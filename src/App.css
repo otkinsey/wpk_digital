@@ -6,10 +6,32 @@
   height: 40vmin;
   pointer-events: none;
 }
+button svg {
+  pointer-events: none;
+}
+button,
+a.btn-primary {
+  height: 35px;
+  background-color: #1473e6;
+  display: block;
+  z-index: 1;
+  position: relative;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 120px;
+  text-decoration: none;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
 
 header li {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 header li {
@@ -17,7 +39,7 @@ header li {
 }
 
 header svg {
-  height: 55px;
+  height: 40px;
 }
 
 header ul {
