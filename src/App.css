@@ -7,6 +7,47 @@
   pointer-events: none;
 }
 
+header li {
+  display: flex;
+  align-items: center;
+}
+
+header li {
+  height: 100%;
+}
+
+header svg {
+  height: 55px;
+}
+
+header ul {
+  margin: 0;
+}
+
+.section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.section img.principal_image {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 0;
+}
+.section .section_text {
+  position: relative;
+  z-index: 1;
+  width: 30%;
+  font-size: 1.25rem;
+}
+.section .section_text h1 {
+  text-transform: capitalize;
+  font-size: 4rem;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
