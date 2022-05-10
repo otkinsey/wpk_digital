@@ -1,5 +1,6 @@
 import "./App.css";
 import Home from "./components/homePage";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import { ReactComponent as Logo } from "./components/header/logo.svg";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -12,28 +13,8 @@ function App() {
   };
   return (
     <div className="App">
-      <header
-        style={{
-          backgroundColor: "black",
-
-          height: "75px",
-
-          margin: "none",
-        }}
-        id="header"
-      >
-        <ul
-          style={{
-            color: "white",
-            listStyleType: "none",
-            fontWeight: "bold",
-            fontSize: ".8rem",
-            display: "flex",
-            alignItems: "center",
-            height: "100%",
-            justifyContent: "space-around",
-          }}
-        >
+      <header style={{}} id="header">
+        <ul style={{}}>
           <li>
             <Logo />
           </li>
@@ -78,9 +59,7 @@ function App() {
       </Router>
       <footer
         style={{
-          background: "black",
           height: "150px",
-          color: "white",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",

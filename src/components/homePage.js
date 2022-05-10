@@ -1,4 +1,6 @@
 import { BsChevronUp } from "react-icons/bs";
+import { FaPaperPlane } from "react-icons/fa";
+import { Form, Button, Col, Row } from "react-bootstrap";
 
 const HomePage = (props) => {
   const pageData = [
@@ -30,7 +32,7 @@ const HomePage = (props) => {
 
   const createSectionContent = (section, index) => {
     const alignment = index % 2 === 0 ? "left" : "right";
-    const textColor = index % 2 === 0 ? "black" : "white";
+    const textColor = index % 2 === 0 ? "#6c6c6c" : "white";
     const textPosition = index % 2 === 0 ? "10%" : "57%";
     return (
       <div
@@ -47,7 +49,14 @@ const HomePage = (props) => {
           <h1>{section.title.replace("_", " ")}</h1>
           <p>{section.text}</p>
           {index === 0 ? (
-            <a href="/" className="btn-primary" style={{}}>
+            <a
+              href="/"
+              className="btn-primary"
+              onClick={(event) => {
+                event.preventDefault();
+                props.scrollTo("button_contact_us");
+              }}
+            >
               Contact Us
             </a>
           ) : (
@@ -83,8 +92,36 @@ const HomePage = (props) => {
       >
         <BsChevronUp />
       </button>
+      <div className="section" id="contact_us" style={{ color: "#6c6c6c" }}>
+        <Form>
+          <h1>We'd love to hear from you.</h1>
+          <Row>
+            <Col>
+              <label>First Name:</label>
+              <Form.Control />
+            </Col>
+            <Col>
+              <label>First Name:</label>
+              <Form.Control />
+            </Col>
+          </Row>
+          <Row>
+            <label>Company Name:</label>
+            <Form.Control></Form.Control>
+          </Row>
+          <Row>
+            <label>Email:</label>
+            <Form.Control></Form.Control>
+          </Row>
+          <Button type="submit" className="button">
+            <FaPaperPlane style={{}} /> <span>Send</span>
+          </Button>
+        </Form>
+      </div>
     </div>
   );
 };
 
 export default HomePage;
+
+// 617-730-2069
