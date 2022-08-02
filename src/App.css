@@ -29,6 +29,12 @@ a.btn-primary {
   justify-content: center;
   cursor: pointer;
 }
+button svg {
+  pointer-events: none;
+}
+div#digital_transformation {
+  border-top: 1px solid rgba(22, 103, 149, 0.15);
+}
 footer {
   background-color: #f3f3f3;
 }
@@ -133,11 +139,11 @@ header ul {
 .section .section_text {
   position: relative;
   z-index: 1;
-  width: 30%;
+  width: 22%;
   font-size: 1.25rem;
 }
 .section .section_text h1 {
-  text-transform: capitalize;
+  text-transform: inherit;
   font-size: 4rem;
 }
 .section @media (prefers-reduced-motion: no-preference) {

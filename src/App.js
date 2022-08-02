@@ -40,7 +40,7 @@ function App() {
             }}
             id="nav_digital_transformation"
           >
-            DIGITALTRANSFORMATION
+            DIGITAL TRANSFORMATION
           </li>
           <li
             onClick={(event) => {
