@@ -67,61 +67,7 @@ const HomePage = (props) => {
     );
   };
 
-  return (
-    <div>
-      {pageData.map((section, index) => createSectionContent(section, index))}
-      <button
-        onClick={(event) => {
-          event.preventDefault();
-          props.scrollTo(event.target.id);
-        }}
-        id="button_header"
-        style={{
-          height: 40,
-          width: 40,
-          borderRadius: 20,
-          backgroundColor: "rgba(0,0,0,.45)",
-          color: "white",
-          fontSize: "2rem",
-          border: "1px solid #fff",
-          position: "fixed",
-          right: "3%",
-          bottom: "6%",
-          boxShadow: "0 0 10px #fff",
-        }}
-      >
-        <BsChevronUp />
-      </button>
-      <div className="section" id="contact_us" style={{ color: "#6c6c6c" }}>
-        <Form>
-          <h1>We'd love to hear from you.</h1>
-          <Row>
-            <Col>
-              <label>First Name:</label>
-              <Form.Control />
-            </Col>
-            <Col>
-              <label>First Name:</label>
-              <Form.Control />
-            </Col>
-          </Row>
-          <Row>
-            <label>Company Name:</label>
-            <Form.Control></Form.Control>
-          </Row>
-          <Row>
-            <label>Email:</label>
-            <Form.Control></Form.Control>
-          </Row>
-          <Button type="submit" className="button">
-            <FaPaperPlane style={{}} /> <span>Send</span>
-          </Button>
-        </Form>
-      </div>
-    </div>
-  );
+  return <h1>Currently undergoing maintenance. Thank you for visiting.</h1>;
 };
 
 export default HomePage;
-
-// 617-730-2069
