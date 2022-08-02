@@ -34,6 +34,7 @@ button svg {
 }
 div#digital_transformation {
   border-top: 1px solid rgba(22, 103, 149, 0.15);
+  border-bottom: 1px solid rgba(22, 103, 149, 0.15);
 }
 footer {
   background-color: #f3f3f3;
