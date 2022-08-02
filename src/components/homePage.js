@@ -8,7 +8,7 @@ const HomePage = (props) => {
       sectionID: "hero",
       title: "Embrace the Future",
       text: "From document management applications, to digital transformatoin consultation, WPK provides solutions that drive results, and push your organization forward.",
-      imageURL: "images/homepage/tyler-franta-RbFDzMKTH6Q-unsplash.png",
+      imageURL: "images/homepage/embrace_the_future.png",
     },
     {
       sectionID: "learning",
