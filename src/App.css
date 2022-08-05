@@ -84,7 +84,7 @@ header,
 footer {
   height: 65px;
   background-color: white;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: #6c6c6c;
   list-style-type: none;
   font-weight: normal;
@@ -205,9 +205,21 @@ header ul {
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.55);
 }
+footer {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 24%;
+}
 @media screen and (max-width: 600px) {
   .section .section_text h1 {
     font-size: 11vw;
+  }
+  footer {
+    justify-content: center;
+    padding: 0 3%;
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 850px) {
@@ -245,6 +257,10 @@ header ul {
 }
 
 @media only screen and (max-width: 1100px) {
+  footer {
+    padding: 0 3%;
+    font-size: 0.75rem;
+  }
   form .col {
     flex-basis: 100%;
   }
