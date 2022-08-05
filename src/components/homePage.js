@@ -32,8 +32,6 @@ const HomePage = (props) => {
 
   const createSectionContent = (section, index) => {
     const alignment = index % 2 === 0 ? "left" : "right";
-    const textColor = index % 2 === 0 ? "6c" : "white";
-    const textPosition = index % 2 === 0 ? "7%" : "71%";
     return (
       <div
         className="section"
