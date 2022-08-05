@@ -23,7 +23,7 @@ a.btn-primary {
   color: white;
   font-size: 0.85rem;
   font-weight: bold;
-  width: 120px;
+  padding: 8px 20px;
   text-decoration: none;
   border-radius: 20px;
   display: flex;
@@ -34,7 +34,7 @@ a.btn-primary {
 button svg {
   pointer-events: none;
 }
-div#digital_transformation {
+#digital_transformation {
   border-top: 1px solid rgba(22, 103, 149, 0.15);
   border-bottom: 1px solid rgba(22, 103, 149, 0.15);
 }
@@ -90,12 +90,17 @@ footer {
 }
 header {
   border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
 }
-header ul {
+header ul#main-nav {
   display: flex;
   align-items: center;
   height: 100%;
   justify-content: space-around;
+  width: 75%;
 }
 header li {
   display: flex;
@@ -115,6 +120,12 @@ header svg {
 
 header ul {
   margin: 0;
+}
+#mobile-nav-button {
+  position: absolute;
+  left: 20px;
+  font-size: 1.15rem;
+  bottom: 17px;
 }
 .row {
   padding-bottom: 1rem;
@@ -145,20 +156,10 @@ header ul {
   width: 31%;
   font-size: 1.25rem;
 }
-/* .section .section_text {
-  position: relative;
-  z-index: 1;
-  width: 22%;
-  font-size: 1.25rem;
-} */
+
 .section .section_text h1 {
   text-transform: inherit;
   font-size: 4rem;
-}
-.section @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -192,7 +193,7 @@ header ul {
   left: 10%;
   padding: 40px;
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .section_text.right {
   /* text-align: right; */
@@ -200,11 +201,16 @@ header ul {
   left: 59%;
   padding: 40px;
   border-radius: 4px;
-  background: rgba(0, 0, 0, 0.55);
+  background-color: rgba(0, 0, 0, 0.55);
 }
 @media screen and (max-width: 600px) {
   .section .section_text h1 {
     font-size: 11vw;
+  }
+}
+@media screen and (max-width: 850px) {
+  header ul#main-nav {
+    display: none;
   }
 }
 
@@ -226,7 +232,7 @@ header ul {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: rgba(27, 39, 87, 0.85);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 0;
     display: block;
   }
@@ -238,10 +244,6 @@ header ul {
     display: none;
   }
 
-  /* .section .section_text h1 {
-    text-transform: inherit;
-    font-size: 3rem;
-  } */
   .section .section_text {
     position: relative;
     z-index: 1;
@@ -253,6 +255,7 @@ header ul {
     margin: auto;
     right: 0;
     left: 0;
+    background-color: transparent;
   }
   .section_text.left,
   .section_text.right {

@@ -46,16 +46,16 @@ const HomePage = (props) => {
           <h1>{section.title.replace("_", " ")}</h1>
           <p>{section.text}</p>
           {index === 0 ? (
-            <a
+            <button
               href="/"
-              className="btn-primary"
+              className="button btn btn-primary"
               onClick={(event) => {
                 event.preventDefault();
                 props.scrollTo("button_contact_us");
               }}
             >
-              Contact Us
-            </a>
+              <FaPaperPlane></FaPaperPlane>Contact
+            </button>
           ) : (
             ""
           )}
@@ -107,11 +107,12 @@ const HomePage = (props) => {
           borderRadius: 20,
           backgroundColor: "rgba(0,0,0,.45)",
           color: "white",
-          fontSize: "2rem",
+          fontSize: "1rem",
           border: "1px solid #fff",
           position: "fixed",
           right: "3%",
           bottom: "6%",
+          padding: "0",
           boxShadow: "0 0 10px #fff",
         }}
       >

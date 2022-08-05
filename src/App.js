@@ -1,7 +1,7 @@
 import "./App.css";
 import Home from "./components/homePage";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import { FaBars } from "react-icons/fa";
 import { ReactComponent as Logo } from "./components/header/logo.svg";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -14,10 +14,11 @@ function App() {
   return (
     <div className="App">
       <header style={{}} id="header">
-        <ul style={{}}>
-          <li>
-            <Logo />
-          </li>
+        <div>
+          <FaBars id="mobile-nav-button"></FaBars>
+          <Logo />
+        </div>
+        <ul id="main-nav" style={{}}>
           <li
             onClick={(event) => {
               scrollTo(event.target.id);
