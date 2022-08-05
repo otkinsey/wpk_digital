@@ -121,5 +121,3 @@ const HomePage = (props) => {
 };
 
 export default HomePage;
-
-// 617-730-2069

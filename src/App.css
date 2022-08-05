@@ -70,6 +70,7 @@ form .col:last-child {
 form h1 {
   margin-bottom: 2rem;
   font-size: 2.75rem;
+  text-align: center;
 }
 
 form input,
@@ -126,6 +127,7 @@ header ul {
   left: 20px;
   font-size: 1.15rem;
   bottom: 17px;
+  display: none;
 }
 .row {
   padding-bottom: 1rem;
@@ -210,7 +212,35 @@ header ul {
 }
 @media screen and (max-width: 850px) {
   header ul#main-nav {
-    display: none;
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    height: 100vh;
+    justify-content: flex-start;
+    background-color: white;
+    width: 350px;
+    flex-direction: column;
+    top: 66px;
+    left: -350px;
+    z-index: 2;
+    transition: left 0.3s ease;
+  }
+  header ul#main-nav.active {
+    left: 0;
+  }
+  header ul#main-nav li {
+    height: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex: 0 0 47px;
+  }
+  #mobile-nav-button {
+    position: absolute;
+    left: 20px;
+    font-size: 1.15rem;
+    bottom: 17px;
+    display: inline;
   }
 }
 

@@ -1,57 +1,35 @@
 import "./App.css";
 import Home from "./components/homePage";
+import MainNav from "./components/mainNav";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { ReactComponent as Logo } from "./components/header/logo.svg";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-  const scrollTo = (id) => {
+  const [active, setActive] = useState("inactive");
+  const scrollTo = (id, menuState = active) => {
     const elem = document.getElementById(id.substring(id.indexOf("_") + 1));
     console.log(elem);
     elem.scrollIntoView({ behavior: "smooth" });
+    if (menuState === "active") {
+      toggleMenu();
+    }
+  };
+
+  const toggleMenu = () => {
+    active === "inactive" ? setActive("active") : setActive("inactive");
+    return active;
   };
   return (
     <div className="App">
       <header style={{}} id="header">
         <div>
-          <FaBars id="mobile-nav-button"></FaBars>
-          <Logo />
+          <FaBars id="mobile-nav-button" onClick={() => toggleMenu()}></FaBars>
+          <Logo id="wpk-logo" />
         </div>
-        <ul id="main-nav" style={{}}>
-          <li
-            onClick={(event) => {
-              scrollTo(event.target.id);
-            }}
-            id="nav_elearning"
-          >
-            ELEARNING
-          </li>
-          <li
-            onClick={(event) => {
-              scrollTo(event.target.id);
-            }}
-            id="nav_document_management"
-          >
-            DOCUMENT MANAGEMENT
-          </li>
-          <li
-            onClick={(event) => {
-              scrollTo(event.target.id);
-            }}
-            id="nav_digital_transformation"
-          >
-            DIGITAL TRANSFORMATION
-          </li>
-          <li
-            onClick={(event) => {
-              scrollTo(event.target.id);
-            }}
-            id="nav_contact_us"
-          >
-            CONNECT WITH US
-          </li>
-        </ul>
+        <MainNav scrollTo={scrollTo} active={active}></MainNav>
       </header>
       <Router>
         <Routes>
