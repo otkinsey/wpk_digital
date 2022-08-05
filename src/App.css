@@ -179,15 +179,28 @@ header ul {
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
+.section {
+  border-top: 1px solid rgba(22, 103, 149, 0.15);
+  /* border-bottom: 1px solid rgb(185, 181, 181); */
+}
+.section_text {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
 .section_text.left {
   text-align: left;
   color: #6c6c6c;
   left: 10%;
+  padding: 40px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.5);
 }
 .section_text.right {
-  text-align: right;
+  /* text-align: right; */
   color: white;
   left: 59%;
+  padding: 40px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.55);
 }
 @media screen and (max-width: 600px) {
   .section .section_text h1 {
