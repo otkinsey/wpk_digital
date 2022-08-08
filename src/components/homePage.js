@@ -11,7 +11,7 @@ const HomePage = (props) => {
       imageURL: "images/homepage/embrace_the_future.png",
     },
     {
-      sectionID: "learning",
+      sectionID: "elearning",
       title: "Elearning Development",
       text: "Whether it's regulatory compliance, continuing education, or recruitment, WPK is your trusted partner. We deliver value every step of the way, from inception to implementation.",
       imageURL: "images/homepage/elearning.png",
