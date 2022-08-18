@@ -177,7 +177,16 @@ header ul {
 .App-link {
   color: #61dafb;
 }
-
+#contact-form {
+  position: relative;
+}
+#error-message {
+  text-align: right;
+}
+label {
+  position: relative;
+  top: -3px;
+}
 .section {
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -187,7 +196,7 @@ header ul {
   /* border-bottom: 1px solid rgb(185, 181, 181); */
 }
 .section_text {
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 .section_text.left {
   text-align: left;
@@ -195,7 +204,7 @@ header ul {
   left: 10%;
   padding: 40px;
   border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.25);
 }
 .section_text.right {
   /* text-align: right; */
@@ -203,7 +212,7 @@ header ul {
   left: 59%;
   padding: 40px;
   border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.55);
+  background-color: rgba(0, 0, 0, 0.25);
 }
 footer {
   height: 150px;

@@ -36,7 +36,7 @@ function App() {
           <Route path="/" element={<Home scrollTo={scrollTo} />} />
         </Routes>
       </Router>
-      <footer style={{}}>
+      <footer>
         <Logo style={{ height: 45 }} />
         <p>&copy; WPK Digital Solution copyright 2022. All rights reserved</p>
       </footer>

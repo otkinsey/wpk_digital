@@ -1,6 +1,7 @@
 import { BsChevronUp } from "react-icons/bs";
 import { FaPaperPlane } from "react-icons/fa";
-import { Form, Button, Col, Row } from "react-bootstrap";
+
+import ContactForm from "./contactForm";
 
 const HomePage = (props) => {
   const pageData = [
@@ -30,20 +31,20 @@ const HomePage = (props) => {
     },
   ];
 
-  const createSectionContent = (section, index) => {
-    const alignment = index % 2 === 0 ? "left" : "right";
+  const CreateSectionContent = (props) => {
+    const alignment = props.index % 2 === 0 ? "left" : "right";
     return (
       <div
         className="section"
-        id={section.sectionID}
+        id={props.section.sectionID}
         style={{
-          backgroundImage: `url(${section.imageURL})`,
+          backgroundImage: `url(${props.section.imageURL})`,
         }}
       >
         <div className={`section_text ${alignment}`} style={{}}>
-          <h1>{section.title.replace("_", " ")}</h1>
-          <p>{section.text}</p>
-          {index === 0 ? (
+          <h1>{props.section.title.replace("_", " ")}</h1>
+          <p>{props.section.text}</p>
+          {props.index === 0 ? (
             <button
               href="/"
               className="button btn btn-primary"
@@ -65,33 +66,13 @@ const HomePage = (props) => {
   return (
     <div>
       <div id="main-content">
-        {pageData.map((section, index) => createSectionContent(section, index))}
-        <div className="section" id="contact_us" style={{ color: "#6c6c6c" }}>
-          <Form>
-            <h1>We'd love to hear from you.</h1>
-            <Row>
-              <Col>
-                <label>First Name:</label>
-                <Form.Control />
-              </Col>
-              <Col>
-                <label>Last Name:</label>
-                <Form.Control />
-              </Col>
-            </Row>
-            <Row>
-              <label>Company Name:</label>
-              <Form.Control></Form.Control>
-            </Row>
-            <Row>
-              <label>Email:</label>
-              <Form.Control></Form.Control>
-            </Row>
-            <Button type="submit" className="button">
-              <FaPaperPlane style={{}} /> <span>Send</span>
-            </Button>
-          </Form>
-        </div>
+        {/* create content sections */}
+        {pageData.map((section, index) => (
+          <CreateSectionContent key={index} section={section} index={index} />
+        ))}
+
+        {/* refactor: replace with a form component */}
+        <ContactForm />
       </div>
       <button
         onClick={(event) => {
