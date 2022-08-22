@@ -1,30 +1,71 @@
 import { FaPaperPlane } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 import { Form, Button, Col, Row } from "react-bootstrap";
 
 const FormMockUp = () => {
-  let [display, setDisplay] = useState("none"),
+  // state variables
+  const form = useRef();
+  let [message, setMessage] = useState(""),
+    [display, setDisplay] = useState("none"),
     [top, setTop] = useState("0px"),
     [left, setLeft] = useState("0px");
+
   const frontEndValidate = (event) => {
-    //   debugger;
     const input = event.target.value;
-    const re = /;|@|\+|=|\$|%|\*|&|#|-|\^/g;
-    // input.match(re);
+    const textOnlyFields = ["first-name", "last-name"];
+    const errorMsgWidth = 330;
+    const msgMargin = 5;
+    const re = textOnlyFields.includes(event.target.name)
+      ? /;|@|\+|=|\$|%|\*|&|#|\^|<|>|[0-9]/g
+      : /;|\+|=|\$|%|\*|&|#|-|\^|<|>/g;
 
     let val = input.match(re) === null ? "none" : "block";
 
+    textOnlyFields.includes(event.target.name)
+      ? setMessage("Invalid input. Letters only.")
+      : setMessage("Invalid input. Special characters not allowed.");
+
     display = setDisplay(val);
-    // top = setTop(`${event.target.getBoundingClientRect().y + -10}px`);
-    top = setTop(`${event.target.offsetTop - 30}px`);
-    // left = setLeft(`${event.target.getBoundingClientRect().x + 127}px`);
-    left = setLeft(`${event.target.offsetLeft + 90}px`);
-    console.log("display: ", display, " | top: ", top, " | left: ", left);
+    top = setTop(`${event.target.offsetTop - 27}px`);
+    left = setLeft(
+      `${
+        event.target.offsetLeft +
+        event.target.clientWidth -
+        errorMsgWidth -
+        msgMargin
+      }px`
+    );
+  };
+
+  const resetContactForm = (e) => {
+    const formInputs = document.getElementsByClassName("contact-form-input");
+    Array.from(formInputs).forEach((input) => (input.value = ""));
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_grci4gd",
+        "template_yrewygy",
+        form.current,
+        "_dJAITq5fj7zi-rp-"
+      )
+      .then(
+        (result) => {
+          console.log(`emailJs success confirmation: ${result.text}`);
+          resetContactForm(e);
+        },
+        (error) => {
+          console.log(`Email error: ${error.text}`);
+        }
+      );
   };
 
   return (
-    <Form id="contact-form">
+    <Form ref={form} id="contact-form" onSubmit={sendEmail}>
       <h1>We'd love to hear from you.</h1>
       <Row>
         <Col>
@@ -32,6 +73,8 @@ const FormMockUp = () => {
           <Form.Control
             onChange={frontEndValidate}
             className="contact-form-input"
+            name="first-name"
+            type="text"
           />
         </Col>
         <Col>
@@ -39,6 +82,8 @@ const FormMockUp = () => {
           <Form.Control
             onChange={frontEndValidate}
             className="contact-form-input"
+            name="last-name"
+            type="text"
           />
         </Col>
       </Row>
@@ -47,13 +92,16 @@ const FormMockUp = () => {
         <Form.Control
           onChange={frontEndValidate}
           className="contact-form-input"
+          name="company-name"
         />
       </Row>
       <Row>
         <label>Email:</label>
         <Form.Control
-          onChange={frontEndValidate}
+          //   onChange={frontEndValidate}
           className="contact-form-input"
+          name="email"
+          type="email"
         />
       </Row>
       <Button type="submit" className="button">
@@ -70,7 +118,7 @@ const FormMockUp = () => {
           textAlign: "right",
         }}
       >
-        Invalid input. Special characters not allowed.
+        {message}
       </div>
     </Form>
   );

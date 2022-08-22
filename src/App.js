@@ -2,6 +2,7 @@ import "./App.css";
 import Home from "./components/homePage";
 import MainNav from "./components/mainNav";
 import "bootstrap/dist/css/bootstrap.min.css";
+import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { ReactComponent as Logo } from "./components/header/logo.svg";
@@ -11,8 +12,11 @@ function App() {
   const [active, setActive] = useState("inactive");
   const scrollTo = (id, menuState = active) => {
     const elem = document.getElementById(id.substring(id.indexOf("_") + 1));
-    console.log(elem);
     elem.scrollIntoView({ behavior: "smooth" });
+    if (id === "nav_contact_us") {
+      let input = document.querySelector("[name=first-name]");
+      input.focus({ preventScroll: true });
+    }
     if (menuState === "active") {
       toggleMenu();
     }
@@ -24,6 +28,10 @@ function App() {
   };
   return (
     <div className="App">
+      <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+      ></script>
       <header style={{}} id="header">
         <div>
           <FaBars id="mobile-nav-button" onClick={() => toggleMenu()}></FaBars>
