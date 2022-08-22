@@ -2,7 +2,6 @@ import "./App.css";
 import Home from "./components/homePage";
 import MainNav from "./components/mainNav";
 import "bootstrap/dist/css/bootstrap.min.css";
-import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { ReactComponent as Logo } from "./components/header/logo.svg";
