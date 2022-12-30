@@ -122,6 +122,19 @@ header svg {
 header ul {
   margin: 0;
 }
+.demo {
+  background: white;
+  height: 0vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transition: height 0.75s ease;
+}
+.demo.active {
+  height: 100vh;
+}
 #mobile-nav-button {
   position: absolute;
   left: 20px;
