@@ -16,11 +16,10 @@ button,
 button.button,
 a.btn-primary {
   height: 35px;
-  background-color: #1473e6;
   display: block;
   z-index: 1;
+  color: #fff;
   position: relative;
-  color: white;
   font-size: 0.85rem;
   font-weight: bold;
   padding: 8px 20px;
@@ -30,13 +29,43 @@ a.btn-primary {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  border: none;
 }
-button svg {
+.btn-primary {
+  background-color: #0d6efd;
+}
+button.btn-default {
+  background-color: white;
+  border: 2px solid lightgray;
+  color: gray;
+}
+
+.btn-primary button svg {
   pointer-events: none;
 }
+
 #digital_transformation {
   border-top: 1px solid rgba(22, 103, 149, 0.15);
   border-bottom: 1px solid rgba(22, 103, 149, 0.15);
+}
+.demo {
+  background: white;
+  height: 0vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  transition: height 0.75s ease;
+}
+.demo.active {
+  height: 100vh;
+}
+.demo button {
+  position: absolute;
+  top: 10%;
+  right: 10%;
 }
 footer {
   background-color: #f3f3f3;
@@ -94,7 +123,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  position: relative;
+  position: fixed;
+  width: 100%;
+  font-size: 14px;
+  z-index: 9;
 }
 header ul#main-nav {
   display: flex;
@@ -107,7 +139,7 @@ header li {
   display: flex;
   align-items: center;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 400;
   text-transform: capitalize;
 }
 
@@ -122,19 +154,7 @@ header svg {
 header ul {
   margin: 0;
 }
-.demo {
-  background: white;
-  height: 0vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  transition: height 0.75s ease;
-}
-.demo.active {
-  height: 100vh;
-}
+
 #mobile-nav-button {
   position: absolute;
   left: 20px;

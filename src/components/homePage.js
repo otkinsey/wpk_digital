@@ -20,7 +20,7 @@ const HomePage = (props) => {
       title: "Elearning Development",
       text: "Whether it's regulatory compliance, continuing education, or recruitment, WPK is your trusted partner. We deliver value every step of the way, from inception to implementation.",
       imageURL: "images/homepage/elearning.jpg",
-      button: { text: "learn more." },
+      button: { text: "Learn more" },
     },
     {
       sectionID: "document_management",
@@ -39,29 +39,23 @@ const HomePage = (props) => {
   const [LMSActive, setLMSActive] = useState(false);
 
   const toggleDemoLMS = () => {
-    console.log(!LMSActive);
+    if (!LMSActive) {
+      props.scrollTo("demo");
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
     return setLMSActive(!LMSActive);
   };
-
-  const CreateSectionContent = (props) => {
-    const alignment = props.index % 2 === 0 ? "left" : "right";
-
-    // return (
-
-    // );
-  };
-
-  const alignment = props.index % 2 === 0 ? "left" : "right";
 
   return (
     <div>
       <div id="main-content">
-        <DemoLMS LMSActive={LMSActive} />
         {/* create content sections */}
         {pageData.map((section, index) => (
           <div>
             {section.sectionID === "elearning" ? (
-              <DemoLMS LMSActive={LMSActive} />
+              <DemoLMS LMSActive={LMSActive} toggleDemoLMS={toggleDemoLMS} />
             ) : (
               ""
             )}
@@ -72,11 +66,15 @@ const HomePage = (props) => {
                 backgroundImage: `url(${section.imageURL})`,
               }}
             >
-              <div className={`section_text ${alignment}`} style={{}}>
+              <div
+                className={`section_text ${index % 2 === 0 ? "left" : "right"}`}
+                style={{}}
+              >
                 <h1>{section.title.replace("_", " ")}</h1>
                 <p>{section.text}</p>
                 {section.hasOwnProperty("button") ? (
                   <button
+                    id="button_demo"
                     className="button btn btn-primary"
                     onClick={(event) => toggleDemoLMS()}
                   >
@@ -85,7 +83,7 @@ const HomePage = (props) => {
                 ) : (
                   ""
                 )}
-                {props.index === 0 ? (
+                {index === 0 ? (
                   <button
                     href="/"
                     className="button btn btn-primary"
@@ -94,7 +92,7 @@ const HomePage = (props) => {
                       props.scrollTo("button_contact_us");
                     }}
                   >
-                    <FaPaperPlane></FaPaperPlane>Contact
+                    <FaPaperPlane></FaPaperPlane>Contact us
                   </button>
                 ) : (
                   ""

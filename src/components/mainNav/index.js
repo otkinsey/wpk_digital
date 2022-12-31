@@ -7,7 +7,7 @@ const MobileMenu = (props) => {
         }}
         id="nav_elearning"
       >
-        ELEARNING
+        elearning
       </li>
       <li
         onClick={(event) => {
@@ -15,7 +15,7 @@ const MobileMenu = (props) => {
         }}
         id="nav_document_management"
       >
-        DOCUMENT MANAGEMENT
+        Document Management
       </li>
       <li
         onClick={(event) => {
@@ -23,7 +23,7 @@ const MobileMenu = (props) => {
         }}
         id="nav_digital_transformation"
       >
-        DIGITAL TRANSFORMATION
+        Digital Transformation
       </li>
       <li
         onClick={(event) => {
@@ -31,7 +31,7 @@ const MobileMenu = (props) => {
         }}
         id="nav_contact_us"
       >
-        CONNECT WITH US
+        Connect With Us
       </li>
     </ul>
   );
