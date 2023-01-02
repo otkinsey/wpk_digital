@@ -3,6 +3,29 @@ body {
   min-height: 100vh;
   min-width: 100vw;
 }
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+#contact-form {
+  position: relative;
+}
+#error-message {
+  text-align: right;
+}
+label {
+  position: relative;
+  top: -3px;
+}
 
 .App-logo {
   height: 40vmin;
@@ -48,26 +71,19 @@ button.btn-default {
   border-top: 1px solid rgba(22, 103, 149, 0.15);
   border-bottom: 1px solid rgba(22, 103, 149, 0.15);
 }
-.demo {
-  background: white;
-  height: 0vh;
-  position: relative;
+.demo-interface {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  overflow: hidden;
-  transition: height 0.75s ease;
 }
-.demo.active {
-  height: 100vh;
+.demo-interface .col .wrapper {
+  border: 1px solid lightgray;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.demo button {
-  position: absolute;
-  top: 10%;
-  right: 10%;
-}
-footer {
+.demo-interface footer {
   background-color: #f3f3f3;
 }
 footer #logo * {
@@ -108,9 +124,14 @@ form input.form-control {
 }
 footer {
   border-top: 1px solid #ddd;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 24%;
 }
-header,
-footer {
+footer,
+header {
   height: 65px;
   background-color: white;
   font-size: 1rem;
@@ -197,29 +218,6 @@ header ul {
   font-size: 4rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-#contact-form {
-  position: relative;
-}
-#error-message {
-  text-align: right;
-}
-label {
-  position: relative;
-  top: -3px;
-}
 .section {
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -247,13 +245,35 @@ label {
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.25);
 }
-footer {
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0px 24%;
+.slide-down-panel {
+  background: white;
+  height: 0vh;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  transition: height 0.75s ease;
 }
+.slide-down-panel.active {
+  height: 100vh;
+}
+.slide-down-panel.active .row {
+  min-height: 60px;
+}
+.slide-down-panel.active .demo-interface.row {
+  height: 90%;
+}
+.slide-down-panel.active .row .col {
+  height: 100%;
+}
+.slide-down-panel button {
+  position: relative;
+}
+.toggle-row {
+  display: flex;
+  justify-content: right;
+  padding-top: 80px;
+}
+
 @media screen and (max-width: 600px) {
   .section .section_text h1 {
     font-size: 11vw;
