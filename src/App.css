@@ -288,7 +288,7 @@ header ul {
   .section {
     background-position: center center;
   }
-  .section::before {
+  .section::after {
     content: "";
     position: absolute;
     display: block;
