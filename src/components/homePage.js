@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-
-import { ModalFooter } from "react-bootstrap";
 import { BsChevronUp } from "react-icons/bs";
 import { FaPaperPlane } from "react-icons/fa";
 
