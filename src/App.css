@@ -285,6 +285,17 @@ header ul {
   }
 }
 @media screen and (max-width: 850px) {
+  .section {
+    background-position: center center;
+  }
+  .section::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
   header ul#main-nav {
     position: absolute;
     display: flex;
