@@ -1,8 +1,6 @@
-import React, { useState } from "react";
 import { BsChevronUp } from "react-icons/bs";
 import { FaPaperPlane } from "react-icons/fa";
 
-import DemoLMS from "./LMSDemo";
 import ContactForm from "./contactForm";
 
 const HomePage = (props) => {
@@ -18,7 +16,6 @@ const HomePage = (props) => {
       title: "Elearning Development",
       text: "Whether it's regulatory compliance, continuing education, or recruitment, WPK is your trusted partner. We deliver value every step of the way, from inception to implementation.",
       imageURL: "images/homepage/elearning.jpg",
-      button: { text: "Learn more" },
     },
     {
       sectionID: "document_management",
@@ -34,16 +31,36 @@ const HomePage = (props) => {
     },
   ];
 
-  const [LMSActive, setLMSActive] = useState(false);
-
-  const toggleDemoLMS = () => {
-    if (!LMSActive) {
-      props.scrollTo("demo");
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "scroll";
-    }
-    return setLMSActive(!LMSActive);
+  const CreateSectionContent = (props) => {
+    const alignment = props.index % 2 === 0 ? "left" : "right";
+    return (
+      <div
+        className="section"
+        id={props.section.sectionID}
+        style={{
+          backgroundImage: `url(${props.section.imageURL})`,
+        }}
+      >
+        <div className={`section_text ${alignment}`} style={{}}>
+          <h1>{props.section.title.replace("_", " ")}</h1>
+          <p>{props.section.text}</p>
+          {props.index === 0 ? (
+            <button
+              href="/"
+              className="button btn btn-primary"
+              onClick={(event) => {
+                event.preventDefault();
+                props.scrollTo("button_contact_us");
+              }}
+            >
+              <FaPaperPlane></FaPaperPlane>Contact
+            </button>
+          ) : (
+            ""
+          )}
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -51,53 +68,7 @@ const HomePage = (props) => {
       <div id="main-content">
         {/* create content sections */}
         {pageData.map((section, index) => (
-          <div>
-            {section.sectionID === "elearning" ? (
-              <DemoLMS LMSActive={LMSActive} toggleDemoLMS={toggleDemoLMS} />
-            ) : (
-              ""
-            )}
-            <div
-              className="section"
-              id={section.sectionID}
-              style={{
-                backgroundImage: `url(${section.imageURL})`,
-              }}
-            >
-              <div
-                className={`section_text ${index % 2 === 0 ? "left" : "right"}`}
-                style={{}}
-              >
-                <h1>{section.title.replace("_", " ")}</h1>
-                <p>{section.text}</p>
-                {section.hasOwnProperty("button") ? (
-                  <button
-                    id="button_demo"
-                    className="button btn btn-primary"
-                    onClick={(event) => toggleDemoLMS()}
-                  >
-                    {section.button.text}
-                  </button>
-                ) : (
-                  ""
-                )}
-                {index === 0 ? (
-                  <button
-                    href="/"
-                    className="button btn btn-primary"
-                    onClick={(event) => {
-                      event.preventDefault();
-                      props.scrollTo("button_contact_us");
-                    }}
-                  >
-                    <FaPaperPlane></FaPaperPlane>Contact us
-                  </button>
-                ) : (
-                  ""
-                )}
-              </div>
-            </div>
-          </div>
+          <CreateSectionContent key={index} section={section} index={index} />
         ))}
 
         {/* refactor: replace with a form component */}
