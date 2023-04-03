@@ -65,7 +65,7 @@ const HomePage = (props) => {
               }}
             >
               <div
-                className={`section_text ${index % 2 === 0 ? "left" : "right"}`}
+                className={`section-text ${index % 2 === 0 ? "left" : "right"}`}
                 style={{}}
               >
                 <h1>{section.title.replace("_", " ")}</h1>
