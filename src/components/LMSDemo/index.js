@@ -4,7 +4,18 @@ import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 class LMSDemo extends React.Component {
+  playAudioFile = () => {
+    const audio = document.getElementById("demoAudio");
+    audio.currentTime = 0;
+    audio.play();
+  };
+  stopAudioFile = () => {
+    const audio = document.getElementById("demoAudio");
+    audio.pause();
+  };
+
   render() {
+    this.props.LMSActive ? this.playAudioFile() : this.stopAudioFile();
     return (
       <div
         id="demo"
@@ -13,12 +24,6 @@ class LMSDemo extends React.Component {
         }`}
       >
         <div className="row demo-interface" id="">
-          {/* <div className="col col-3">
-            <div className="wrapper">
-              <h1>Demo</h1>
-              <h3>column 1</h3>
-            </div>
-          </div> */}
           <div className="col col-12">
             <div className="wrapper">
               <div className="row">
@@ -51,13 +56,7 @@ class LMSDemo extends React.Component {
                   </button>
                 </div>
                 <div className="col col-6">
-                  <audio src="audio.m4a"></audio>
-                  {/* <div className="bordered-image">
-                    <img
-                      src="images/homepage/elearning.jpg"
-                      alt="eleaning student"
-                    />
-                  </div> */}
+                  <audio id="demoAudio" src="audio.m4a"></audio>
                 </div>
               </div>
             </div>

@@ -4,6 +4,9 @@ const MobileMenu = (props) => {
       <li
         onClick={(event) => {
           props.scrollTo(event.target.id);
+          document.body.style.overflow =
+            document.body.style.overflow === "hidden" ? "scroll" : "hidden";
+          if (props.LMSActive) props.toggleDemoLMS();
         }}
         id="nav_elearning"
       >
@@ -12,6 +15,9 @@ const MobileMenu = (props) => {
       <li
         onClick={(event) => {
           props.scrollTo(event.target.id);
+          document.body.style.overflow =
+            document.body.style.overflow === "hidden" ? "scroll" : "scroll";
+          if (props.LMSActive) props.toggleDemoLMS();
         }}
         id="nav_document_management"
       >
@@ -20,6 +26,9 @@ const MobileMenu = (props) => {
       <li
         onClick={(event) => {
           props.scrollTo(event.target.id);
+          document.body.style.overflow =
+            document.body.style.overflow === "hidden" ? "scroll" : "hidden";
+          if (props.LMSActive) props.toggleDemoLMS();
         }}
         id="nav_digital_transformation"
       >
@@ -28,6 +37,9 @@ const MobileMenu = (props) => {
       <li
         onClick={(event) => {
           props.scrollTo(event.target.id);
+          document.body.style.overflow =
+            document.body.style.overflow === "hidden" ? "scroll" : "hidden";
+          if (props.LMSActive) props.toggleDemoLMS();
         }}
         id="nav_contact_us"
       >

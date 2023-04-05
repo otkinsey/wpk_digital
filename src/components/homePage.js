@@ -34,18 +34,6 @@ const HomePage = (props) => {
     },
   ];
 
-  const [LMSActive, setLMSActive] = useState(false);
-
-  const toggleDemoLMS = () => {
-    if (!LMSActive) {
-      props.scrollTo("demo");
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "scroll";
-    }
-    return setLMSActive(!LMSActive);
-  };
-
   return (
     <div>
       <div id="main-content">
@@ -53,7 +41,10 @@ const HomePage = (props) => {
         {pageData.map((section, index) => (
           <div>
             {section.sectionID === "elearning" ? (
-              <DemoLMS LMSActive={LMSActive} toggleDemoLMS={toggleDemoLMS} />
+              <DemoLMS
+                LMSActive={props.LMSActive}
+                toggleDemoLMS={props.toggleDemoLMS}
+              />
             ) : (
               ""
             )}
@@ -74,7 +65,7 @@ const HomePage = (props) => {
                   <button
                     id="button_demo"
                     className="button btn btn-primary"
-                    onClick={(event) => toggleDemoLMS()}
+                    onClick={(event) => props.toggleDemoLMS()}
                   >
                     {section.button.text}
                   </button>

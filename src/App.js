@@ -21,6 +21,18 @@ function App() {
     }
   };
 
+  const [LMSActive, setLMSActive] = useState(false);
+
+  const toggleDemoLMS = () => {
+    if (!LMSActive) {
+      scrollTo("demo");
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
+    return setLMSActive(!LMSActive);
+  };
+
   const toggleMenu = () => {
     active === "inactive" ? setActive("active") : setActive("inactive");
     return active;
@@ -36,11 +48,25 @@ function App() {
           <FaBars id="mobile-nav-button" onClick={() => toggleMenu()}></FaBars>
           <Logo id="wpk-logo" />
         </div>
-        <MainNav scrollTo={scrollTo} active={active}></MainNav>
+        <MainNav
+          scrollTo={scrollTo}
+          active={active}
+          LMSActive={LMSActive}
+          toggleDemoLMS={toggleDemoLMS}
+        ></MainNav>
       </header>
       <Router>
         <Routes>
-          <Route path="/" element={<Home scrollTo={scrollTo} />} />
+          <Route
+            path="/"
+            element={
+              <Home
+                scrollTo={scrollTo}
+                LMSActive={LMSActive}
+                toggleDemoLMS={toggleDemoLMS}
+              />
+            }
+          />
         </Routes>
       </Router>
       <footer>
