@@ -3,10 +3,16 @@ const MobileMenu = (props) => {
     <ul id="main-nav" className={`${props.active}`} style={{}}>
       <li
         onClick={(event) => {
-          props.scrollTo(event.target.id);
           document.body.style.overflow =
             document.body.style.overflow === "hidden" ? "scroll" : "hidden";
-          if (props.LMSActive) props.toggleDemoLMS();
+          if (props.LMSActive) {
+            props.toggleDemoLMS();
+            setTimeout(() => {
+              props.scrollTo(event.target.id);
+            }, 800);
+          } else {
+            props.scrollTo(event.target.id);
+          }
         }}
         id="nav_elearning"
       >
@@ -14,10 +20,16 @@ const MobileMenu = (props) => {
       </li>
       <li
         onClick={(event) => {
-          props.scrollTo(event.target.id);
           document.body.style.overflow =
             document.body.style.overflow === "hidden" ? "scroll" : "scroll";
-          if (props.LMSActive) props.toggleDemoLMS();
+          if (props.LMSActive) {
+            props.toggleDemoLMS();
+            setTimeout(() => {
+              props.scrollTo(event.target.id);
+            }, 800);
+          } else {
+            props.scrollTo(event.target.id);
+          }
         }}
         id="nav_document_management"
       >
@@ -25,10 +37,16 @@ const MobileMenu = (props) => {
       </li>
       <li
         onClick={(event) => {
-          props.scrollTo(event.target.id);
           document.body.style.overflow =
             document.body.style.overflow === "hidden" ? "scroll" : "hidden";
-          if (props.LMSActive) props.toggleDemoLMS();
+          if (props.LMSActive) {
+            props.toggleDemoLMS();
+            setTimeout(() => {
+              props.scrollTo(event.target.id);
+            }, 800);
+          } else {
+            props.scrollTo(event.target.id);
+          }
         }}
         id="nav_digital_transformation"
       >
@@ -36,10 +54,16 @@ const MobileMenu = (props) => {
       </li>
       <li
         onClick={(event) => {
-          props.scrollTo(event.target.id);
           document.body.style.overflow =
             document.body.style.overflow === "hidden" ? "scroll" : "hidden";
-          if (props.LMSActive) props.toggleDemoLMS();
+          if (props.LMSActive) {
+            props.toggleDemoLMS();
+            setTimeout(() => {
+              props.scrollTo(event.target.id);
+            }, 800);
+          } else {
+            props.scrollTo(event.target.id);
+          }
         }}
         id="nav_contact_us"
       >

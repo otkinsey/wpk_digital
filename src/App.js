@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   const [active, setActive] = useState("inactive");
   const scrollTo = (id, menuState = active) => {
+    console.log("app.js scrollTo");
     const elem = document.getElementById(id.substring(id.indexOf("_") + 1));
     elem.scrollIntoView({ behavior: "smooth" });
     if (id === "nav_contact_us") {
