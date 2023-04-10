@@ -28,6 +28,9 @@ body {
   height: 100%;
   object-fit: cover;
 }
+button svg {
+  pointer-events: none;
+}
 #contact-form {
   position: relative;
 }
@@ -43,14 +46,14 @@ label {
   height: 40vmin;
   pointer-events: none;
 }
-button:not(#button_header) svg {
+button:not(#button_header, #button_hero) svg {
   pointer-events: none;
   margin-right: 7px;
 }
 button,
 button.button,
 a.btn-primary {
-  height: 35px;
+  height: 32px;
   display: block;
   z-index: 1;
   color: #fff;
@@ -79,31 +82,51 @@ button.btn-default {
 .btn-primary button svg {
   pointer-events: none;
 }
-
-#demo-content .section-text {
-  height: 100%;
-}
-#demo-content .section-text {
-  height: 100%;
-  padding: 60px;
-}
 .demo-interface {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .demo-interface .col .wrapper {
-  border: 1px solid lightgray;
+  border: 1px solid rgb(0 0 0 / 45%);
   height: 100%;
-  background: linear-gradient(90deg, white -103%, red 97%);
+  background: linear-gradient(90deg, white -81%, red 58%);
   color: white;
 }
 .demo-interface footer {
   background-color: #f3f3f3;
 }
-.demo-interface #demo-content {
+#demo-content .col > div {
+  height: 100%;
   padding: 60px;
-  height: 70%;
+  border: 1px solid rgb(0 0 0 / 15%);
+  position: relative;
+  background: rgb(57 1 1 / 20%);
+}
+.demo-interface #demo-content {
+  position: relative;
+  padding: 20px 11px;
+  height: 92.5%;
+  margin: 0;
+}
+.demo-interface #demo-content li {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  align-items: center;
+  padding-left: 20px;
+  background: rgb(57 1 1 / 20%);
+  min-height: 100px;
+  margin-top: 20px;
+}
+.demo-interface #demo-content li div {
+  padding: 20px;
+}
+.demo-interface #demo-content .demo-option {
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 1.2rem;
 }
 #digital_transformation {
   border-top: 1px solid rgba(22, 103, 149, 0.15);
@@ -163,7 +186,7 @@ header {
   font-weight: normal;
 }
 header {
-  border-bottom: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd; */
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -247,10 +270,6 @@ header ul {
 }
 .section {
   border-top: 1px solid rgba(22, 103, 149, 0.15);
-  /* border-bottom: 1px solid rgb(185, 181, 181); */
-}
-.section-text {
-  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 .section-text.left {
   text-align: left;
@@ -278,6 +297,12 @@ header ul {
 }
 .slide-down-panel.active {
   height: 100vh;
+  padding-top: 65px;
+}
+.slide-down-panel .wrapper > .row:first-child {
+  border-bottom: 1px solid rgb(0 0 0 / 15%);
+  background: rgb(57 1 1 / 20%);
+  margin: 0;
 }
 .slide-down-panel .row {
   min-height: 60px;
@@ -305,8 +330,9 @@ header ul {
 .toggle-row {
   display: flex;
   justify-content: right;
-  padding-top: 80px;
+  padding-top: 1rem;
   padding-right: 66px !important;
+  /* padding-bottom: 9px; */
 }
 
 @media screen and (max-width: 600px) {

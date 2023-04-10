@@ -99,7 +99,7 @@ const HomePage = (props) => {
           event.preventDefault();
           props.scrollTo(event.target.id);
         }}
-        id="button_header"
+        id="button_hero"
         style={{
           height: 40,
           width: 40,
