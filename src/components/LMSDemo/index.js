@@ -57,19 +57,19 @@ const LMSDemo = (props) => {
                     passages, and more recently with desktop publishing software
                     like Aldus PageMaker including versions of Lorem Ipsum.
                   </p>
-                  <button className="btn-secondary button">
+                  {/* <button className="btn-secondary button">
                     continue &nbsp; <FaArrowRight />
-                  </button>
+                  </button> */}
                 </div>
               </div>
               <div className="col col-8">
                 <div>
                   <h2>Choose an Option</h2>
-                  <ul class="demo-options">
+                  <ul className="demo-options">
                     <li>
-                      <button class="btn-secondary button">select</button>
+                      <button className="btn-secondary button">select</button>
                       <div>
-                        <h4 class="demo-option">manage demo content</h4>
+                        <h4 className="demo-option">manage demo content</h4>
                         <p>
                           Lorem Ipsum is simply dummy text of the printing and
                           typesetting industry. Lorem Ipsum has been the
@@ -80,9 +80,9 @@ const LMSDemo = (props) => {
                       </div>
                     </li>
                     <li>
-                      <button class="btn-secondary button">select</button>
+                      <button className="btn-secondary button">select</button>
                       <div>
-                        <h4 class="demo-option">play presentation</h4>
+                        <h4 className="demo-option">play presentation</h4>
                         <p>
                           Lorem Ipsum is simply dummy text of the printing and
                           typesetting industry. Lorem Ipsum has been the
@@ -93,9 +93,9 @@ const LMSDemo = (props) => {
                       </div>
                     </li>
                     <li>
-                      <button class="btn-secondary button">select</button>
+                      <button className="btn-secondary button">select</button>
                       <div>
-                        <h4 class="demo-option">take exam</h4>
+                        <h4 className="demo-option">take exam</h4>
                         <p>
                           Lorem Ipsum is simply dummy text of the printing and
                           typesetting industry. Lorem Ipsum has been the
@@ -110,6 +110,7 @@ const LMSDemo = (props) => {
                     id="demoAudio"
                     src="audio.m4a"
                     ref={audioElement}
+                    // muted={true}
                   ></audio>
                 </div>
               </div>

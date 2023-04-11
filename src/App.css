@@ -109,6 +109,10 @@ button.btn-default {
   height: 92.5%;
   margin: 0;
 }
+.demo-interface #demo-content ul {
+  margin: 0;
+  padding: 0;
+}
 .demo-interface #demo-content li {
   list-style: none;
   display: flex;

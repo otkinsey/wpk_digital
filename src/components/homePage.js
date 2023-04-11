@@ -39,7 +39,7 @@ const HomePage = (props) => {
       <div id="main-content">
         {/* create content sections */}
         {pageData.map((section, index) => (
-          <div>
+          <div key={`section-${index}`}>
             {section.sectionID === "elearning" ? (
               <DemoLMS
                 LMSActive={props.LMSActive}
@@ -65,7 +65,7 @@ const HomePage = (props) => {
                   <button
                     id="button_demo"
                     className="button btn btn-primary"
-                    onClick={(event) => props.toggleDemoLMS()}
+                    onClick={() => props.toggleDemoLMS()}
                   >
                     {section.button.text}
                   </button>

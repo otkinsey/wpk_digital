@@ -10,16 +10,27 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   const [active, setActive] = useState("inactive");
   const scrollTo = (id, menuState = active) => {
-    console.log("app.js scrollTo");
-    const elem = document.getElementById(id.substring(id.indexOf("_") + 1));
-    elem.scrollIntoView({ behavior: "smooth" });
-    if (id === "nav_contact_us") {
-      let input = document.querySelector("[name=first-name]");
-      input.focus({ preventScroll: true });
-    }
-    if (menuState === "active") {
-      toggleMenu();
-    }
+    const demoActive = document
+      .getElementById("demo")
+      .classList.contains("active");
+
+    setTimeout(
+      () => {
+        const elem = document.getElementById(id.substring(id.indexOf("_") + 1));
+
+        elem.scrollIntoView({ behavior: "smooth" });
+        if (id === "nav_contact_us") {
+          let input = document.querySelector("[name=first-name]");
+          input.focus({ preventScroll: true });
+        }
+        if (menuState === "active") {
+          toggleMenu();
+        }
+      },
+      demoActive ? 800 : 0
+    );
+
+    if (demoActive) toggleDemoLMS();
   };
 
   const [LMSActive, setLMSActive] = useState(false);
@@ -31,6 +42,7 @@ function App() {
     } else {
       document.body.style.overflow = "scroll";
     }
+
     return setLMSActive(!LMSActive);
   };
 

@@ -1,74 +1,29 @@
 const MobileMenu = (props) => {
+  const navItems = [
+    { name: "elearning", id: "nav_elearning" },
+    { name: "document management", id: "nav_document_management" },
+    { name: "digital transformation", id: "nav_digital_transformation" },
+    { name: "contact with us", id: "nav_contact_with_us" },
+  ];
   return (
     <ul id="main-nav" className={`${props.active}`} style={{}}>
-      <li
-        onClick={(event) => {
-          document.body.style.overflow =
-            document.body.style.overflow === "hidden" ? "scroll" : "hidden";
-          if (props.LMSActive) {
-            props.toggleDemoLMS();
-            setTimeout(() => {
+      {navItems.map((item, index) => (
+        <li
+          key={`nav-item-${index}`}
+          onClick={(event) => {
+            document.body.style.overflow =
+              document.body.style.overflow === "hidden" ? "scroll" : "hidden";
+            if (props.LMSActive) {
               props.scrollTo(event.target.id);
-            }, 800);
-          } else {
-            props.scrollTo(event.target.id);
-          }
-        }}
-        id="nav_elearning"
-      >
-        elearning
-      </li>
-      <li
-        onClick={(event) => {
-          document.body.style.overflow =
-            document.body.style.overflow === "hidden" ? "scroll" : "scroll";
-          if (props.LMSActive) {
-            props.toggleDemoLMS();
-            setTimeout(() => {
+            } else {
               props.scrollTo(event.target.id);
-            }, 800);
-          } else {
-            props.scrollTo(event.target.id);
-          }
-        }}
-        id="nav_document_management"
-      >
-        Document Management
-      </li>
-      <li
-        onClick={(event) => {
-          document.body.style.overflow =
-            document.body.style.overflow === "hidden" ? "scroll" : "hidden";
-          if (props.LMSActive) {
-            props.toggleDemoLMS();
-            setTimeout(() => {
-              props.scrollTo(event.target.id);
-            }, 800);
-          } else {
-            props.scrollTo(event.target.id);
-          }
-        }}
-        id="nav_digital_transformation"
-      >
-        Digital Transformation
-      </li>
-      <li
-        onClick={(event) => {
-          document.body.style.overflow =
-            document.body.style.overflow === "hidden" ? "scroll" : "hidden";
-          if (props.LMSActive) {
-            props.toggleDemoLMS();
-            setTimeout(() => {
-              props.scrollTo(event.target.id);
-            }, 800);
-          } else {
-            props.scrollTo(event.target.id);
-          }
-        }}
-        id="nav_contact_us"
-      >
-        Connect With Us
-      </li>
+            }
+          }}
+          id={item.id}
+        >
+          {item.name}
+        </li>
+      ))}
     </ul>
   );
 };
