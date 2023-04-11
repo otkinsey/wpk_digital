@@ -27,7 +27,7 @@ function App() {
           toggleMenu();
         }
       },
-      demoActive ? 800 : 0
+      demoActive ? 1100 : 0
     );
 
     if (demoActive) toggleDemoLMS();

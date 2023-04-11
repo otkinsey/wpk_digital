@@ -109,6 +109,19 @@ button.btn-default {
   height: 92.5%;
   margin: 0;
 }
+.demo-interface #demo-content li:nth-child(2) {
+  border-top: 1px solid rgb(0 0 0 / 30%);
+  border-bottom: 1px solid rgb(0 0 0 / 30%);
+}
+.demo-interface #demo-content .section-text > div {
+  padding: 0;
+}
+.demo-interface .section-text h2 {
+  padding: 18px;
+  font-size: 1.25em;
+  font-weight: bold;
+  line-height: 1.35em;
+}
 .demo-interface #demo-content ul {
   margin: 0;
   padding: 0;
@@ -119,18 +132,27 @@ button.btn-default {
   width: 100%;
   justify-content: left;
   align-items: center;
-  padding-left: 20px;
+  padding: 0 20px;
   background: rgb(57 1 1 / 20%);
-  min-height: 100px;
-  margin-top: 20px;
+  min-height: 73px;
+  cursor: pointer;
+}
+.demo-interface #demo-content li * {
+  pointer-events: none;
+}
+.demo-interface #demo-content li svg {
+  font-size: 1.5rem;
+  color: rgb(255 255 255 / 60%);
+  color: rgb(0 0 0 / 45%);
 }
 .demo-interface #demo-content li div {
-  padding: 20px;
+  padding-left: 20px;
 }
 .demo-interface #demo-content .demo-option {
-  font-weight: bold;
+  /* font-weight: bold; */
   text-transform: capitalize;
-  font-size: 1.2rem;
+  font-size: 1em;
+  padding-left: 11px;
 }
 #digital_transformation {
   border-top: 1px solid rgba(22, 103, 149, 0.15);
@@ -297,11 +319,11 @@ header ul {
   position: relative;
   width: 100%;
   overflow: hidden;
-  transition: height 0.75s ease;
+  transition: height 1s cubic-bezier(0.75, 0, 0.58, 0);
+  padding-top: 65px;
 }
 .slide-down-panel.active {
   height: 100vh;
-  padding-top: 65px;
 }
 .slide-down-panel .wrapper > .row:first-child {
   border-bottom: 1px solid rgb(0 0 0 / 15%);

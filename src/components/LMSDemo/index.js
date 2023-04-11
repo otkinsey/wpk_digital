@@ -1,22 +1,32 @@
 // import { useState } from "react";
 
-import { useRef, useEffect } from "react";
+import { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import Default from "./demoViews/default";
+import Exam from "./demoViews/exam";
+import Manage from "./demoViews/manage";
+import Play from "./demoViews/play";
 
 const LMSDemo = (props) => {
-  const audioElement = useRef(null);
+  const [demoContentVar, setDemoContentVar] = useState("default");
 
-  const playAudioFile = (audio) => {
-    audio.current.currentTime = 0;
-    audio.current.play();
+  const setDemoContent = (e) => {
+    let output;
+    let switchVar = e === "default" ? "default" : e.target.id;
+    switch (switchVar) {
+      case "exam":
+        output = <Exam />;
+        break;
+      case "manage":
+        output = <Manage />;
+        break;
+      default:
+        output = <Play LMSActive={props.LMSActive} />;
+    }
+    return output;
   };
 
-  const stopAudioFile = (audio) => {
-    audio.current.pause();
-  };
-  useEffect(() => {
-    props.LMSActive ? playAudioFile(audioElement) : stopAudioFile(audioElement);
-  });
+  const DemoContent = () => setDemoContent(demoContentVar);
 
   return (
     <div
@@ -39,13 +49,13 @@ const LMSDemo = (props) => {
               </div>
             </div>
             <div id="demo-content" className="row gx-3">
-              <div className="col col-4 section-text">
+              <div className="col col-3 section-text">
                 <div>
-                  <h1>
-                    Welcome to the WPK Digital Solutions ELearning Demo
+                  <h2>
+                    Welcome to the WPK Digital Solutions Elearning Demo
                     Application.
-                  </h1>
-                  <p>
+                  </h2>
+                  {/* <p>
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry's
                     standard dummy text ever since the 1500s, when an unknown
@@ -56,62 +66,17 @@ const LMSDemo = (props) => {
                     the release of Letraset sheets containing Lorem Ipsum
                     passages, and more recently with desktop publishing software
                     like Aldus PageMaker including versions of Lorem Ipsum.
-                  </p>
-                  {/* <button className="btn-secondary button">
-                    continue &nbsp; <FaArrowRight />
-                  </button> */}
+                  </p> */}
+                  <Default setDemoContentVar={setDemoContentVar} />
                 </div>
               </div>
-              <div className="col col-8">
+              <div className="col col-9">
                 <div>
                   <h2>Choose an Option</h2>
-                  <ul className="demo-options">
-                    <li>
-                      <button className="btn-secondary button">select</button>
-                      <div>
-                        <h4 className="demo-option">manage demo content</h4>
-                        <p>
-                          Lorem Ipsum is simply dummy text of the printing and
-                          typesetting industry. Lorem Ipsum has been the
-                          industry's standard dummy text ever since the 1500s,
-                          when an unknown printer took a galley of type and
-                          scrambled it to make a type specimen book.
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <button className="btn-secondary button">select</button>
-                      <div>
-                        <h4 className="demo-option">play presentation</h4>
-                        <p>
-                          Lorem Ipsum is simply dummy text of the printing and
-                          typesetting industry. Lorem Ipsum has been the
-                          industry's standard dummy text ever since the 1500s,
-                          when an unknown printer took a galley of type and
-                          scrambled it to make a type specimen book.
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <button className="btn-secondary button">select</button>
-                      <div>
-                        <h4 className="demo-option">take exam</h4>
-                        <p>
-                          Lorem Ipsum is simply dummy text of the printing and
-                          typesetting industry. Lorem Ipsum has been the
-                          industry's standard dummy text ever since the 1500s,
-                          when an unknown printer took a galley of type and
-                          scrambled it to make a type specimen book.
-                        </p>
-                      </div>
-                    </li>
-                  </ul>
-                  <audio
-                    id="demoAudio"
-                    src="audio.m4a"
-                    ref={audioElement}
-                    // muted={true}
-                  ></audio>
+                  <DemoContent />
+
+                  {/* selectively render component on button click see the link below for details:  */}
+                  {/* https://stackoverflow.com/questions/54188654/how-to-load-a-new-component-on-button-click-in-reactjs  */}
                 </div>
               </div>
             </div>

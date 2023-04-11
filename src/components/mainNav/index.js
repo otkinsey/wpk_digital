@@ -11,8 +11,7 @@ const MobileMenu = (props) => {
         <li
           key={`nav-item-${index}`}
           onClick={(event) => {
-            document.body.style.overflow =
-              document.body.style.overflow === "hidden" ? "scroll" : "hidden";
+            document.body.style.overflow = "scroll";
             if (props.LMSActive) {
               props.scrollTo(event.target.id);
             } else {
