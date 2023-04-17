@@ -98,16 +98,25 @@ button.btn-default {
 }
 #demo-content .col > div {
   height: 100%;
-  padding: 60px;
-  border: 1px solid rgb(0 0 0 / 15%);
   position: relative;
-  background: rgb(57 1 1 / 20%);
+  background-color: rgb(0 0 0 / 20%);
+}
+#demo-content .overlay {
+  height: 100%;
+  padding: 60px;
+  background: rgb(5 24 61 / 70%);
 }
 .demo-interface #demo-content {
   position: relative;
   padding: 20px 11px;
   height: 92.5%;
   margin: 0;
+}
+#demo-content #logo-white {
+  height: 3rem;
+}
+.demo-content .logo-white {
+  font-size: 3rem;
 }
 .demo-interface #demo-content li:nth-child(2) {
   border-top: 1px solid rgb(0 0 0 / 30%);
@@ -267,6 +276,9 @@ header ul {
   position: relative;
   display: flex;
   align-items: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  border-top: 1px solid rgba(22, 103, 149, 0.15);
 }
 .section#contact_us {
   justify-content: center;
@@ -290,13 +302,6 @@ header ul {
   font-size: 4rem;
 }
 
-.section {
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-}
-.section {
-  border-top: 1px solid rgba(22, 103, 149, 0.15);
-}
 .section-text.left {
   text-align: left;
   color: #6c6c6c;
@@ -316,13 +321,14 @@ header ul {
 .slide-down-panel {
   background: white;
   height: 0vh;
-  position: relative;
   width: 100%;
   overflow: hidden;
-  transition: height 1s cubic-bezier(0.75, 0, 0.58, 0);
-  padding-top: 65px;
+  transition: padding 0.7s linear, height 1s cubic-bezier(0.75, 0, 0.58, 0);
+  padding-top: 0px;
 }
 .slide-down-panel.active {
+  padding-top: 65px;
+  position: relative;
   height: 100vh;
 }
 .slide-down-panel .wrapper > .row:first-child {

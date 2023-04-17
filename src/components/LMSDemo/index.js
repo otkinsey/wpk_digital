@@ -52,32 +52,17 @@ const LMSDemo = (props) => {
               <div className="col col-3 section-text">
                 <div>
                   <h2>
-                    Welcome to the WPK Digital Solutions Elearning Demo
-                    Application.
+                    WPK Digital Solutions:
+                    <br />
+                    Elearning Demo Application
                   </h2>
-                  {/* <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
-                  </p> */}
                   <Default setDemoContentVar={setDemoContentVar} />
                 </div>
               </div>
               <div className="col col-9">
-                <div>
-                  <h2>Choose an Option</h2>
-                  <DemoContent />
-
-                  {/* selectively render component on button click see the link below for details:  */}
-                  {/* https://stackoverflow.com/questions/54188654/how-to-load-a-new-component-on-button-click-in-reactjs  */}
-                </div>
+                <DemoContent />
+                {/* selectively render component on button click see the link below for details:  */}
+                {/* https://stackoverflow.com/questions/54188654/how-to-load-a-new-component-on-button-click-in-reactjs  */}
               </div>
             </div>
           </div>
