@@ -1,14 +1,19 @@
 // import { useState } from "react";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import Default from "./demoViews/default";
+import DemoNav from "./demoViews/demo-nav.js";
 import Exam from "./demoViews/exam";
 import Manage from "./demoViews/manage";
 import Play from "./demoViews/play";
 
 const LMSDemo = (props) => {
+  // State variables
   const [demoContentVar, setDemoContentVar] = useState("default");
+  // const [demoPlaying, setDemoPlaying] = useState(false);
+
+  const demoPlaying = useRef(false);
+  const setDemoPlaying = (val) => (demoPlaying.current = val);
 
   const setDemoContent = (e) => {
     let output;
@@ -21,7 +26,13 @@ const LMSDemo = (props) => {
         output = <Manage />;
         break;
       default:
-        output = <Play LMSActive={props.LMSActive} />;
+        output = (
+          <Play
+            LMSActive={props.LMSActive}
+            demoPlaying={demoPlaying}
+            setDemoPlaying={setDemoPlaying}
+          />
+        );
     }
     return output;
   };
@@ -56,7 +67,10 @@ const LMSDemo = (props) => {
                     <br />
                     Elearning Demo Application
                   </h2>
-                  <Default setDemoContentVar={setDemoContentVar} />
+                  <DemoNav
+                    setDemoContentVar={setDemoContentVar}
+                    setDemoPlaying={setDemoPlaying}
+                  />
                 </div>
               </div>
               <div className="col col-9">

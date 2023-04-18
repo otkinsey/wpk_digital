@@ -1,4 +1,14 @@
-import React from "react";
-import { useState } from "react";
+export const playAudioFile = (audio) => {
+  audio.current.currentTime = 0;
+  audio.current.play();
+};
 
-class Utils {}
+export const centerSvgContent = (svg) => {
+  const height = svg;
+};
+
+export const stopAudioFile = (audio) => {
+  audio.current.pause();
+};
+
+export const centerSvgText = (id) => {};

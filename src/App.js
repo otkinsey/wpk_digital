@@ -2,7 +2,7 @@ import "./App.css";
 import Home from "./components/homePage";
 import MainNav from "./components/mainNav";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { FaBars } from "react-icons/fa";
 import { ReactComponent as Logo } from "./components/header/logo.svg";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -42,8 +42,8 @@ function App() {
     } else {
       document.body.style.overflow = "scroll";
     }
-
-    return setLMSActive(!LMSActive);
+    setLMSActive(!LMSActive);
+    // return
   };
 
   const toggleMenu = () => {

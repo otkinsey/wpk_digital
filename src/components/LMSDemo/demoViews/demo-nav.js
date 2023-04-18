@@ -3,7 +3,13 @@ import { IoSettingsSharp } from "react-icons/io5";
 const Default = (props) => {
   return (
     <ul className="demo-options">
-      <li onClick={props.setDemoContentVar} id="play">
+      <li
+        onClick={(e) => {
+          props.setDemoContentVar(e);
+          props.setDemoPlaying(true);
+        }}
+        id="play"
+      >
         <FaRegPlayCircle />
         <span className="demo-option">play presentation</span>
       </li>
