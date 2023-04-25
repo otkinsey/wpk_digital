@@ -59,7 +59,7 @@ function App() {
       <header style={{}} id="header">
         <div>
           <FaBars id="mobile-nav-button" onClick={() => toggleMenu()}></FaBars>
-          <Logo id="wpk-logo" />
+          <Logo id="wpk-logo" onClick={() => scrollTo("_hero")} />
         </div>
         <MainNav
           scrollTo={scrollTo}

@@ -1,4 +1,4 @@
-import { FaRegPlayCircle, FaClipboardCheck } from "react-icons/fa";
+import { FaRegPlayCircle, FaPauseCircle } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 const Default = (props) => {
   return (
@@ -6,11 +6,11 @@ const Default = (props) => {
       <li
         onClick={(e) => {
           props.setDemoContentVar(e);
-          props.setDemoPlaying(true);
+          props.setDemoPlaying(!props.demoPlaying);
         }}
         id="play"
       >
-        <FaRegPlayCircle />
+        {props.demoPlaying ? <FaPauseCircle /> : <FaRegPlayCircle />}
         <span className="demo-option">play presentation</span>
       </li>
       <li onClick={props.setDemoContentVar} id="exam">

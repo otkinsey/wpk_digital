@@ -106,6 +106,14 @@ button.btn-default {
   padding: 60px;
   background: rgb(5 24 61 / 70%);
 }
+#demo .overlay svg path,
+#demo .overlay svg text {
+  opacity: 0;
+  transition: opacity 0.75s 1.2s ease;
+}
+#demo .overlay text#text-1.active {
+  opacity: 1;
+}
 .demo-interface #demo-content {
   position: relative;
   padding: 20px 11px;
@@ -365,6 +373,9 @@ header ul {
   padding-top: 1rem;
   padding-right: 66px !important;
   /* padding-bottom: 9px; */
+}
+#wpk-logo {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {

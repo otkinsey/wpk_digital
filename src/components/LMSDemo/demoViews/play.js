@@ -42,6 +42,9 @@ const Play = (props) => {
 
     text2.setAttribute("x", 0.5 * svgWidth - 0.5 * text2.getBBox().width);
     text2.style.visibility = "visible";
+
+    const text = document.querySelector("#text-1");
+    text.classList.add("active");
   }, []);
 
   useEffect(() => {
