@@ -111,7 +111,8 @@ button.btn-default {
   opacity: 0;
   transition: opacity 0.75s 1.2s ease;
 }
-#demo .overlay text#text-1.active {
+#demo .overlay text.active,
+#demo .overlay svg.active path {
   opacity: 1;
 }
 .demo-interface #demo-content {

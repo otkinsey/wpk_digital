@@ -1,5 +1,5 @@
-export const playAudioFile = (audio) => {
-  audio.current.currentTime = 0;
+export const playAudioFile = (audio, time = 0) => {
+  audio.current.currentTime = time;
   audio.current.play();
 };
 

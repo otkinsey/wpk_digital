@@ -1,17 +1,14 @@
 import { useRef, useEffect, useState } from "react";
 import { ReactComponent as LogoWhite } from "../../header/logo_white.svg";
-import {
-  playAudioFile,
-  stopAudioFile,
-  centerSvgContent,
-} from "../../../utils/helper.js";
+import { playAudioFile } from "../../../utils/helper.js";
 
 const Play = (props) => {
   // DOM refs
-  const audioElement = useRef(null);
+  // const audioElement = useRef(null);
   const demoSvg = useRef(null);
 
-  // State variables
+  // Initialize DOM constants
+  let text1, text2, demoLogo;
 
   const Text = (opts) => {
     const textElement = (
@@ -32,9 +29,16 @@ const Play = (props) => {
     return textElement;
   };
 
+  const animatePresentation = () => {
+    text2.classList.add("active");
+    demoLogo.classList.add("active");
+  };
+
   useEffect(() => {
-    const text1 = document.getElementById("text-1");
-    const text2 = document.getElementById("text-2");
+    text1 = document.getElementById("text-1");
+    text2 = document.getElementById("text-2");
+    demoLogo = document.getElementById("logo-white");
+
     const svgWidth = document.getElementById("demo-svg").width.animVal.value;
 
     text1.setAttribute("x", 0.5 * svgWidth - 0.5 * text1.getBBox().width);
@@ -43,17 +47,21 @@ const Play = (props) => {
     text2.setAttribute("x", 0.5 * svgWidth - 0.5 * text2.getBBox().width);
     text2.style.visibility = "visible";
 
-    const text = document.querySelector("#text-1");
-    text.classList.add("active");
+    text1.classList.add("active");
   }, []);
 
   useEffect(() => {
-    if (props.demoPlaying.current) {
-      playAudioFile(audioElement);
-      audioElement.current.addEventListener("ended", () => {
-        props.demoPlaying.current = false;
-      });
-    }
+    if (props.demoPlaying) {
+      //     // playAudioFile(audioElement);
+      //     audioElement.current.addEventListener("ended", () => {
+      //       props.demoPlaying = false;
+      //     });
+
+      //     // DOM maniputlations can occurs inside useEffect call
+      setTimeout(() => {
+        animatePresentation();
+      }, 1000);
+    } // end if
   });
 
   return (
@@ -100,7 +108,6 @@ const Play = (props) => {
             </g>
           </svg>
         </div>
-        <audio id="demoAudio" src="audio.m4a" ref={audioElement}></audio>
       </div>
     </div>
   );
