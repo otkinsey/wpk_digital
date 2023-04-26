@@ -106,14 +106,46 @@ button.btn-default {
   padding: 60px;
   background: rgb(5 24 61 / 70%);
 }
-#demo .overlay svg path,
-#demo .overlay svg text {
+
+/*Elearning: animation 1*/
+#demo-content .overlay svg #text1 {
   opacity: 0;
-  transition: opacity 0.75s 0s ease;
+  transition: opacity 1s ease;
 }
-#demo .overlay text.active,
-#demo .overlay svg.active path {
+#demo-content .overlay svg #text1.active {
   opacity: 1;
+}
+
+/*Elearning: animation 2*/
+#demo-content .overlay #logo-white path {
+  opacity: 0;
+  transition: opacity 1s 1s ease;
+}
+#demo-content .overlay #logo-white.active path {
+  opacity: 1;
+}
+
+/*Elearning: animation 3*/
+#demo-content .overlay svg #subtext1 {
+  opacity: 0;
+  transition: opacity 1s 3s ease, font-size 1s 27s;
+}
+#demo-content .overlay svg #subtext2 {
+  opacity: 0;
+  transition: opacity 1s 3s ease;
+}
+#demo-content .overlay svg #subtext1.active,
+#demo-content .overlay svg #subtext2.active {
+  opacity: 1;
+}
+
+#demo-content .overlay #subtext1.animate1 {
+  font-size: 2rem;
+}
+#demo-content .overlay > div,
+#demo-content .overlay > svg,
+#demo-content .overlay > div > svg {
+  width: 100%;
 }
 .demo-interface #demo-content {
   position: relative;

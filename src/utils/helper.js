@@ -11,4 +11,4 @@ export const stopAudioFile = (audio) => {
   audio.current.pause();
 };
 
-export const centerSvgText = (id) => {};
+export const animateSVG = (svgRef, attr, duration) => {};

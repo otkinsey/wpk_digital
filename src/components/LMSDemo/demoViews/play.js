@@ -8,7 +8,7 @@ const Play = (props) => {
   const demoSvg = useRef(null);
 
   // Initialize DOM constants
-  let text1, text2, demoLogo, svgWidth;
+  let text1, subtext1, subtext2, demoLogo, svgWidth;
 
   const Text = (opts) => {
     const textElement = (
@@ -19,16 +19,10 @@ const Play = (props) => {
         fontSize={opts.size}
         stroke={opts.strokeColor ? opts.strokeColor : "white"}
         strokeWidth={opts.strokeWidth ? opts.strokeWidth : "0"}
-        id={`text-${opts.id}`}
+        id={`${opts.id}`}
         style={{ visibility: "hidden" }}
       >
         {opts.text}
-        {/* <animate
-          // xmlnsXlink:href={`#text-${opts.id}`}
-          attributeName={opts.attributeName}
-          from={opts.x}
-          to={0}
-        /> */}
       </text>
     );
 
@@ -39,26 +33,36 @@ const Play = (props) => {
     presentationWidth,
     presentationHeight = null
   ) => {
-    /** Display subtext */
+    /**1. Display subtext */
     setTimeout(() => {
-      text2.classList.add("active");
-    }, 2000);
+      subtext1.classList.add("active");
+      subtext2.classList.add("active");
+    }, 0);
 
-    /** Display logo */
+    /**2. Display logo */
     setTimeout(() => {
       demoLogo.classList.add("active");
-    }, 1000);
+    }, 0);
 
-    /**Fade logo and subtext */
+    /**3. Fade logo and subtext */
     setTimeout(() => {
-      demoLogo.classList.remove("active");
-      text2.classList.remove("active");
-    }, 5000);
+      demoLogo.classList = "";
+      text1.classList = "";
+      subtext2.classList = "";
+    }, 23000);
+
+    /**4. Increase font-size of Elearning */
+    setTimeout(() => {
+      subtext1.classList.add("animate1");
+    }, 0);
+
+    /**5. Animate Elearning to the left */
   };
 
   useEffect(() => {
-    text1 = document.getElementById("text-1");
-    text2 = document.getElementById("text-2");
+    text1 = document.getElementById("text1");
+    subtext1 = document.getElementById("subtext1");
+    subtext2 = document.getElementById("subtext2");
     demoLogo = document.getElementById("logo-white");
 
     svgWidth = document.getElementById("demo-svg").width.animVal.value;
@@ -66,14 +70,31 @@ const Play = (props) => {
     text1.setAttribute("x", 0.5 * svgWidth - 0.5 * text1.getBBox().width);
     text1.style.visibility = "visible";
 
-    text2.setAttribute("x", 0.5 * svgWidth - 0.5 * text2.getBBox().width);
-    text2.style.visibility = "visible";
+    subtext1.setAttribute(
+      "x",
+      0.5 * svgWidth - (subtext1.getBBox().width + 40)
+    );
+    subtext1.style.visibility = "visible";
+
+    subtext2.setAttribute("x", 0.5 * svgWidth + -35);
+    subtext2.style.visibility = "visible";
+
+    console.log(
+      "s1x: ",
+      subtext1.getAttribute("x"),
+      "s1w: ",
+      subtext1.getBBox().width,
+      "s2x: ",
+      subtext2.getAttribute("x"),
+      "s2w: ",
+      subtext2.getBBox().width
+    );
 
     text1.classList.add("active");
     if (props.demoPlaying) {
       setTimeout(() => {
         animatePresentation(svgWidth);
-      }, 1000);
+      }, 0);
     }
   }, []);
 
@@ -109,7 +130,7 @@ const Play = (props) => {
                 size={"40px"}
                 strokeWidth="1"
                 strokeColor="white"
-                id="1"
+                id="text1"
                 attributeName="x"
                 from={null}
                 to={null}
@@ -118,9 +139,20 @@ const Play = (props) => {
               <Text
                 x={0}
                 y={75 + 40}
-                text={"Elearning Demo Application"}
-                size="1.3rem"
-                id="2"
+                text={"Elearning"}
+                size="20"
+                id="subtext1"
+                attributeName="x"
+                from={null}
+                to={null}
+                svg={svgWidth}
+              />
+              <Text
+                x={0}
+                y={75 + 40}
+                text={"Demo Application"}
+                size="20"
+                id="subtext2"
                 attributeName="x"
                 from={null}
                 to={null}
