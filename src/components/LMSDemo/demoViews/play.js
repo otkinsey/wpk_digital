@@ -70,10 +70,11 @@ const Play = (props) => {
     text2.style.visibility = "visible";
 
     text1.classList.add("active");
-
-    setTimeout(() => {
-      animatePresentation(svgWidth);
-    }, 1000);
+    if (props.demoPlaying) {
+      setTimeout(() => {
+        animatePresentation(svgWidth);
+      }, 1000);
+    }
   }, []);
 
   return (
