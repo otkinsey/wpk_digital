@@ -128,7 +128,7 @@ button.btn-default {
 /*Elearning: animation 3*/
 #demo-content .overlay svg #subtext1 {
   opacity: 0;
-  transition: opacity 1s 3s ease, font-size 1s 27s;
+  transition: opacity 1s 3s ease, font-size 1s 27s, transform 1s 27s;
 }
 #demo-content .overlay svg #subtext2 {
   opacity: 0;
@@ -141,6 +141,7 @@ button.btn-default {
 
 #demo-content .overlay #subtext1.animate1 {
   font-size: 2rem;
+  transform: translate(-420px, -50px);
 }
 #demo-content .overlay > div,
 #demo-content .overlay > svg,

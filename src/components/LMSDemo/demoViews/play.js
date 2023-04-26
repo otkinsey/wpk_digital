@@ -34,15 +34,11 @@ const Play = (props) => {
     presentationHeight = null
   ) => {
     /**1. Display subtext */
-    setTimeout(() => {
-      subtext1.classList.add("active");
-      subtext2.classList.add("active");
-    }, 0);
+    subtext1.classList.add("active");
+    subtext2.classList.add("active");
 
     /**2. Display logo */
-    setTimeout(() => {
-      demoLogo.classList.add("active");
-    }, 0);
+    demoLogo.classList.add("active");
 
     /**3. Fade logo and subtext */
     setTimeout(() => {
@@ -51,10 +47,8 @@ const Play = (props) => {
       subtext2.classList = "";
     }, 23000);
 
-    /**4. Increase font-size of Elearning */
-    setTimeout(() => {
-      subtext1.classList.add("animate1");
-    }, 0);
+    /**4. Animate "Elearning" */
+    subtext1.classList.add("animate1");
 
     /**5. Animate Elearning to the left */
   };
