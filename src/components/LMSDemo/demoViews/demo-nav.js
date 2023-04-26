@@ -33,6 +33,9 @@ const Default = (props) => {
             : playAudioFile(audioElement, 0);
 
           props.setDemoPlaying(!props.demoPlaying);
+
+          /** Pass audioFile ref to index.js */
+          props.childAudioFile.current = audioElement;
           // props.setDemoPlaying(!props.demoPlaying);
           return;
         }}

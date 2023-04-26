@@ -79,6 +79,7 @@ function App() {
               <Home
                 scrollTo={scrollTo}
                 LMSActive={LMSActive}
+                setLMSActive={setLMSActive}
                 toggleDemoLMS={toggleDemoLMS}
               />
             }

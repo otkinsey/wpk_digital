@@ -1,14 +1,16 @@
 // import { useState } from "react";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import DemoNav from "./demoViews/demo-nav.js";
 import Exam from "./demoViews/exam";
 import Manage from "./demoViews/manage";
 import Play from "./demoViews/play";
+import { stopAudioFile } from "../../utils/helper.js";
 
 const LMSDemo = (props) => {
   // State variables
   const [demoContentVar, setDemoContentVar] = useState("default");
+  const childAudioFile = useRef(null);
 
   // const demoPlaying = useRef(false);
   // const setDemoPlaying = (val) => (demoPlaying.current = val);
@@ -38,6 +40,11 @@ const LMSDemo = (props) => {
 
   const DemoContent = () => setDemoContent(demoContentVar);
 
+  /** A hack to allow ternary expression on End Demo button */
+  const pass = () => {
+    return;
+  };
+
   return (
     <div
       id="demo"
@@ -52,7 +59,14 @@ const LMSDemo = (props) => {
               <div className="col-sm toggle-row" id="">
                 <button
                   className="button btn-primary"
-                  onClick={() => props.toggleDemoLMS()}
+                  onClick={() => {
+                    if (childAudioFile.current) {
+                      stopAudioFile(childAudioFile.current);
+                      props.setLMSActive(false);
+                      setDemoPlaying(false);
+                    }
+                    props.toggleDemoLMS();
+                  }}
                 >
                   End demo
                 </button>
@@ -70,6 +84,7 @@ const LMSDemo = (props) => {
                     setDemoContentVar={setDemoContentVar}
                     setDemoPlaying={setDemoPlaying}
                     demoPlaying={demoPlaying}
+                    childAudioFile={childAudioFile}
                   />
                 </div>
               </div>

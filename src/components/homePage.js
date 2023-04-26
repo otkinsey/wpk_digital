@@ -43,6 +43,7 @@ const HomePage = (props) => {
             {section.sectionID === "elearning" ? (
               <DemoLMS
                 LMSActive={props.LMSActive}
+                setLMSActive={props.setLMSActive}
                 toggleDemoLMS={props.toggleDemoLMS}
               />
             ) : (
@@ -113,6 +114,7 @@ const HomePage = (props) => {
           bottom: "6%",
           padding: "0",
           boxShadow: "0 0 10px #fff",
+          visibility: props.LMSActive ? "hidden" : "visible",
         }}
       >
         <BsChevronUp />

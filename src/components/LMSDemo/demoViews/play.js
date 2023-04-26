@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import { ReactComponent as LogoWhite } from "../../header/logo_white.svg";
-import { playAudioFile } from "../../../utils/helper.js";
+// import { playAudioFile } from "../../../utils/helper.js";
 
 const Play = (props) => {
   // DOM refs
@@ -8,7 +8,7 @@ const Play = (props) => {
   const demoSvg = useRef(null);
 
   // Initialize DOM constants
-  let text1, text2, demoLogo;
+  let text1, text2, demoLogo, svgWidth;
 
   const Text = (opts) => {
     const textElement = (
@@ -23,15 +23,37 @@ const Play = (props) => {
         style={{ visibility: "hidden" }}
       >
         {opts.text}
+        {/* <animate
+          // xmlnsXlink:href={`#text-${opts.id}`}
+          attributeName={opts.attributeName}
+          from={opts.x}
+          to={0}
+        /> */}
       </text>
     );
 
     return textElement;
   };
 
-  const animatePresentation = () => {
-    text2.classList.add("active");
-    demoLogo.classList.add("active");
+  const animatePresentation = (
+    presentationWidth,
+    presentationHeight = null
+  ) => {
+    /** Display subtext */
+    setTimeout(() => {
+      text2.classList.add("active");
+    }, 2000);
+
+    /** Display logo */
+    setTimeout(() => {
+      demoLogo.classList.add("active");
+    }, 1000);
+
+    /**Fade logo and subtext */
+    setTimeout(() => {
+      demoLogo.classList.remove("active");
+      text2.classList.remove("active");
+    }, 5000);
   };
 
   useEffect(() => {
@@ -39,7 +61,7 @@ const Play = (props) => {
     text2 = document.getElementById("text-2");
     demoLogo = document.getElementById("logo-white");
 
-    const svgWidth = document.getElementById("demo-svg").width.animVal.value;
+    svgWidth = document.getElementById("demo-svg").width.animVal.value;
 
     text1.setAttribute("x", 0.5 * svgWidth - 0.5 * text1.getBBox().width);
     text1.style.visibility = "visible";
@@ -48,21 +70,11 @@ const Play = (props) => {
     text2.style.visibility = "visible";
 
     text1.classList.add("active");
+
+    setTimeout(() => {
+      animatePresentation(svgWidth);
+    }, 1000);
   }, []);
-
-  useEffect(() => {
-    if (props.demoPlaying) {
-      //     // playAudioFile(audioElement);
-      //     audioElement.current.addEventListener("ended", () => {
-      //       props.demoPlaying = false;
-      //     });
-
-      //     // DOM maniputlations can occurs inside useEffect call
-      setTimeout(() => {
-        animatePresentation();
-      }, 1000);
-    } // end if
-  });
 
   return (
     <div
@@ -97,6 +109,10 @@ const Play = (props) => {
                 strokeWidth="1"
                 strokeColor="white"
                 id="1"
+                attributeName="x"
+                from={null}
+                to={null}
+                svg={svgWidth}
               />
               <Text
                 x={0}
@@ -104,6 +120,10 @@ const Play = (props) => {
                 text={"Elearning Demo Application"}
                 size="1.3rem"
                 id="2"
+                attributeName="x"
+                from={null}
+                to={null}
+                svg={svgWidth}
               />
             </g>
           </svg>
