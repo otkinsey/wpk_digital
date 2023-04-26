@@ -1,4 +1,5 @@
-import { FaRegPlayCircle, FaRegStopCircle } from "react-icons/fa";
+import { FaRegPlayCircle, FaRegStopCircle, FaEdit } from "react-icons/fa";
+import { MdComputer } from "react-icons/md";
 import { IoSettingsSharp } from "react-icons/io5";
 import { useEffect, useRef } from "react";
 import {
@@ -46,11 +47,11 @@ const Default = (props) => {
         <audio id="demoAudio" src="audio.m4a" ref={audioElement}></audio>
       </li>
       <li onClick={props.setDemoContentVar} id="exam">
-        <IoSettingsSharp />
+        <MdComputer />
         <span className="demo-option">take exam</span>
       </li>
       <li onClick={props.setDemoContentVar} id="manage">
-        <IoSettingsSharp />
+        <FaEdit />
         <span className="demo-option">Edit Content</span>
       </li>
       <li onClick={props.setDemoContentVar} id="manage">
