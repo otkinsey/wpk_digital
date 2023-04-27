@@ -96,75 +96,98 @@ button.btn-default {
 .demo-interface footer {
   background-color: #f3f3f3;
 }
-#demo-content .col > div {
+#elearning-demo-content .col > div {
   height: 100%;
   position: relative;
   background-color: rgb(0 0 0 / 20%);
 }
-#demo-content .overlay {
-  height: 100%;
-  padding: 60px;
-  background: rgb(5 24 61 / 70%);
-}
 
-/*Elearning: animation 1*/
-#demo-content .overlay svg #text1 {
+/* Elearning: animation 1 - Display Welcome */
+#elearning-demo-content .overlay svg #text1 {
   opacity: 0;
   transition: opacity 1s ease;
 }
-#demo-content .overlay svg #text1.active {
+#elearning-demo-content .overlay svg #text1.active {
   opacity: 1;
 }
 
-/*Elearning: animation 2*/
-#demo-content .overlay #logo-white path {
+/* Elearning: animation 2 - Display logo */
+#elearning-demo-content .overlay #logo-white path {
   opacity: 0;
   transition: opacity 1s 1s ease;
 }
-#demo-content .overlay #logo-white.active path {
+#elearning-demo-content .overlay #logo-white.active path {
   opacity: 1;
 }
 
-/*Elearning: animation 3*/
-#demo-content .overlay svg #subtext1 {
+/****
+Elearning: animation 3 - Fade logo and subtext
+no css currently required for this transition
+****/
+
+/* Elearning: animation 4 - Animate "Elearning" */
+#elearning-demo-content .overlay svg #subtext1 {
   opacity: 0;
   transition: opacity 1s 3s ease, font-size 1s 27s, transform 1s 27s;
 }
-#demo-content .overlay svg #subtext2 {
+#elearning-demo-content .overlay svg #subtext2 {
   opacity: 0;
   transition: opacity 1s 3s ease;
 }
-#demo-content .overlay svg #subtext1.active,
-#demo-content .overlay svg #subtext2.active {
+
+/* Elearning: animation 5 - Animate "Elearning" */
+/* Elearning: animation 6 - Animate "Elearning" */
+#elearning-demo-content .overlay {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  justify-items: center;
+  grid-template-rows: 1fr 50%;
+  height: 100%;
+  padding: 60px;
+  background-color: rgb(5 24 61 / 70%);
+  transition: background-color 1s 24s, grid-template-rows 1s 24s;
+}
+#elearning-demo-content #logo-white {
+  height: 60px;
+  transition: height 1s 24s;
+}
+#elearning-demo-content .overlay.expanded {
+  grid-template-rows: 1fr 100%;
+  background-color: rgb(5 24 61 / 100%);
+}
+#elearning-demo-content .overlay.expanded #logo-white {
+  height: 0;
+}
+
+#elearning-demo-content .overlay svg #subtext1.active,
+#elearning-demo-content .overlay svg #subtext2.active {
   opacity: 1;
 }
 
-#demo-content .overlay #subtext1.animate1 {
+#elearning-demo-content .overlay #subtext1.animate1 {
   font-size: 2rem;
-  transform: translate(-420px, -50px);
+  transform: translate(-420px, 156px);
 }
-#demo-content .overlay > div,
-#demo-content .overlay > svg,
-#demo-content .overlay > div > svg {
+
+#elearning-demo-content .overlay > div,
+#elearning-demo-content .overlay > svg,
+#elearning-demo-content .overlay > div > svg {
   width: 100%;
+  height: 100%;
 }
-.demo-interface #demo-content {
+.demo-interface #elearning-demo-content {
   position: relative;
   padding: 20px 11px;
   height: 92.5%;
   margin: 0;
 }
-#demo-content #logo-white {
-  height: 3rem;
-}
-.demo-content .logo-white {
-  font-size: 3rem;
-}
-.demo-interface #demo-content li:nth-child(2) {
+
+.demo-interface #elearning-demo-content li:nth-child(2) {
   border-top: 1px solid rgb(0 0 0 / 30%);
   border-bottom: 1px solid rgb(0 0 0 / 30%);
 }
-.demo-interface #demo-content .section-text > div {
+.demo-interface #elearning-demo-content .section-text > div {
   padding: 0;
 }
 .demo-interface .section-text h2 {
@@ -173,11 +196,11 @@ button.btn-default {
   font-weight: bold;
   line-height: 1.35em;
 }
-.demo-interface #demo-content ul {
+.demo-interface #elearning-demo-content ul {
   margin: 0;
   padding: 0;
 }
-.demo-interface #demo-content li {
+.demo-interface #elearning-demo-content li {
   list-style: none;
   display: flex;
   width: 100%;
@@ -188,18 +211,18 @@ button.btn-default {
   min-height: 73px;
   cursor: pointer;
 }
-.demo-interface #demo-content li * {
+.demo-interface #elearning-demo-content li * {
   pointer-events: none;
 }
-.demo-interface #demo-content li svg {
+.demo-interface #elearning-demo-content li svg {
   font-size: 1.5rem;
   color: rgb(255 255 255 / 60%);
   color: rgb(0 0 0 / 45%);
 }
-.demo-interface #demo-content li div {
+.demo-interface #elearning-demo-content li div {
   padding-left: 20px;
 }
-.demo-interface #demo-content .demo-option {
+.demo-interface #elearning-demo-content .demo-option {
   /* font-weight: bold; */
   text-transform: capitalize;
   font-size: 1em;

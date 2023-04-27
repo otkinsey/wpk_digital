@@ -33,26 +33,42 @@ const Play = (props) => {
     presentationWidth,
     presentationHeight = null
   ) => {
-    /**1. Display subtext */
+    const presentationArea = document.querySelector(
+      "#elearning-demo-content .overlay"
+    );
+    const logoSVG = document.getElementById("logo-white");
+    /** 1. Display "Welcome" */
     subtext1.classList.add("active");
     subtext2.classList.add("active");
 
-    /**2. Display logo */
+    /** 2. Display logo */
     demoLogo.classList.add("active");
 
-    /**3. Fade logo and subtext */
+    /** 3. Fade logo and subtext */
     setTimeout(() => {
       demoLogo.classList = "";
       text1.classList = "";
       subtext2.classList = "";
     }, 23000);
 
-    /**4. Animate "Elearning" */
+    /** 4. Animate "Elearning" */
     subtext1.classList.add("animate1");
 
-    /**5. Animate Elearning to the left */
+    /** 5. Fade backgroun */
+    /** 6. Change height of demo-svg */
+    presentationArea.classList.add("expanded");
+
+    /** 7. Draw dendogram lines */
+    let path1, path2, path3;
+
+    path1 = document.createElementNS("path");
+    path1.setAttribute("d", `M100 300 L 100 300 L 100 250 L 200 250`);
   };
 
+  /**
+   * NOTE: Most of the demo animation code will be contained
+   * in the useEffect call
+   */
   useEffect(() => {
     text1 = document.getElementById("text1");
     subtext1 = document.getElementById("subtext1");
@@ -73,17 +89,6 @@ const Play = (props) => {
     subtext2.setAttribute("x", 0.5 * svgWidth + -35);
     subtext2.style.visibility = "visible";
 
-    console.log(
-      "s1x: ",
-      subtext1.getAttribute("x"),
-      "s1w: ",
-      subtext1.getBBox().width,
-      "s2x: ",
-      subtext2.getAttribute("x"),
-      "s2w: ",
-      subtext2.getBBox().width
-    );
-
     text1.classList.add("active");
     if (props.demoPlaying) {
       setTimeout(() => {
@@ -91,6 +96,7 @@ const Play = (props) => {
       }, 0);
     }
   }, []);
+  /* end of useEffect ******************************************/
 
   return (
     <div
@@ -103,15 +109,7 @@ const Play = (props) => {
       }}
       className="main-backdrop"
     >
-      <div
-        className="overlay"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(1, 1fr)",
-          justifyContent: "center",
-          justifyItems: "center",
-        }}
-      >
+      <div className="overlay">
         <LogoWhite style={{ fill: "white" }} />
         <div>
           <svg id="demo-svg" ref={demoSvg}>

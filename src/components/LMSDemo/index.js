@@ -72,7 +72,7 @@ const LMSDemo = (props) => {
                 </button>
               </div>
             </div>
-            <div id="demo-content" className="row gx-3">
+            <div id="elearning-demo-content" className="row gx-3">
               <div className="col col-3 section-text">
                 <div>
                   <h2>
