@@ -36,6 +36,9 @@ const Play = (props) => {
     const presentationArea = document.querySelector(
       "#elearning-demo-content .overlay"
     );
+    const presentationSVG = document.querySelector(
+      "#elearning-demo-content .overlay #demo-svg"
+    );
     const logoSVG = document.getElementById("logo-white");
     /** 1. Display "Welcome" */
     subtext1.classList.add("active");
@@ -61,8 +64,17 @@ const Play = (props) => {
     /** 7. Draw dendogram lines */
     let path1, path2, path3;
 
-    path1 = document.createElementNS("path");
-    path1.setAttribute("d", `M100 300 L 100 300 L 100 250 L 200 250`);
+    path1 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path3 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path1.classList.add("dendogram-path");
+    path2.classList.add("dendogram-path");
+    path3.classList.add("dendogram-path");
+    path1.setAttribute("d", `M130 257 L 230 257 L 230 57 L 380 57`);
+    path2.setAttribute("d", `M130 263 L 380 263`);
+    path3.setAttribute("d", `M130 269 L 230 269 L 230 469 L 380 469`);
+
+    presentationSVG.append(path1, path2, path3);
   };
 
   /**
