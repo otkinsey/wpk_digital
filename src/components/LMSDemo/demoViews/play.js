@@ -63,6 +63,32 @@ const Play = (props) => {
 
     /** 7. Draw dendogram lines */
     let path1, path2, path3;
+    let dendogram = [
+      {
+        pathId: "path1",
+        text: "employee prescreening",
+        M: [130, 257],
+        L1: [230.257],
+        L2: [230.57],
+        L3: [380, 57],
+      },
+      {
+        pathId: "path2",
+        text: "OJT/skill development",
+        M: [130, 263],
+        L1: [380, 263],
+        L2: [380, 263],
+        L3: [380, 263],
+      },
+      {
+        pathId: "path3",
+        text: "compliance training",
+        M: [130, 269],
+        L1: [230, 269],
+        L2: [230, 469],
+        L3: [380, 469],
+      },
+    ];
 
     path1 = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
@@ -71,10 +97,26 @@ const Play = (props) => {
     path2.classList.add("dendogram-path");
     path3.classList.add("dendogram-path");
     path1.setAttribute("d", `M130 257 L 230 257 L 230 57 L 380 57`);
-    path2.setAttribute("d", `M130 263 L 380 263`);
+    path2.setAttribute("d", `M130 263 L 130 263 L 380 263`);
     path3.setAttribute("d", `M130 269 L 230 269 L 230 469 L 380 469`);
 
-    presentationSVG.append(path1, path2, path3);
+    /** 8. Create text nodes for usecase categories */
+
+    const usecases = dendogram.map((item, index) => {
+      let usecase = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "text"
+      );
+      let usecaseText = document.createTextNode(item.text);
+      usecase.appendChild(usecaseText);
+      usecase.setAttribute("style", "font-size:20px; fill:white");
+      usecase.setAttribute("x", item.L3[0]);
+      usecase.setAttribute("y", item.L3[1] + 4);
+
+      return usecase;
+    });
+
+    presentationSVG.append(path1, path2, path3, ...usecases);
   };
 
   /**

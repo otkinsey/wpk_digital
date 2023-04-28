@@ -162,9 +162,9 @@ no css currently required for this transition
 
 /* Elearning: animation 7 - Dendogram lines */
 #elearning-demo-content .dendogram-path {
-  stroke: white;
+  stroke: #495d83;
   fill: none;
-  stroke-width: 0.5px;
+  stroke-width: 1px;
 }
 #elearning-demo-content .overlay svg #subtext1.active,
 #elearning-demo-content .overlay svg #subtext2.active {
