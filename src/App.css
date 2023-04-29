@@ -186,7 +186,14 @@ no css currently required for this transition
   stroke: #495d83;
   fill: none;
   stroke-width: 1px;
+  stroke-dasharray: 450;
+  stroke-dashoffset: 450;
+  transition: stroke-dashoffset 1.5s 2s;
 }
+#elearning-demo-content .dendogram-path.active {
+  stroke-dashoffset: 0;
+}
+
 #elearning-demo-content .overlay svg #subtext1.active,
 #elearning-demo-content .overlay svg #subtext2.active {
   opacity: 1;

@@ -74,7 +74,7 @@ const Play = (props) => {
       },
       {
         pathId: "path2",
-        text: "OJT/skill development",
+        text: "on the job training",
         M: [130, 263],
         L1: [380, 263],
         L2: [380, 263],
@@ -133,6 +133,11 @@ const Play = (props) => {
           }px);`
         );
       });
+      Array.from(document.getElementsByClassName("dendogram-path")).forEach(
+        (item, index) => {
+          item.classList.add("active");
+        }
+      );
     }, 27000);
 
     presentationSVG.append(path1, path2, path3, ...usecases);
