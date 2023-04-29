@@ -101,7 +101,7 @@ const Play = (props) => {
     path3.setAttribute("d", `M130 269 L 230 269 L 230 469 L 380 469`);
 
     /** 8. Create text nodes for usecase categories */
-
+    let usecaseCoords = [];
     const usecases = dendogram.map((item, index) => {
       let usecase = document.createElementNS(
         "http://www.w3.org/2000/svg",
@@ -110,11 +110,30 @@ const Play = (props) => {
       let usecaseText = document.createTextNode(item.text);
       usecase.appendChild(usecaseText);
       usecase.setAttribute("style", "font-size:20px; fill:white");
-      usecase.setAttribute("x", item.L3[0]);
-      usecase.setAttribute("y", item.L3[1] + 4);
+      usecase.setAttribute("x", -130);
+      usecase.setAttribute("y", 263);
+      usecase.classList.add("usecase");
+      usecase.id = `usecase-${index + 1}`;
+
+      usecaseCoords.push([item.L3[0], item.L3[1]]);
 
       return usecase;
     });
+
+    setTimeout(() => {
+      dendogram.forEach((d, usecaseIndex) => {
+        const uc = document.querySelector(
+          `#elearning-demo-content #usecase-${usecaseIndex + 1}`
+        );
+        uc.classList.add("active");
+        uc.setAttribute(
+          "style",
+          ` transform: translate(${usecaseCoords[usecaseIndex][0] + 130}px, ${
+            usecaseCoords[usecaseIndex][1] - 258
+          }px);`
+        );
+      });
+    }, 27000);
 
     presentationSVG.append(path1, path2, path3, ...usecases);
   };
