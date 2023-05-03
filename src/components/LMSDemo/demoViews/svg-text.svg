@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="demo-svg">
+  <g style="fill: white;">
+    <text x="459.546875" y="75" font-size="40px" stroke="white" stroke-width="1" id="text1" style="visibility: visible;" class="">Welcome.</text>
+    <text x="422.671875" y="115" font-size="20" stroke="white" stroke-width="0" id="subtext1" style="visibility: visible;" class="animate1">Elearning</text>
+    <text x="509" y="115" font-size="20" stroke="white" stroke-width="0" id="subtext2" style="visibility: visible;" class="">Demo Application</text>
+  </g>
+  <path class="dendogram-path" d="M130 257 L 230 257 L 230 57 L 380 57"></path>
+  <path class="dendogram-path" d="M130 263 L 130 263 L 380 263"></path>
+  <path class="dendogram-path" d="M130 269 L 230 269 L 230 469 L 380 469"></path>
+
+  <g id="usecases" x="-130" y="263" style=" transform: translate(454.4px , 339.5px);">
+    <circle cx="0" cy="0" r="280" id="usecase-path-0" startAngle="0" endAngle="180" class="usecase-path" stroke="white" opacity="0.7" stroke-width="8px" visibility="visible"></circle>
+    <circle cx="0" cy="0" r="210" id="usecase-path-1" startAngle="0" endAngle="180" class="usecase-path" stroke="white" opacity="0.7" stroke-width="8px" visibility="visible"></circle>
+    <circle cx="0" cy="0" r="140" id="usecase-path-2" startAngle="0" endAngle="180" class="usecase-path" stroke="white" opacity="0.7" stroke-width="8px" visibility="visible"></circle>
+   <text style="transform:translate(510px, -201px);" x="-130" y="263" class="usecase active" id="usecase-1">
+    <textPath xlink:href="#usecase-path-0">Employee Prescreening</textPath>
+  </text>
+  <text style="transform:translate(510px, -135px);" x="-130" y="263" class="usecase active" id="usecase-2">
+    <textPath xlink:href="#usecase-path-1">On the Job Training</textPath>
+  </text>
+  <text style="transform:translate(510px, -69px);" x="-130" y="263" class="usecase active" id="usecase-3">
+    <textPath xlink:href="#usecase-path-2">Compliance Training</textPath>
+  </text>
+  </g>
+</svg>

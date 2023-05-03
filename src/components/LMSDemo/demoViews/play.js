@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import { ReactComponent as LogoWhite } from "../../header/logo_white.svg";
-// import { playAudioFile } from "../../../utils/helper.js";
+import { ReactComponent as ConcentricCircle } from "./concentric.svg";
 
 const Play = (props) => {
   // DOM refs
@@ -66,7 +66,7 @@ const Play = (props) => {
     let dendogram = [
       {
         pathId: "path1",
-        text: "employee prescreening",
+        text: "Employee Prescreening",
         M: [130, 257],
         L1: [230.257],
         L2: [230.57],
@@ -74,7 +74,7 @@ const Play = (props) => {
       },
       {
         pathId: "path2",
-        text: "on the job training",
+        text: "On the Job Training",
         M: [130, 263],
         L1: [380, 263],
         L2: [380, 263],
@@ -82,7 +82,7 @@ const Play = (props) => {
       },
       {
         pathId: "path3",
-        text: "compliance training",
+        text: "Compliance Training",
         M: [130, 269],
         L1: [230, 269],
         L2: [230, 469],
@@ -140,6 +140,29 @@ const Play = (props) => {
       );
     }, 27000);
 
+    /** 9. Remove dendogram */
+    setTimeout(() => {
+      Array.from(document.getElementsByClassName("dendogram-path")).forEach(
+        (item, index) => {
+          item.classList.remove("active");
+        }
+      );
+      subtext1.classList.remove("active");
+      let ucs = document.getElementsByClassName("usecase");
+      Array.from(ucs).forEach((item, index) => {
+        item.setAttribute(
+          "style",
+          `transform:translate(${usecaseCoords[index][0] + 130}px, ${
+            usecaseCoords[index][1] - 258 - 140 * index
+          }px);`
+        );
+      });
+
+      /** 10.Display rotating graphic */
+      const graphic = document.getElementById("rotating-graphic");
+      graphic.classList.add("active");
+    }, 30000);
+
     presentationSVG.append(path1, path2, path3, ...usecases);
   };
 
@@ -192,7 +215,7 @@ const Play = (props) => {
         <div>
           <svg id="demo-svg" ref={demoSvg}>
             <g style={{ fill: "white" }}>
-              {/* TODO: replace with a data object that instatiates 2 Text components */}
+              {/* TODO: replace with a data object that instatiates 2 Text components  */}
               <Text
                 x={0}
                 y={75}
@@ -230,6 +253,7 @@ const Play = (props) => {
               />
             </g>
           </svg>
+          <ConcentricCircle />
         </div>
       </div>
     </div>
