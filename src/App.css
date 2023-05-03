@@ -115,6 +115,19 @@ button.btn-default {
   opacity: 1;
 }
 
+#elearning-demo-content #demo-svg.active {
+  opacity: 1;
+}
+
+#elearning-demo-content #demo-svg {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#elearning-demo-content #rotating-graphic g#elipse-5 text {
+  font-size: 16px;
+}
+
 /* Elearning: animation 1 - Display Welcome */
 #elearning-demo-content .overlay svg #text1 {
   opacity: 0;
@@ -197,6 +210,58 @@ no css currently required for this transition
 #elearning-demo-content #usecase-3.active,
 #elearning-demo-content #usecase-3.active textPath {
   opacity: 1;
+}
+
+/* Elearning: animation 10 - rotational graphic */
+
+#rotating-graphic #elipse-1,
+#rotating-graphic #elipse-2,
+#rotating-graphic #elipse-5 circle.cls-4 {
+  animation: spin 48s linear infinite;
+  transform-origin: 50% 50%;
+  transform-origin: 43.47% 43.45%;
+}
+
+#rotating-graphic #arc-1 {
+  animation: spin 40s linear infinite;
+  transform-origin: 50% 50%;
+  transform-origin: 43.47% 43.45%;
+}
+
+#rotating-graphic #elipse-3 {
+  animation: reverse-spin 48s linear infinite;
+  transform-origin: 50% 50%;
+  transform-origin: 43.47% 43.45%;
+}
+
+#rotating-graphic #arc-2 {
+  animation: reverse-spin 80s linear infinite;
+  transform-origin: 50% 50%;
+  transform-origin: 43.47% 43.45%;
+}
+
+#rotating-graphic #elipse-4 {
+  animation: spin 48s linear infinite;
+  transform-origin: 50% 50%;
+  transform-origin: 43.47% 43.45%;
+}
+
+#rotating-graphic #arc-3 {
+  animation: spin 80s linear infinite;
+  transform-origin: 50% 50%;
+  transform-origin: 43.47% 43.45%;
+}
+
+@keyframes reverse-spin {
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 #elearning-demo-content .dendogram-path {
@@ -373,6 +438,9 @@ header ul {
   left: 20px;
   font-size: 1.15rem;
   bottom: 17px;
+  display: none;
+}
+.removed {
   display: none;
 }
 .row {

@@ -157,11 +157,18 @@ const Play = (props) => {
           }px);`
         );
       });
+    }, 30000);
 
-      /** 10.Display rotating graphic */
+    setTimeout(() => {
+      presentationSVG.classList.remove("active");
+    }, 32000);
+
+    /** 10.Display rotating graphic */
+    setTimeout(() => {
+      presentationSVG.classList.add("removed");
       const graphic = document.getElementById("rotating-graphic");
       graphic.classList.add("active");
-    }, 30000);
+    }, 34000);
 
     presentationSVG.append(path1, path2, path3, ...usecases);
   };
@@ -213,7 +220,7 @@ const Play = (props) => {
       <div className="overlay">
         <LogoWhite style={{ fill: "white" }} />
         <div>
-          <svg id="demo-svg" ref={demoSvg}>
+          <svg id="demo-svg" ref={demoSvg} className="active">
             <g style={{ fill: "white" }}>
               {/* TODO: replace with a data object that instatiates 2 Text components  */}
               <Text

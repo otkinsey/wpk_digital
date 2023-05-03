@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="rotating-graphic" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="433.02" height="433.27" viewBox="0 20 433.02 433.27">
+<svg id="rotating-graphic" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="433.02" height="433.27" viewBox="0 0 500 500">
   <defs>
     <style>
-	
-	  #arc-1,#arc-2,#arc-3{ fill:white; opacity:.3;}
+    #elearning-demo-content #rotating-graphic g#elipse-1 text,
+    #elearning-demo-content #rotating-graphic g#elipse-2 text,
+    #elearning-demo-content #rotating-graphic g#elipse-3 text,
+    #elearning-demo-content #rotating-graphic g#elipse-4 text {
+      font-size: 13px;
+      fill:rgb(255 255 255 /70%);
+    }
+	  #arc-1,#arc-2,#arc-3{ fill:rgb(255 255 255 / 10%);}
       .cls-1 {
         stroke-dasharray: 0 0 2 5.99;
       }
@@ -13,7 +19,7 @@
       }
 
       .cls-1, .cls-2, .cls-3, .cls-5, .cls-7 {
-        stroke: rgb(255 255 255 / 45%)
+        stroke: rgb(255 255 255 / 20%)
       }
 
       .cls-1, .cls-3, .cls-4, .cls-5, .cls-7 {
@@ -36,7 +42,7 @@
       }
 
       .cls-4, .cls-6 {
-        stroke: #fff;
+        stroke: rgb(255 255 255 / 50%);
       }
 
       .cls-6 {
@@ -63,9 +69,10 @@
 	#rotating-graphic g text tspan {
 		letter-spacing: 1px;
 	}
-	#outer-circle-group, #inner-circle-group{ fill:rgb(255 255 255 / 20%); }
+	#outer-circle-group, #inner-circle-group{ fill:rgb(255 255 255 / 10%); }
 	#elipse-5 circle:first-child {
-    	fill: rgb(0 0 0 / 50%);
+    	fill: rgb(0 0 0 / 20%);
+
     	z-index: 0;
 	}
 	#elipse-5 text { z-index:1;}
@@ -73,7 +80,7 @@
   </defs>
   <g id="elipse-5">
     <circle cx="217.51" cy="217.51" r="66.5"/>
-    <text class="cls-6" transform="translate(196.65 209.22)"><tspan class="cls-12" x="-5" y="0">Core</tspan><tspan x="-15" y="24">Mission</tspan></text>
+    <text class="cls-6" transform="translate(196.65 209.22)"><tspan class="cls-12" x="0" y="-5">Core</tspan><tspan x="-10" y="19">Mission</tspan></text>
     <circle class="cls-4" cx="218.07" cy="217.21" r="62.5"/>
   </g>
   <g id="elipse-4">
