@@ -157,18 +157,19 @@ const Play = (props) => {
           }px);`
         );
       });
-    }, 30000);
+    }, 41000);
 
     setTimeout(() => {
       presentationSVG.classList.remove("active");
-    }, 32000);
+    }, 42000);
 
     /** 10.Display rotating graphic */
     setTimeout(() => {
       presentationSVG.classList.add("removed");
       const graphic = document.getElementById("rotating-graphic");
       graphic.classList.add("active");
-    }, 34000);
+    }, 44000);
+    // }, 1);
 
     presentationSVG.append(path1, path2, path3, ...usecases);
   };

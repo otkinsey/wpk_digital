@@ -214,40 +214,45 @@ no css currently required for this transition
 
 /* Elearning: animation 10 - rotational graphic */
 
-#rotating-graphic #elipse-1,
-#rotating-graphic #elipse-2,
-#rotating-graphic #elipse-5 circle.cls-4 {
+#rotating-graphic.active #elipse-1,
+#rotating-graphic.active #elipse-2 {
   animation: spin 48s linear infinite;
   transform-origin: 50% 50%;
   transform-origin: 43.47% 43.45%;
 }
 
-#rotating-graphic #arc-1 {
+#rotating-graphic.active #arc-1 {
   animation: spin 40s linear infinite;
   transform-origin: 50% 50%;
   transform-origin: 43.47% 43.45%;
 }
 
-#rotating-graphic #elipse-3 {
+#rotating-graphic.active #elipse-3 {
   animation: reverse-spin 48s linear infinite;
   transform-origin: 50% 50%;
   transform-origin: 43.47% 43.45%;
 }
 
-#rotating-graphic #arc-2 {
+#rotating-graphic.active #arc-2 {
   animation: reverse-spin 80s linear infinite;
   transform-origin: 50% 50%;
   transform-origin: 43.47% 43.45%;
 }
 
-#rotating-graphic #elipse-4 {
+#rotating-graphic.active #elipse-4 {
   animation: spin 48s linear infinite;
   transform-origin: 50% 50%;
   transform-origin: 43.47% 43.45%;
 }
 
-#rotating-graphic #arc-3 {
+#rotating-graphic.active #arc-3 {
   animation: spin 80s linear infinite;
+  transform-origin: 50% 50%;
+  transform-origin: 43.47% 43.45%;
+}
+
+#rotating-graphic.active #elipse-5 circle.cls-4 {
+  animation: reverse-spin 60s linear infinite;
   transform-origin: 50% 50%;
   transform-origin: 43.47% 43.45%;
 }

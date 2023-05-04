@@ -10,7 +10,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   // State variables
   const [active, setActive] = useState("inactive");
-  const [demoPlaying, setDemoPlaying] = useState(false);
 
   const scrollTo = (id, menuState = active) => {
     const demoActive = document
