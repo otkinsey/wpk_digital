@@ -9,6 +9,12 @@ import {
 } from "../../../utils/helper.js";
 const Default = (props) => {
   const audioElement = useRef(null);
+  const audioFiles = [
+    "audio.m4a",
+    "elearning-usecases.m4a",
+    "core-functionality.m4a",
+  ];
+  let audioIndex = 0;
 
   useEffect(() => {
     if (props.demoPlaying) {
@@ -37,7 +43,22 @@ const Default = (props) => {
 
           /** Pass audioFile ref to index.js */
           props.childAudioFile.current = audioElement;
-          // props.setDemoPlaying(!props.demoPlaying);
+
+          /** Set next audio to play */
+          function playNextAudio() {
+            audioIndex += 1;
+            if (audioIndex < 3) {
+              audioElement.current.setAttribute("src", audioFiles[audioIndex]);
+              playAudioFile(audioElement);
+            } else {
+              audioIndex = 0;
+              audioElement.current.removeEventListener("ended", playNextAudio);
+              audioElement.current.setAttribute("src", audioFiles[audioIndex]);
+            }
+          }
+
+          audioElement.current.addEventListener("ended", playNextAudio);
+
           return;
         }}
         id="play"
@@ -45,6 +66,8 @@ const Default = (props) => {
         {props.demoPlaying ? <FaRegStopCircle /> : <FaRegPlayCircle />}
         <span className="demo-option">play presentation</span>
         <audio id="demoAudio" src="audio.m4a" ref={audioElement}></audio>
+        {/* <audio id="demoAudio" src="audio.m4a" ref={audioElement}></audio>
+        <audio id="demoAudio" src="audio.m4a" ref={audioElement}></audio> */}
       </li>
       <li onClick={props.setDemoContentVar} id="exam">
         <MdComputer />
