@@ -161,7 +161,7 @@ const Play = (props) => {
 
     setTimeout(() => {
       presentationSVG.classList.remove("active");
-    }, 42000);
+    }, 38000);
 
     /** 10.Display rotating graphic */
     setTimeout(() => {

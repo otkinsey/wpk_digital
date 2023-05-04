@@ -3,7 +3,6 @@
 <svg version="1.1" id="rotating-graphic" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 433 433.3" style="enable-background:new 0 0 433 433.3;" xml:space="preserve">
 <style type="text/css">
-
 	.st1{font-family:'ArialMT';}
 	.st3{fill:white;stroke:rgb(255 255 255 / 0%);stroke-width:0.433;stroke-miterlimit:8.6604;}
 	.st4{fill:none;stroke:rgb(255 255 255 / 30%);stroke-width:0.866;stroke-miterlimit:8.6604;stroke-dasharray:0,0,1.7321,5.1962;}
@@ -11,15 +10,17 @@
 	.st6{fill:rgb(255 255 255 / 10%);stroke:rgb(255 255 255 / 10%);stroke-width:0.866;stroke-miterlimit:8.6604;}
 	.st7{font-size:12.9906px;}
 	.st8{fill:none;stroke:rgb(255 255 255 / 30%);stroke-width:0.866;stroke-miterlimit:8.6604;stroke-dasharray:0,0,1.7321,5.1876;}
-  text textPath{ fill:rgb(255 255 255 / 60%); font-size:13px;}
-  #rotating-graphic .st0{fill:rgb(255 255 255 / 10%);}
-  #elipse-5 #core-circle{fill:rgb(0 0 0 / 30%); stroke:none;}
-  #elipse-5 circle:not(#core-circle){stroke:rgb(255 255 255 / 100%);}
-  svg#rotating-graphic #elipse-2 text,
-  svg#rotating-graphic #elipse-3 text {
-    transform: translate(3px, -5px);
-  }
-  svg#rotating-graphic #elipse-4 text{ transform: translate(7px, -7px);}
+	text textPath{ fill:rgb(255 255 255 / 60%); font-size:13px;}
+	#rotating-graphic .st0{fill:rgb(255 255 255 / 10%);}
+	#elipse-5 #core-circle{fill:rgb(0 0 0 / 30%); stroke:none;}
+	#elipse-5 circle:not(#core-circle){stroke:rgb(255 255 255 / 100%);}
+	svg#rotating-graphic #elipse-2 text,
+	svg#rotating-graphic #elipse-3 text {
+		transform: translate(3px, -5px);
+	}
+	svg#rotating-graphic #elipse-4 text {
+		transform: translate(10px, -5px);
+	}
 </style>
 <g id="elipse-5">
 	<circle id="core-circle" cx="188.4" cy="188.5" r="57.6"/>
@@ -34,7 +35,7 @@
 		"/>
 	<path id="arc-3" class="st6" d="M127.9,188.3c0-33.1,26.8-59.9,59.9-59.9s59.9,26.8,59.9,59.9 M257.4,188.3
 		c0-38.5-31.2-69.7-69.7-69.7s-69.7,31.2-69.7,69.7"/>
-  <text><textPath href="#compliance">Compliance Training</textPath></text>
+  <text><textPath href="#compliance">Organization Management</textPath></text>
 
 	<g id="inner-circle-group">
 		<ellipse class="st0" cx="171.1" cy="95.3" rx="3.2" ry="3.1"/>
@@ -58,7 +59,7 @@
 <g id="elipse-3">
 	<path id="ojt" class="st5" d="M188.6,70.2c65,0,117.7,52.7,117.7,117.7s-52.7,117.7-117.7,117.7S70.9,252.9,70.9,187.9
 		S123.6,70.2,188.6,70.2z"/>
-  <text><textPath href="#ojt">On the Job Training</textPath></text>
+  <text><textPath href="#ojt">Content Management</textPath></text>
 
 	<path id="arc-2" class="st6" d="M87.5,187.6c0-55.9,45.3-101.1,101.1-101.1s101.1,45.3,101.1,101.1 M306.4,187.6
 		c0-65-52.7-117.7-117.7-117.7S71,122.6,71,187.6"/>
@@ -66,7 +67,7 @@
 <g id="elipse-2">
 	<path id="employee-training" class="st5" d="M188.4,25.8c89.5,0,162,72.5,162,162s-72.5,162-162,162s-162-72.5-162-162S98.9,25.8,188.4,25.8z"/>
 	<circle class="st4" cx="188" cy="187.6" r="142.3"/>
-  <text><textPath href="#employee-training">Employee Training</textPath></text>
+  <text><textPath href="#employee-training">Presentation Interface</textPath></text>
 
 </g>
 <g id="elipse-1">

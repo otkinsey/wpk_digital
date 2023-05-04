@@ -32,6 +32,7 @@ const Default = (props) => {
     <ul className="demo-options">
       <li
         onClick={(e) => {
+          audioElement.current.setAttribute("src", audioFiles[audioIndex]);
           /* Display desired view in presentation area */
           props.setDemoContentVar(e);
 
@@ -53,7 +54,6 @@ const Default = (props) => {
             } else {
               audioIndex = 0;
               audioElement.current.removeEventListener("ended", playNextAudio);
-              audioElement.current.setAttribute("src", audioFiles[audioIndex]);
             }
           }
 
