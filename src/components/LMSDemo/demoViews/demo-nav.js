@@ -1,12 +1,8 @@
 import { FaRegPlayCircle, FaRegStopCircle, FaEdit } from "react-icons/fa";
 import { MdComputer } from "react-icons/md";
 import { IoSettingsSharp } from "react-icons/io5";
-import { useEffect, useRef } from "react";
-import {
-  playAudioFile,
-  stopAudioFile,
-  centerSvgContent,
-} from "../../../utils/helper.js";
+import { useRef } from "react";
+import { playAudioFile, stopAudioFile } from "../../../utils/helper.js";
 const Default = (props) => {
   const audioElement = useRef(null);
   const audioFiles = [
@@ -16,18 +12,6 @@ const Default = (props) => {
   ];
   let audioIndex = 0;
 
-  useEffect(() => {
-    if (props.demoPlaying) {
-      // playAudioFile(audioElement);
-      // audioElement.current.addEventListener("ended", () => {
-      //   props.demoPlaying = false;
-      // });
-      // DOM maniputlations can occurs inside useEffect call
-      // setTimeout(() => {
-      //   animatePresentation();
-      // }, 1000);
-    }
-  });
   return (
     <ul className="demo-options">
       <li

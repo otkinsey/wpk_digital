@@ -168,7 +168,7 @@ const Play = (props) => {
       presentationSVG.classList.add("removed");
       const graphic = document.getElementById("rotating-graphic");
       graphic.classList.add("active");
-    }, 44000);
+    }, 40000);
     // }, 1);
 
     presentationSVG.append(path1, path2, path3, ...usecases);
