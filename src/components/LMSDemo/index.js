@@ -55,23 +55,27 @@ const LMSDemo = (props) => {
       <div className="row demo-interface" id="">
         <div className="col col-12">
           <div className="wrapper">
-            <div className="row">
-              <div className="col-sm toggle-row" id="">
-                <button
-                  className="button btn-primary"
-                  onClick={() => {
-                    if (childAudioFile.current) {
-                      stopAudioFile(childAudioFile.current);
-                      props.setLMSActive(false);
-                      setDemoPlaying(false);
-                    }
-                    props.toggleDemoLMS();
-                  }}
-                >
-                  End demo
-                </button>
-              </div>
-            </div>
+            <button
+              className="button btn-primary"
+              style={{
+                position: "absolute",
+                right: 50,
+                top: "103px",
+                border: "1px solid white",
+                backgroundColor: "rgb(13 110 253 / 10%)",
+                transition: "background-color .5s",
+              }}
+              onClick={() => {
+                if (childAudioFile.current) {
+                  stopAudioFile(childAudioFile.current);
+                  props.setLMSActive(false);
+                  setDemoPlaying(false);
+                }
+                props.toggleDemoLMS();
+              }}
+            >
+              End demo
+            </button>
             <div id="elearning-demo-content" className="row gx-3">
               <div className="col col-3 section-text">
                 <div>

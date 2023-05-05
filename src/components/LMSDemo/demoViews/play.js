@@ -157,7 +157,7 @@ const Play = (props) => {
           }px);`
         );
       });
-    }, 41000);
+    }, 40000);
 
     setTimeout(() => {
       presentationSVG.classList.remove("active");
@@ -168,7 +168,10 @@ const Play = (props) => {
       presentationSVG.classList.add("removed");
       const graphic = document.getElementById("rotating-graphic");
       graphic.classList.add("active");
-    }, 40000);
+      setTimeout(() => {
+        graphic.classList.add("rotate");
+      }, 700);
+    }, 39000);
     // }, 1);
 
     presentationSVG.append(path1, path2, path3, ...usecases);
@@ -219,7 +222,9 @@ const Play = (props) => {
       className="main-backdrop"
     >
       <div className="overlay">
-        <LogoWhite style={{ fill: "white" }} />
+        <div>
+          <LogoWhite style={{ fill: "white" }} />
+        </div>
         <div>
           <svg id="demo-svg" ref={demoSvg} className="active">
             <g style={{ fill: "white" }}>

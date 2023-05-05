@@ -57,14 +57,14 @@ const Default = (props) => {
         <MdComputer />
         <span className="demo-option">take exam</span>
       </li>
-      <li onClick={props.setDemoContentVar} id="manage">
+      {/* <li onClick={props.setDemoContentVar} id="manage">
         <FaEdit />
         <span className="demo-option">Edit Content</span>
       </li>
       <li onClick={props.setDemoContentVar} id="manage">
         <IoSettingsSharp />
         <span className="demo-option">Manager Dashboard</span>
-      </li>
+      </li> */}
     </ul>
   );
 };
