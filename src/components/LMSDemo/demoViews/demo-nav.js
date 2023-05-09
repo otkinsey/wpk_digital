@@ -1,7 +1,6 @@
 import { FaRegPlayCircle, FaRegStopCircle, FaEdit } from "react-icons/fa";
 import { MdComputer } from "react-icons/md";
-import { IoSettingsSharp } from "react-icons/io5";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { playAudioFile, stopAudioFile } from "../../../utils/helper.js";
 const Default = (props) => {
   const audioElement = useRef(null);
@@ -11,7 +10,15 @@ const Default = (props) => {
     "core-functionality.m4a",
   ];
   let audioIndex = 0;
-
+  useEffect(() => {
+    const contentVar =
+      props.demoContentVar === "default"
+        ? props.demoContentVar
+        : props.demoContentVar.target.id;
+    document.querySelector(
+      ".demo-interface"
+    ).className = `row demo-interface ${contentVar}`;
+  }, [props.demoContentVar]);
   return (
     <ul className="demo-options">
       <li
@@ -50,12 +57,10 @@ const Default = (props) => {
         {props.demoPlaying ? <FaRegStopCircle /> : <FaRegPlayCircle />}
         <span className="demo-option">play presentation</span>
         <audio id="demoAudio" src="audio.m4a" ref={audioElement}></audio>
-        {/* <audio id="demoAudio" src="audio.m4a" ref={audioElement}></audio>
-        <audio id="demoAudio" src="audio.m4a" ref={audioElement}></audio> */}
       </li>
       <li onClick={props.setDemoContentVar} id="exam">
         <MdComputer />
-        <span className="demo-option">take exam</span>
+        <span className="demo-option">Take Quiz</span>
       </li>
       {/* <li onClick={props.setDemoContentVar} id="manage">
         <FaEdit />

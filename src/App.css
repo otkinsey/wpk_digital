@@ -31,9 +31,6 @@ body {
 button svg {
   pointer-events: none;
 }
-.btn-primary:hover {
-  background-color: #0d6efd !important;
-}
 #contact-form {
   position: relative;
 }
@@ -53,9 +50,8 @@ button:not(#button_header, #button_hero) svg {
   pointer-events: none;
   margin-right: 7px;
 }
-button,
-button.button,
-a.btn-primary {
+button.btn-primary,
+.btn-secondary {
   height: 32px;
   display: block;
   z-index: 1;
@@ -71,6 +67,12 @@ a.btn-primary {
   justify-content: center;
   cursor: pointer;
   border: none;
+  transition: background-color 0.3s;
+}
+
+#elearning-end-demo:hover,
+button.btn-primary:hover {
+  background-color: #1dd2cd;
 }
 
 .btn-primary {
@@ -95,6 +97,7 @@ button.btn-default {
   height: 100%;
   background: linear-gradient(90deg, white -81%, red 58%);
   color: white;
+  position: relative;
 }
 .demo-interface footer {
   background-color: #f3f3f3;
@@ -104,9 +107,67 @@ button.btn-default {
   position: relative;
   background-color: rgb(0 0 0 / 20%);
 }
+#elearning-end-demo {
+  position: absolute;
+  right: 60px;
+  top: 60px;
+  border: 1px solid white;
+  background-color: rgba(13, 110, 253, 0.1);
+  transition: background-color 0.3s;
+}
+.exam #elearning-end-demo,
+.exam .btn-primary {
+  border: 1px solid #68bfba;
+  background-color: transparent;
+  color: #68bfba;
+}
+#elearning-demo-content #elearning-exam li {
+  background-color: transparent;
+  border: none;
+}
+#elearning-demo-content #elearning-exam li .radial-click {
+  padding: 0;
+  margin-right: 20px;
+  border: 1px solid rgb(204, 204, 204);
+  height: 16px;
+  width: 16px;
+  border-radius: 9px;
+}
+#elearning-demo-content #elearning-exam {
+  position: relative;
+  background-color: white;
+}
+#elearning-demo-content .exam-nav {
+  color: #67bfba;
+}
+#elearning-demo-content #elearning-exam::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url(http://localhost:3000/static/media/elearning-demo-background.5f52857903f650402dcf.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.1;
+  transform: scaleX(-1);
+}
+#elearning-demo-content #elearning-exam .overlay {
+  color: #777;
+  padding: 40px;
+  top: 0;
+  background-color: transparent;
+  display: block;
+  height: auto;
+}
+#elearning-demo-content #elearning-exam h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #61c4c0;
+}
 #elearning-demo-content #usecases {
   transition: transform 1s;
 }
+
 #elearning-demo-content #usecases .usecase-path {
   fill: none;
 }
@@ -436,6 +497,10 @@ header li {
 
 header li {
   height: 100%;
+  transition: color 0.3s;
+}
+header li:hover {
+  color: #0cfdf7;
 }
 
 header svg {

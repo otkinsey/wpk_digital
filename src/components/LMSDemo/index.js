@@ -12,8 +12,6 @@ const LMSDemo = (props) => {
   const [demoContentVar, setDemoContentVar] = useState("default");
   const childAudioFile = useRef(null);
 
-  // const demoPlaying = useRef(false);
-  // const setDemoPlaying = (val) => (demoPlaying.current = val);
   const [demoPlaying, setDemoPlaying] = useState(false);
 
   const setDemoContent = (e) => {
@@ -40,11 +38,6 @@ const LMSDemo = (props) => {
 
   const DemoContent = () => setDemoContent(demoContentVar);
 
-  /** A hack to allow ternary expression on End Demo button */
-  const pass = () => {
-    return;
-  };
-
   return (
     <div
       id="demo"
@@ -56,15 +49,8 @@ const LMSDemo = (props) => {
         <div className="col col-12">
           <div className="wrapper">
             <button
+              id="elearning-end-demo"
               className="button btn-primary"
-              style={{
-                position: "absolute",
-                right: 50,
-                top: "103px",
-                border: "1px solid white",
-                backgroundColor: "rgb(13 110 253 / 10%)",
-                transition: "background-color .5s",
-              }}
               onClick={() => {
                 if (childAudioFile.current) {
                   stopAudioFile(childAudioFile.current);
@@ -79,16 +65,13 @@ const LMSDemo = (props) => {
             <div id="elearning-demo-content" className="row gx-3">
               <div className="col col-3 section-text">
                 <div>
-                  <h2>
-                    WPK Digital Solutions:
-                    <br />
-                    Elearning Demo Application
-                  </h2>
+                  <h2>Elearning Demo Application</h2>
                   <DemoNav
                     setDemoContentVar={setDemoContentVar}
                     setDemoPlaying={setDemoPlaying}
                     demoPlaying={demoPlaying}
                     childAudioFile={childAudioFile}
+                    demoContentVar={demoContentVar}
                   />
                 </div>
               </div>
