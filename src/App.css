@@ -12,7 +12,9 @@ body {
   justify-content: center;
   color: white;
 }
-
+li {
+  list-style-type: none;
+}
 .App-link {
   color: #61dafb;
 }
@@ -124,14 +126,20 @@ button.btn-default {
 #elearning-demo-content #elearning-exam li {
   background-color: transparent;
   border: none;
+  display: flex;
+  padding: 10px 20px;
 }
 #elearning-demo-content #elearning-exam li .radial-click {
   padding: 0;
   margin-right: 20px;
-  border: 1px solid rgb(204, 204, 204);
+  border: 1px solid rgb(152 151 151);
   height: 16px;
   width: 16px;
   border-radius: 9px;
+  cursor: pointer;
+}
+#elearning-demo-content #elearning-exam li .radial-click.active {
+  background-color: #68bfba;
 }
 #elearning-demo-content #elearning-exam {
   position: relative;
@@ -150,6 +158,7 @@ button.btn-default {
   background-size: cover;
   opacity: 0.1;
   transform: scaleX(-1);
+  z-index: 0;
 }
 #elearning-demo-content #elearning-exam .overlay {
   color: #777;
@@ -158,6 +167,7 @@ button.btn-default {
   background-color: transparent;
   display: block;
   height: auto;
+  position: relative;
 }
 #elearning-demo-content #elearning-exam h4 {
   font-size: 1rem;
@@ -385,7 +395,7 @@ no css currently required for this transition
   margin: 0;
   padding: 0;
 }
-.demo-interface #elearning-demo-content li {
+.demo-interface #elearning-demo-content .demo-options li {
   list-style: none;
   display: flex;
   width: 100%;
@@ -396,15 +406,15 @@ no css currently required for this transition
   min-height: 73px;
   cursor: pointer;
 }
-.demo-interface #elearning-demo-content li * {
+.demo-interface #elearning-demo-content .demo-options li * {
   pointer-events: none;
 }
-.demo-interface #elearning-demo-content li svg {
+.demo-interface #elearning-demo-content .demo-options li svg {
   font-size: 1.5rem;
   color: rgb(255 255 255 / 60%);
   color: rgb(0 0 0 / 45%);
 }
-.demo-interface #elearning-demo-content li div {
+.demo-interface #elearning-demo-content .demo-options li div {
   padding-left: 20px;
 }
 .demo-interface #elearning-demo-content .demo-option {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import Question1 from "./quiz-questions/question1";
 import Question2 from "./quiz-questions/question2";
@@ -19,25 +19,36 @@ const Exam = () => {
     return output;
   };
 
+  useEffect(() => {
+    const radialButtons = Array.from(
+      document.getElementsByClassName("radial-click")
+    );
+    radialButtons.forEach((button) =>
+      button.addEventListener("click", (e) => {
+        radialButtons.forEach((button) => button.classList.remove("active"));
+        e.target.classList.add("active");
+      })
+    );
+  }, []);
   const CurrentQuestion = () => selectQuestion(questionIndex);
   return (
     <div id="elearning-exam">
-      <div class="overlay">
+      <div className="overlay">
         <h4>WPK Digital Solutions Elearning Demo Exam</h4>
         <h1>Review Questions</h1>
         <hr />
         <CurrentQuestion />
         <hr />
-        <div class="exam-nav d-flex flex-row justify-content-between align-items-center">
-          <div class="">
+        <div className="exam-nav d-flex flex-row justify-content-between align-items-center">
+          <div className="">
             <span>
               <FaArrowLeft /> prev
             </span>
           </div>
-          <div class="">
-            <button class="btn btn-primary">submit</button>
+          <div className="">
+            <button className="btn btn-primary">submit</button>
           </div>
-          <div class="">
+          <div className="">
             <span>
               next <FaArrowRight />
             </span>
