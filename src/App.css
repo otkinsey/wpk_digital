@@ -31,8 +31,10 @@ label {
   height: 40vmin;
   pointer-events: none;
 }
-button:not(#button_header) svg {
+button svg {
   pointer-events: none;
+}
+button:not(#button_hero) svg {
   margin-right: 7px;
 }
 button,
