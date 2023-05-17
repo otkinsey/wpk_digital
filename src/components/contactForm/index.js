@@ -118,7 +118,7 @@ const FormMockUp = () => {
   };
 
   return (
-    <Form ref={form} id="contact-form" onSubmit={sendEmail}>
+    <Form ref={form} id="contact-form" onSubmit={sendEmail} netlify>
       <h1>We'd love to hear from you.</h1>
       <Row>
         <Col>
