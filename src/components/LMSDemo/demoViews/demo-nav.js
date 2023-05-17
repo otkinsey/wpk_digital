@@ -39,11 +39,13 @@ const Default = (props) => {
           /** Set next audio to play */
           function playNextAudio() {
             audioIndex += 1;
+
             if (audioIndex < 3) {
               audioElement.current.setAttribute("src", audioFiles[audioIndex]);
               playAudioFile(audioElement);
             } else {
               audioIndex = 0;
+              setTimeout(props.endDemo(), 700);
               audioElement.current.removeEventListener("ended", playNextAudio);
             }
           }

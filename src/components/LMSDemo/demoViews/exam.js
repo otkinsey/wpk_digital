@@ -7,7 +7,7 @@ const Exam = () => {
   const [questionIndex, setQuestionIndex] = useState(0);
 
   const selectQuestion = (index) => {
-    let output = <Question1 />;
+    let output;
     switch (index) {
       case 1:
         output = <Question2 />;
@@ -30,7 +30,16 @@ const Exam = () => {
       })
     );
   }, []);
-  const CurrentQuestion = () => selectQuestion(questionIndex);
+
+  const incrementIndex = () => {
+    return questionIndex >= 1 ? 1 : setQuestionIndex(questionIndex + 1);
+  };
+  const decrementIndex = () => {
+    return questionIndex <= 0 ? 0 : setQuestionIndex(questionIndex - 1);
+  };
+
+  let CurrentQuestion = () => selectQuestion(questionIndex);
+
   return (
     <div id="elearning-exam">
       <div className="overlay">
@@ -40,19 +49,15 @@ const Exam = () => {
         <CurrentQuestion />
         <hr />
         <div className="exam-nav d-flex flex-row justify-content-between align-items-center">
-          <div className="">
-            <span>
-              <FaArrowLeft /> prev
-            </span>
-          </div>
+          <span className="exam-nav" onClick={decrementIndex}>
+            <FaArrowLeft /> prev
+          </span>
           <div className="">
             <button className="btn btn-primary">submit</button>
           </div>
-          <div className="">
-            <span>
-              next <FaArrowRight />
-            </span>
-          </div>
+          <span className="exam-nav" onClick={incrementIndex}>
+            next <FaArrowRight />
+          </span>
         </div>
       </div>
     </div>

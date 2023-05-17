@@ -120,8 +120,12 @@ button.btn-default {
 .exam #elearning-end-demo,
 .exam .btn-primary {
   border: 1px solid #68bfba;
-  background-color: transparent;
+  background-color: rgb(255 255 255 / 20%);
   color: #68bfba;
+  transition: color 0.4s;
+}
+.exam .btn-primary:hover {
+  border: 1px solid #68bfba;
 }
 #elearning-demo-content #elearning-exam li {
   background-color: transparent;
@@ -147,6 +151,7 @@ button.btn-default {
 }
 #elearning-demo-content .exam-nav {
   color: #67bfba;
+  cursor: pointer;
 }
 #elearning-demo-content #elearning-exam::before {
   content: "";
@@ -156,23 +161,31 @@ button.btn-default {
   background-image: url(http://localhost:3000/static/media/elearning-demo-background.5f52857903f650402dcf.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.1;
+  opacity: 0.05;
   transform: scaleX(-1);
   z-index: 0;
 }
 #elearning-demo-content #elearning-exam .overlay {
   color: #777;
-  padding: 40px;
+  padding: 50px 40px 40px;
   top: 0;
   background-color: transparent;
   display: block;
   height: auto;
   position: relative;
 }
+#elearning-demo-content #elearning-exam h1 {
+  margin: 30px 0;
+  color: #aaa;
+}
 #elearning-demo-content #elearning-exam h4 {
   font-size: 1rem;
   font-weight: bold;
   color: #61c4c0;
+  margin-bottom: 0;
+}
+#elearning-demo-content #elearning-exam .question {
+  padding: 30px 0 90px;
 }
 #elearning-demo-content #usecases {
   transition: transform 1s;
@@ -244,7 +257,7 @@ no css currently required for this transition
   justify-items: center;
   grid-template-rows: 1fr 50%;
   height: 100%;
-  padding: 60px;
+  padding: 40px;
   background-color: rgb(5 24 61 / 70%);
   transition: background-color 1s 24s, grid-template-rows 1s 24s;
 }
@@ -287,40 +300,47 @@ no css currently required for this transition
 }
 
 /* Elearning: animation 10 - rotational graphic */
-
 #rotating-graphic.active.rotate #elipse-1 {
   animation: spin 68s linear infinite;
-  transform-origin: 50% 50%;
   transform-origin: 43.47% 43.45%;
 }
 
+#rotating-graphic #elipse-2 {
+  transform: rotate(-20deg);
+  transform-origin: 43.47% 43.45%;
+}
 #rotating-graphic.active.rotate #elipse-2 {
   animation: spin 50s linear infinite;
-  transform-origin: 50% 50%;
   transform-origin: 43.47% 43.45%;
 }
 
 #rotating-graphic.active.rotate #arc-1 {
   animation: spin 40s linear infinite;
-  transform-origin: 50% 50%;
+  transform-origin: 43.47% 43.45%;
+}
+#rotating-graphic #elipse-3 {
+  transform: rotate(-26deg);
   transform-origin: 43.47% 43.45%;
 }
 
 #rotating-graphic.active.rotate #elipse-3 {
   animation: spin 38s linear infinite;
-  transform-origin: 50% 50%;
+  transform: rotate(-26deg);
   transform-origin: 43.47% 43.45%;
 }
 
 #rotating-graphic.active.rotate #arc-2 {
   animation: spin 0s linear infinite;
-  transform-origin: 50% 50%;
+  transform-origin: 43.47% 43.45%;
+}
+#rotating-graphic #elipse-4 {
+  transform: rotate(-61deg);
   transform-origin: 43.47% 43.45%;
 }
 
 #rotating-graphic.active.rotate #elipse-4 {
   animation: spin 24s linear infinite;
-  transform-origin: 50% 50%;
+  transform: rotate(-61deg);
   transform-origin: 43.47% 43.45%;
 }
 

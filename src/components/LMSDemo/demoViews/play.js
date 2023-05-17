@@ -110,7 +110,7 @@ const Play = (props) => {
       let usecaseText = document.createTextNode(item.text);
       usecase.appendChild(usecaseText);
       usecase.setAttribute("style", "font-size:20px; fill:white");
-      usecase.setAttribute("x", -130);
+      usecase.setAttribute("x", -180);
       usecase.setAttribute("y", 263);
       usecase.classList.add("usecase");
       usecase.id = `usecase-${index + 1}`;
@@ -128,7 +128,7 @@ const Play = (props) => {
         uc.classList.add("active");
         uc.setAttribute(
           "style",
-          ` transform: translate(${usecaseCoords[usecaseIndex][0] + 130}px, ${
+          ` transform: translate(${usecaseCoords[usecaseIndex][0] + 180}px, ${
             usecaseCoords[usecaseIndex][1] - 258
           }px);`
         );
@@ -170,9 +170,8 @@ const Play = (props) => {
       graphic.classList.add("active");
       setTimeout(() => {
         graphic.classList.add("rotate");
-      }, 700);
+      }, 2000);
     }, 40000);
-    // }, 1);
 
     presentationSVG.append(path1, path2, path3, ...usecases);
   };
@@ -182,12 +181,13 @@ const Play = (props) => {
    * in the useEffect call
    */
   useEffect(() => {
+    const svg = document.getElementById("demo-svg");
     text1 = document.getElementById("text1");
     subtext1 = document.getElementById("subtext1");
     subtext2 = document.getElementById("subtext2");
     demoLogo = document.getElementById("logo-white");
 
-    svgWidth = document.getElementById("demo-svg").width.animVal.value;
+    svgWidth = svg.width.animVal.value;
 
     text1.setAttribute("x", 0.5 * svgWidth - 0.5 * text1.getBBox().width);
     text1.style.visibility = "visible";
@@ -226,7 +226,12 @@ const Play = (props) => {
           <LogoWhite style={{ fill: "white" }} />
         </div>
         <div>
-          <svg id="demo-svg" ref={demoSvg} className="active">
+          <svg
+            id="demo-svg"
+            ref={demoSvg}
+            className="active"
+            preserveAspectoRatio="xMinYmin meet"
+          >
             <g style={{ fill: "white" }}>
               {/* TODO: replace with a data object that instatiates 2 Text components  */}
               <Text

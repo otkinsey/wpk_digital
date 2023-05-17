@@ -1,6 +1,6 @@
 const Question1 = (props) => {
   return (
-    <div id="question1">
+    <div class="question" id="question1">
       <p>
         1. What are three popular usecases for online learning applications?
       </p>

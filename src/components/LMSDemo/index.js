@@ -38,6 +38,19 @@ const LMSDemo = (props) => {
 
   const DemoContent = () => setDemoContent(demoContentVar);
 
+  const endDemo = () => {
+    if (childAudioFile.current) {
+      stopAudioFile(childAudioFile.current);
+      props.setLMSActive(false);
+      setDemoPlaying(false);
+    }
+
+    props.toggleDemoLMS();
+    setTimeout(() => {
+      setDemoContentVar("default");
+    }, 1100);
+  };
+
   return (
     <div
       id="demo"
@@ -52,12 +65,7 @@ const LMSDemo = (props) => {
               id="elearning-end-demo"
               className="button btn-primary"
               onClick={() => {
-                if (childAudioFile.current) {
-                  stopAudioFile(childAudioFile.current);
-                  props.setLMSActive(false);
-                  setDemoPlaying(false);
-                }
-                props.toggleDemoLMS();
+                endDemo();
               }}
             >
               End demo
@@ -68,6 +76,7 @@ const LMSDemo = (props) => {
                   <h2>Elearning Demo Application</h2>
                   <DemoNav
                     setDemoContentVar={setDemoContentVar}
+                    endDemo={endDemo}
                     setDemoPlaying={setDemoPlaying}
                     demoPlaying={demoPlaying}
                     childAudioFile={childAudioFile}
