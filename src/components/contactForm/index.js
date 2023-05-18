@@ -2,7 +2,7 @@ import { FaPaperPlane } from "react-icons/fa";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
-import { Form, Button, Col, Row } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 const FormMockUp = () => {
   // state variables
@@ -51,7 +51,9 @@ const FormMockUp = () => {
       ? setMessage("Invalid input. Letters only.")
       : setMessage("Invalid input. Special characters not allowed.");
 
-    return input.value.match(re) === null ? true : false;
+    let value = input.value.match(re) === null ? true : false;
+
+    return value;
   };
 
   /**
@@ -120,8 +122,8 @@ const FormMockUp = () => {
   return (
     <form ref={form} id="contact-form" onSubmit={sendEmail}>
       <h1>We'd love to hear from you.</h1>
-      <div className="row">
-        <div className="col5">
+      <div className="d-flex flex-row p-2">
+        <div className="col">
           <label>First Name:</label>
           <input
             onChange={frontEndValidate}
@@ -130,7 +132,7 @@ const FormMockUp = () => {
             type="text"
           />
         </div>
-        <div className>
+        <div className="col">
           <label>Last Name:</label>
           <input
             onChange={frontEndValidate}
@@ -140,17 +142,29 @@ const FormMockUp = () => {
           />
         </div>
       </div>
-      <div>
-        <label>Company Name:</label>
-        <input
-          onChange={frontEndValidate}
-          className="contact-form-input"
-          name="company-name"
-        />
+      <div className="d-flex flex-row p-2 align-items-center justify-content-around">
+        <div className="col">
+          <label>Company Name:</label>
+          <input
+            onChange={frontEndValidate}
+            className="contact-form-input"
+            name="company-name"
+          />
+        </div>
+        <div className="col">
+          <label>Email:</label>
+          <input
+            className="contact-form-input"
+            name="user_email"
+            type="email"
+          />
+        </div>
       </div>
-      <div>
-        <label>Email:</label>
-        <input className="contact-form-input" name="user_email" type="email" />
+      <div className="d-flex flex-row p-2 align-items-center justify-content-around">
+        <div className="col">
+          <label>Message:</label>
+          <textarea name="message" type="text" className="contact-form-input" />
+        </div>
       </div>
       <Button type="submit" className="button">
         <FaPaperPlane style={{}} /> <span>Send</span>
