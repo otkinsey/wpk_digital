@@ -94,8 +94,8 @@ const FormMockUp = () => {
     if (formValid) {
       emailjs
         .sendForm(
-          "service_grci4gd",
-          "template_yrewygy",
+          "service_jd9247j",
+          "template_aceytbb",
           form.current,
           "_dJAITq5fj7zi-rp-"
         )
@@ -118,44 +118,40 @@ const FormMockUp = () => {
   };
 
   return (
-    <Form ref={form} id="contact-form" onSubmit={sendEmail} netlify>
+    <form ref={form} id="contact-form" onSubmit={sendEmail}>
       <h1>We'd love to hear from you.</h1>
-      <Row>
-        <Col>
+      <div className="row">
+        <div className="col5">
           <label>First Name:</label>
-          <Form.Control
+          <input
             onChange={frontEndValidate}
             className="contact-form-input"
             name="first-name"
             type="text"
           />
-        </Col>
-        <Col>
+        </div>
+        <div className>
           <label>Last Name:</label>
-          <Form.Control
+          <input
             onChange={frontEndValidate}
-            className="contact-form-input"
+            className="contact-form-input "
             name="last-name"
             type="text"
           />
-        </Col>
-      </Row>
-      <Row>
+        </div>
+      </div>
+      <div>
         <label>Company Name:</label>
-        <Form.Control
+        <input
           onChange={frontEndValidate}
           className="contact-form-input"
           name="company-name"
         />
-      </Row>
-      <Row>
+      </div>
+      <div>
         <label>Email:</label>
-        <Form.Control
-          className="contact-form-input"
-          name="email"
-          type="email"
-        />
-      </Row>
+        <input className="contact-form-input" name="user_email" type="email" />
+      </div>
       <Button type="submit" className="button">
         <FaPaperPlane style={{}} /> <span>Send</span>
       </Button>
@@ -173,7 +169,7 @@ const FormMockUp = () => {
       >
         {message}
       </div>
-    </Form>
+    </form>
   );
 };
 
