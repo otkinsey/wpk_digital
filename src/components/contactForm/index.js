@@ -2,7 +2,7 @@ import { FaPaperPlane } from "react-icons/fa";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
-import { Form, Button, Col, Row } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 const FormMockUp = () => {
   // state variables
@@ -51,7 +51,9 @@ const FormMockUp = () => {
       ? setMessage("Invalid input. Letters only.")
       : setMessage("Invalid input. Special characters not allowed.");
 
-    return input.value.match(re) === null ? true : false;
+    let value = input.value.match(re) === null ? true : false;
+
+    return value;
   };
 
   /**
@@ -94,8 +96,8 @@ const FormMockUp = () => {
     if (formValid) {
       emailjs
         .sendForm(
-          "service_grci4gd",
-          "template_yrewygy",
+          "service_jd9247j",
+          "template_aceytbb",
           form.current,
           "_dJAITq5fj7zi-rp-"
         )
@@ -118,44 +120,52 @@ const FormMockUp = () => {
   };
 
   return (
-    <Form ref={form} id="contact-form" onSubmit={sendEmail}>
+    <form ref={form} id="contact-form" onSubmit={sendEmail}>
       <h1>We'd love to hear from you.</h1>
-      <Row>
-        <Col>
+      <div className="d-flex flex-row p-2">
+        <div className="col">
           <label>First Name:</label>
-          <Form.Control
+          <input
             onChange={frontEndValidate}
             className="contact-form-input"
             name="first-name"
             type="text"
           />
-        </Col>
-        <Col>
+        </div>
+        <div className="col">
           <label>Last Name:</label>
-          <Form.Control
+          <input
             onChange={frontEndValidate}
-            className="contact-form-input"
+            className="contact-form-input "
             name="last-name"
             type="text"
           />
-        </Col>
-      </Row>
-      <Row>
-        <label>Company Name:</label>
-        <Form.Control
-          onChange={frontEndValidate}
-          className="contact-form-input"
-          name="company-name"
-        />
-      </Row>
-      <Row>
-        <label>Email:</label>
-        <Form.Control
-          className="contact-form-input"
-          name="email"
-          type="email"
-        />
-      </Row>
+        </div>
+      </div>
+      <div className="d-flex flex-row p-2 align-items-center justify-content-around">
+        <div className="col">
+          <label>Company Name:</label>
+          <input
+            onChange={frontEndValidate}
+            className="contact-form-input"
+            name="company-name"
+          />
+        </div>
+        <div className="col">
+          <label>Email:</label>
+          <input
+            className="contact-form-input"
+            name="user_email"
+            type="email"
+          />
+        </div>
+      </div>
+      <div className="d-flex flex-row p-2 align-items-center justify-content-around">
+        <div className="col">
+          <label>Message:</label>
+          <textarea name="message" type="text" className="contact-form-input" />
+        </div>
+      </div>
       <Button type="submit" className="button">
         <FaPaperPlane style={{}} /> <span>Send</span>
       </Button>
@@ -173,7 +183,7 @@ const FormMockUp = () => {
       >
         {message}
       </div>
-    </Form>
+    </form>
   );
 };
 

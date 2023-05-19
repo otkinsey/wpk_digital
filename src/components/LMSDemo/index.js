@@ -51,6 +51,18 @@ const LMSDemo = (props) => {
     }, 1100);
   };
 
+  const resetDemo = () => {
+    if (childAudioFile.current) {
+      stopAudioFile(childAudioFile.current);
+      props.setLMSActive(false);
+      setDemoPlaying(false);
+    }
+
+    setTimeout(() => {
+      setDemoContentVar("default");
+    }, 1100);
+  };
+
   return (
     <div
       id="demo"
@@ -77,6 +89,7 @@ const LMSDemo = (props) => {
                   <DemoNav
                     setDemoContentVar={setDemoContentVar}
                     endDemo={endDemo}
+                    reset={resetDemo}
                     setDemoPlaying={setDemoPlaying}
                     demoPlaying={demoPlaying}
                     childAudioFile={childAudioFile}

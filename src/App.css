@@ -50,6 +50,8 @@ label {
 }
 button:not(#button_header, #button_hero) svg {
   pointer-events: none;
+}
+button:not(#button_hero) svg {
   margin-right: 7px;
 }
 button.btn-primary,
@@ -74,7 +76,7 @@ button.btn-primary,
 
 #elearning-end-demo:hover,
 button.btn-primary:hover {
-  background-color: #1dd2cd;
+  background-color: #eb6969;
 }
 
 .btn-primary {
@@ -306,16 +308,16 @@ no css currently required for this transition
 }
 
 #rotating-graphic #elipse-2 {
-  transform: rotate(-20deg);
+  transform: rotate(-26deg);
   transform-origin: 43.47% 43.45%;
 }
 #rotating-graphic.active.rotate #elipse-2 {
-  animation: spin 50s linear infinite;
+  animation: spin 25s linear infinite;
   transform-origin: 43.47% 43.45%;
 }
 
 #rotating-graphic.active.rotate #arc-1 {
-  animation: spin 40s linear infinite;
+  animation: spin 12s linear infinite;
   transform-origin: 43.47% 43.45%;
 }
 #rotating-graphic #elipse-3 {
@@ -339,7 +341,7 @@ no css currently required for this transition
 }
 
 #rotating-graphic.active.rotate #elipse-4 {
-  animation: spin 24s linear infinite;
+  animation: spin 12s linear infinite;
   transform: rotate(-61deg);
   transform-origin: 43.47% 43.45%;
 }
@@ -351,17 +353,26 @@ no css currently required for this transition
 }
 
 #rotating-graphic.active.rotate #elipse-5 .st4 {
-  animation: reverse-spin 30s linear infinite;
+  animation: reverse-spin 15s linear infinite;
   transform-origin: 50% 50%;
   transform-origin: 43.47% 43.45%;
 }
 
 @keyframes reverse-spin {
+  0% {
+    -webkit-transform: rotate(-26deg);
+    transform: rotate(-26deg);
+  }
   100% {
     -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
   }
 }
 @keyframes spin {
+  0% {
+    -webkit-transform: rotate(-26deg);
+    transform: rotate(-26deg);
+  }
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
@@ -473,6 +484,12 @@ form .col:last-child {
   margin-right: 0;
 }
 
+form > div > div {
+  width: 100%;
+}
+form > div > .col:first-child {
+  margin: 0;
+}
 form h1 {
   margin-bottom: 2rem;
   font-size: 2.75rem;
@@ -482,6 +499,18 @@ form h1 {
 form input,
 form input.form-control {
   height: 49px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+}
+form textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 150px;
+  resize: none;
+  padding: 20px;
 }
 footer {
   border-top: 1px solid #ddd;
@@ -530,7 +559,7 @@ header li {
   transition: color 0.3s;
 }
 header li:hover {
-  color: #0cfdf7;
+  color: #fa9191;
 }
 
 header svg {

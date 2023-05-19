@@ -96,9 +96,9 @@ const Play = (props) => {
     path1.classList.add("dendogram-path");
     path2.classList.add("dendogram-path");
     path3.classList.add("dendogram-path");
-    path1.setAttribute("d", `M130 257 L 230 257 L 230 57 L 380 57`);
-    path2.setAttribute("d", `M130 263 L 130 263 L 380 263`);
-    path3.setAttribute("d", `M130 269 L 230 269 L 230 469 L 380 469`);
+    path1.setAttribute("d", `M150 257 L 250 257 L 250 57 L 380 57`);
+    path2.setAttribute("d", `M150 263 L 150 263 L 400 263`);
+    path3.setAttribute("d", `M150 269 L 250 269 L 250 469 L 380 469`);
 
     /** 8. Create text nodes for usecase categories */
     let usecaseCoords = [];
@@ -125,13 +125,15 @@ const Play = (props) => {
         const uc = document.querySelector(
           `#elearning-demo-content #usecase-${usecaseIndex + 1}`
         );
-        uc.classList.add("active");
-        uc.setAttribute(
-          "style",
-          ` transform: translate(${usecaseCoords[usecaseIndex][0] + 180}px, ${
-            usecaseCoords[usecaseIndex][1] - 258
-          }px);`
-        );
+        if (uc) {
+          uc.classList.add("active");
+          uc.setAttribute(
+            "style",
+            ` transform: translate(${usecaseCoords[usecaseIndex][0] + 180}px, ${
+              usecaseCoords[usecaseIndex][1] - 258
+            }px);`
+          );
+        }
       });
       Array.from(document.getElementsByClassName("dendogram-path")).forEach(
         (item, index) => {

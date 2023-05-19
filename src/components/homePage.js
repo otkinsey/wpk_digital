@@ -1,8 +1,7 @@
 import React from "react";
 import { BsChevronUp } from "react-icons/bs";
 import { FaPaperPlane } from "react-icons/fa";
-
-import DemoLMS from "./LMSDemo";
+import { default as DemoLMS } from "./LMSDemo/index";
 import ContactForm from "./contactForm";
 
 const HomePage = (props) => {

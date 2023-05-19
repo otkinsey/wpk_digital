@@ -45,7 +45,7 @@ const Default = (props) => {
               playAudioFile(audioElement);
             } else {
               audioIndex = 0;
-              setTimeout(props.endDemo(), 700);
+              setTimeout(props.resetDemo(), 700);
               audioElement.current.removeEventListener("ended", playNextAudio);
             }
           }
@@ -58,7 +58,7 @@ const Default = (props) => {
       >
         {props.demoPlaying ? <FaRegStopCircle /> : <FaRegPlayCircle />}
         <span className="demo-option">play presentation</span>
-        <audio id="demoAudio" src="audio.m4a" ref={audioElement}></audio>
+        <audio id="demoAudio" src="audio.m4a" ref={audioElement} muted></audio>
       </li>
       <li onClick={props.setDemoContentVar} id="exam">
         <MdComputer />
