@@ -352,7 +352,7 @@ no css currently required for this transition
   transform-origin: 43.47% 43.45%;
 }
 
-#rotating-graphic.active.rotate #elipse-5 .st4 {
+#rotating-graphic.active.rotate #elipse-5 .cls-4 {
   animation: reverse-spin 15s linear infinite;
   transform-origin: 50% 50%;
   transform-origin: 43.47% 43.45%;
@@ -360,8 +360,8 @@ no css currently required for this transition
 
 @keyframes reverse-spin {
   0% {
-    -webkit-transform: rotate(-26deg);
-    transform: rotate(-26deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(-360deg);
@@ -370,8 +370,8 @@ no css currently required for this transition
 }
 @keyframes spin {
   0% {
-    -webkit-transform: rotate(-26deg);
-    transform: rotate(-26deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(360deg);
