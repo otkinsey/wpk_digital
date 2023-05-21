@@ -173,7 +173,8 @@ const Play = (props) => {
       setTimeout(() => {
         graphic.classList.add("rotate");
       }, 0);
-    }, 40000);
+      //
+    }, 0);
 
     presentationSVG.append(path1, path2, path3, ...usecases);
   };

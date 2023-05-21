@@ -303,59 +303,59 @@ no css currently required for this transition
 
 /* Elearning: animation 10 - rotational graphic */
 #rotating-graphic.active.rotate #elipse-1 {
-  animation: spin 68s linear infinite;
-  transform-origin: 43.47% 43.45%;
+  animation: spin 60s linear infinite;
+  transform-origin: 50% 50%;
 }
 
 #rotating-graphic #elipse-2 {
   transform: rotate(-26deg);
-  transform-origin: 43.47% 43.45%;
+  transform-origin: 50% 50%;
 }
 #rotating-graphic.active.rotate #elipse-2 {
   animation: spin 25s linear infinite;
-  transform-origin: 43.47% 43.45%;
+  transform-origin: 50% 50%;
 }
 
 #rotating-graphic.active.rotate #arc-1 {
   animation: spin 12s linear infinite;
-  transform-origin: 43.47% 43.45%;
+  transform-origin: 50% 50%;
 }
 #rotating-graphic #elipse-3 {
   transform: rotate(-26deg);
-  transform-origin: 43.47% 43.45%;
+  transform-origin: 50% 50%;
 }
 
 #rotating-graphic.active.rotate #elipse-3 {
   animation: spin 38s linear infinite;
   transform: rotate(-26deg);
-  transform-origin: 43.47% 43.45%;
+  transform-origin: 50% 50%;
 }
 
 #rotating-graphic.active.rotate #arc-2 {
   animation: spin 0s linear infinite;
-  transform-origin: 43.47% 43.45%;
+  transform-origin: 50% 50%;
 }
 #rotating-graphic #elipse-4 {
   transform: rotate(-61deg);
-  transform-origin: 43.47% 43.45%;
+  transform-origin: 50% 50%;
 }
 
 #rotating-graphic.active.rotate #elipse-4 {
   animation: spin 12s linear infinite;
   transform: rotate(-61deg);
-  transform-origin: 43.47% 43.45%;
+  transform-origin: 50% 50%;
 }
 
 #rotating-graphic.active.rotate #arc-3 {
   animation: spin 0s linear infinite;
   transform-origin: 50% 50%;
-  transform-origin: 43.47% 43.45%;
+  transform-origin: 50% 50%;
 }
 
 #rotating-graphic.active.rotate #elipse-5 .cls-4 {
   animation: reverse-spin 15s linear infinite;
   transform-origin: 50% 50%;
-  transform-origin: 43.47% 43.45%;
+  transform-origin: 50% 50%;
 }
 
 @keyframes reverse-spin {
@@ -795,6 +795,110 @@ header ul {
     text-align: center;
   }
 }
+
+/* Concentric SVG styles */
+/* #elearning-demo-content #rotating-graphic g#elipse-1 text,
+#elearning-demo-content #rotating-graphic g#elipse-2 text,
+#elearning-demo-content #rotating-graphic g#elipse-3 text,
+#elearning-demo-content #rotating-graphic g#elipse-4 text {
+  font-size: 13px;
+  fill: rgb(255 255 255 /70%);
+}
+#arc-1,
+#arc-2,
+#arc-3 {
+  fill: rgb(255 255 255 / 10%);
+}
+.cls-1 {
+  stroke-dasharray: 0 0 2 5.99;
+}
+
+.cls-1,
+.cls-2,
+.cls-3,
+.cls-4,
+.cls-5,
+.cls-6,
+.cls-7 {
+  stroke-miterlimit: 10;
+}
+
+.cls-1,
+.cls-2,
+.cls-3,
+.cls-5,
+.cls-7 {
+  stroke: rgb(255 255 255 / 20%);
+}
+
+.cls-1,
+.cls-3,
+.cls-4,
+.cls-5,
+.cls-7 {
+  fill: none;
+}
+.cls-8 {
+  letter-spacing: 0.1em;
+}
+
+.cls-9 {
+  letter-spacing: 0.1em;
+}
+
+.cls-3 {
+  stroke-dasharray: 0 0 2 6;
+}
+
+.cls-4,
+.cls-5 {
+  stroke-dasharray: 0 0 2 6;
+}
+
+.cls-4,
+.cls-6 {
+  stroke: rgb(255 255 255 / 50%);
+}
+
+.cls-6 {
+  fill: #fff;
+  font-size: 20px;
+  stroke-width: 0.5px;
+}
+
+.cls-6,
+.cls-10,
+.cls-11 {
+  font-family: arial, san-serif;
+  fill: white;
+}
+
+.cls-10 {
+  font-size: 15px;
+}
+
+.cls-12 {
+  letter-spacing: 0em;
+}
+
+.cls-11 {
+  font-size: 15px;
+}
+#rotating-graphic g text tspan {
+  letter-spacing: 1px;
+}
+#outer-circle-group,
+#inner-circle-group {
+  fill: rgb(255 255 255 / 10%);
+}
+#elipse-5 circle:first-child {
+  fill: rgb(0 0 0 / 20%);
+
+  z-index: 0;
+}
+#elipse-5 text {
+  z-index: 1;
+} */
 
 @keyframes App-logo-spin {
   from {

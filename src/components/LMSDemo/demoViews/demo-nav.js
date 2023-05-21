@@ -58,7 +58,7 @@ const Default = (props) => {
       >
         {props.demoPlaying ? <FaRegStopCircle /> : <FaRegPlayCircle />}
         <span className="demo-option">play presentation</span>
-        <audio id="demoAudio" src="audio.m4a" ref={audioElement} muted></audio>
+        <audio id="demoAudio" src="audio.m4a" ref={audioElement}></audio>
       </li>
       <li onClick={props.setDemoContentVar} id="exam">
         <MdComputer />
