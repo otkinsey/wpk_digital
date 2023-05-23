@@ -28,7 +28,7 @@ const Default = (props) => {
           props.setDemoContentVar(e);
 
           props.demoPlaying
-            ? stopAudioFile(audioElement)
+            ? props.resetDemo(audioElement)
             : playAudioFile(audioElement, 0);
 
           props.setDemoPlaying(!props.demoPlaying);

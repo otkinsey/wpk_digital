@@ -48,7 +48,7 @@ const Play = (props) => {
     demoLogo.classList.add("active");
 
     /** 3. Fade logo and subtext */
-    setTimeout(() => {
+    const timeout1 = setTimeout(() => {
       demoLogo.classList = "";
       text1.classList = "";
       subtext2.classList = "";
@@ -120,7 +120,7 @@ const Play = (props) => {
       return usecase;
     });
 
-    setTimeout(() => {
+    const timeout2 = setTimeout(() => {
       dendogram.forEach((d, usecaseIndex) => {
         const uc = document.querySelector(
           `#elearning-demo-content #usecase-${usecaseIndex + 1}`
@@ -143,7 +143,7 @@ const Play = (props) => {
     }, 27000);
 
     /** 9. Remove dendogram */
-    setTimeout(() => {
+    const timeout3 = setTimeout(() => {
       Array.from(document.getElementsByClassName("dendogram-path")).forEach(
         (item, index) => {
           item.classList.remove("active");
@@ -161,12 +161,12 @@ const Play = (props) => {
       });
     }, 40000);
 
-    setTimeout(() => {
+    const timeout4 = setTimeout(() => {
       presentationSVG.classList.remove("active");
     }, 38000);
 
     /** 10.Display rotating graphic */
-    setTimeout(() => {
+    const timeout5 = setTimeout(() => {
       presentationSVG.classList.add("removed");
       const graphic = document.getElementById("rotating-graphic");
       graphic.classList.add("active");
@@ -184,6 +184,7 @@ const Play = (props) => {
    * in the useEffect call
    */
   useEffect(() => {
+    const timeoutIds = [];
     const svg = document.getElementById("demo-svg");
     text1 = document.getElementById("text1");
     subtext1 = document.getElementById("subtext1");
@@ -206,12 +207,18 @@ const Play = (props) => {
 
     text1.classList.add("active");
     if (props.demoPlaying) {
-      setTimeout(() => {
-        animatePresentation(svgWidth);
-      }, 0);
+      animatePresentation(svgWidth);
     }
   }, []);
   /* end of useEffect ******************************************/
+
+  useEffect(() => {
+    let id = window.setTimeout(() => {}, 0);
+    while (id--) {
+      clearTimeout(id);
+      console.log("play.js timeout id: ", id);
+    }
+  }, [props.demoPlaying]);
 
   return (
     <div
@@ -240,7 +247,7 @@ const Play = (props) => {
               <Text
                 x={0}
                 y={75}
-                text={"Welcome."}
+                text={"Welcome"}
                 size={"40px"}
                 strokeWidth="1"
                 strokeColor="white"

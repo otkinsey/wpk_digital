@@ -218,6 +218,7 @@ button.btn-default {
 #elearning-demo-content #demo-svg {
   opacity: 0;
   transition: opacity 1s;
+  font-family: arial, san-serif;
 }
 
 #elearning-demo-content #rotating-graphic g#elipse-5 text {
