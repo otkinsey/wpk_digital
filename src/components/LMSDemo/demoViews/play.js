@@ -174,7 +174,7 @@ const Play = (props) => {
         graphic.classList.add("rotate");
       }, 0);
       //
-    }, 0);
+    }, 40000);
 
     presentationSVG.append(path1, path2, path3, ...usecases);
   };

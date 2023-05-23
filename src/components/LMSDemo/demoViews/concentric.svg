@@ -45,10 +45,8 @@
   <g id="elipse-5">
     <circle cx="188.37" cy="188.37" r="57.59"/>
     <g class="cls-8">
-      <text class="cls-6" transform="translate(170.31 176.86)"><tspan x="0" y="0">Core</tspan></text>
-      <!-- <text class="cls-4" transform="translate(170.31 176.86)"><tspan x="0" y="0">Core</tspan></text> -->
-      <text class="cls-6" transform="translate(161.65 197.65)"><tspan x="0" y="0">Mission</tspan></text>
-      <!-- <text class="cls-4" transform="translate(161.65 197.65)"><tspan x="0" y="0">Mission</tspan></text> -->
+      <text class="cls-6" transform="translate(173.31 178.86)"><tspan x="0" y="0">Core</tspan></text>
+      <text class="cls-6" transform="translate(166.65 195.65)"><tspan x="0" y="0">Mission</tspan></text>
     </g>
     <circle class="cls-2" cx="188.86" cy="188.11" r="54.13"/>
   </g>
@@ -171,8 +169,8 @@
     </g>
     <circle class="cls-1" cx="187.51" cy="187.51" r="187.07"/>
   </g>
-  <circle class="" cx="187.5" cy="187.5" r="161" fill="none" stroke-width=1 stroke="white"></circle>
-  <circle class="" cx="187.97" cy="187.47" r="117" fill="none" stroke-width=1 stroke="white"></circle>
+  <circle class="" cx="187.5" cy="187.5" r="161" fill="none" stroke-width=.5 stroke="white"></circle>
+  <circle class="" cx="187.97" cy="187.47" r="117" fill="none" stroke-width=.5 stroke="white"></circle>
   <circle class="" cx="187.5" cy="187.5" r="70" fill="none" stroke-width=.5 stroke="white"></circle>
   <path id="arc-1" class="cls-5" d="m43.7,188.15c0-81.68,63-144.52,144.68-144.52s144.78,62.29,144.78,143.96l17.25.73c0-89.48-72.54-162.02-162.02-162.02S26.36,98.83,26.36,188.31l17.34-.16Z"/>
 </svg>

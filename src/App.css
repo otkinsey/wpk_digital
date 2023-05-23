@@ -310,6 +310,23 @@ no css currently required for this transition
 }
 
 /* Elearning: animation 10 - rotational graphic */
+#rotating-graphic [id*="arc"] {
+  opacity: 0.05;
+}
+#rotating-graphic #presentation_interface,
+#rotating-graphic #content_management,
+#rotating-graphic #organization_management {
+  opacity: 0.4;
+}
+#rotating-graphic #presentation_interface text,
+#rotating-graphic #content_management text,
+#rotating-graphic #organization_management text {
+  padding: 1px;
+}
+#rotating-graphic circle,
+#rotating-graphic [id*="circle"] {
+  opacity: 0.2;
+}
 #rotating-graphic.active.rotate #elipse-1 {
   animation: spin 60s linear infinite;
   transform-origin: 50% 50%;
@@ -325,7 +342,7 @@ no css currently required for this transition
 }
 
 #rotating-graphic.active.rotate #arc-1 {
-  animation: spin 12s linear infinite;
+  animation: spin 25s linear infinite;
   transform-origin: 50% 50%;
 }
 #rotating-graphic #elipse-3 {
@@ -334,7 +351,7 @@ no css currently required for this transition
 }
 
 #rotating-graphic.active.rotate #elipse-3 {
-  animation: spin 38s linear infinite;
+  animation: spin 15s linear infinite;
   transform: rotate(-26deg);
   transform-origin: 50% 50%;
 }
@@ -349,7 +366,7 @@ no css currently required for this transition
 }
 
 #rotating-graphic.active.rotate #elipse-4 {
-  animation: spin 12s linear infinite;
+  animation: spin 22s linear infinite;
   transform: rotate(-61deg);
   transform-origin: 50% 50%;
 }
@@ -360,10 +377,12 @@ no css currently required for this transition
   transform-origin: 50% 50%;
 }
 
-#rotating-graphic.active.rotate #elipse-5 .cls-4 {
-  animation: reverse-spin 15s linear infinite;
-  transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
+#rotating-graphic.active.rotate #elipse-5 circle {
+  opacity: 0.3;
+}
+#rotating-graphic.active.rotate #elipse-5 .cls-2 {
+  animation: spin 10s linear infinite;
+  transform-origin: 50.2% 50.13%;
 }
 
 @keyframes reverse-spin {
