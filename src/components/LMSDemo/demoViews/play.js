@@ -212,14 +212,6 @@ const Play = (props) => {
   }, []);
   /* end of useEffect ******************************************/
 
-  useEffect(() => {
-    let id = window.setTimeout(() => {}, 0);
-    while (id--) {
-      clearTimeout(id);
-      console.log("play.js timeout id: ", id);
-    }
-  }, [props.demoPlaying]);
-
   return (
     <div
       style={{

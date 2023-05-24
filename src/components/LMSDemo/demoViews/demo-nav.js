@@ -19,6 +19,16 @@ const Default = (props) => {
       ".demo-interface"
     ).className = `row demo-interface ${contentVar}`;
   }, [props.demoContentVar]);
+
+  useEffect(() => {
+    if (props.demoPlaying === false) {
+      let id = window.setTimeout(() => {}, 0);
+      while (id--) {
+        clearTimeout(id);
+        console.log("play.js timeout id: ", id);
+      }
+    }
+  }, [props.demoPlaying]);
   return (
     <ul className="demo-options">
       <li
