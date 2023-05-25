@@ -9,27 +9,24 @@ const Question2 = (props) => {
         <li className="option">
           <div
             className="radial-click"
-            onClick={() => {
-              props.saveAnswer("question1", "a");
-            }}
+            data-question="question2"
+            data-answer="true"
           ></div>
           <label for="option-1">A. Yes! Very helpful.</label>
         </li>
         <li className="option">
           <div
             className="radial-click"
-            onClick={() => {
-              props.saveAnswer("question1", "b");
-            }}
+            data-question="question2"
+            data-answer="true"
           ></div>
           <label for="option-2">B. Sort of helpful.</label>
         </li>
         <li className="option">
           <div
             className="radial-click"
-            onClick={() => {
-              props.saveAnswer("question1", "c");
-            }}
+            data-question="question2"
+            data-answer="true"
           ></div>
           <label for="option-3">C. Not helpful.</label>
         </li>

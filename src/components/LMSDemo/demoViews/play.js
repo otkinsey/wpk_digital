@@ -228,12 +228,7 @@ const Play = (props) => {
           <LogoWhite style={{ fill: "white" }} />
         </div>
         <div>
-          <svg
-            id="demo-svg"
-            ref={demoSvg}
-            className="active"
-            preserveAspectoRatio="xMinYmin meet"
-          >
+          <svg id="demo-svg" ref={demoSvg} className="active">
             <g style={{ fill: "white" }}>
               {/* TODO: replace with a data object that instatiates 2 Text components  */}
               <Text

@@ -8,15 +8,19 @@ const Exam = () => {
   const [correct, setCorrect] = useState(null);
 
   const incrementIndex = () => {
-    return questionIndex >= 1 ? 1 : setQuestionIndex(questionIndex + 1);
+    let value = questionIndex >= 1 ? 1 : setQuestionIndex(questionIndex + 1);
+    setCorrect(null);
+    return value;
   };
   const decrementIndex = () => {
-    return questionIndex <= 0 ? 0 : setQuestionIndex(questionIndex - 1);
+    let value = questionIndex <= 0 ? 0 : setQuestionIndex(questionIndex - 1);
+    setCorrect(null);
+    return value;
   };
 
   let CurrentQuestion = () => selectQuestion(questionIndex);
 
-  const correctAnswers = ["a", "a"];
+  const correctAnswers = ["a", "true"];
 
   const questions = ["question1", "question2"];
 
@@ -24,24 +28,38 @@ const Exam = () => {
     localStorage.setItem(question, value);
   };
 
+  const assessmentMessage =
+    correct === true
+      ? "Congratulations! You have passed."
+      : "Sorry. Please review your answers.";
+
   const processAnswers = () => {
     const submittedAnswers = questions.map((q) => localStorage.getItem(q));
 
-    const comparedAnswers = submittedAnswers.map(
-      (answer) =>
-        // correctAnswers.includes(answer)
-        true
+    const comparedAnswers = submittedAnswers.map((answer) =>
+      correctAnswers.includes(answer)
     );
-    saveAnswer(
-      questions[questionIndex],
-      localStorage.getItem(`question${questionIndex}`)
-    );
-    if (questionIndex < 1) {
+
+    /**
+     * Otherwise, if user is on last question, ie. question index
+     * is questions.length-1, do the following:
+     * 1. compare subitted questions to correctAnswers
+     * 2. display the appropriate message based on result
+     */
+    if (questionIndex === 1) {
+      const assessment = submittedAnswers.map((a) =>
+        correctAnswers.includes(a)
+      );
+      assessment.includes(false) ? setCorrect(false) : setCorrect(true);
+      return correct;
+    } else if (questionIndex < questions.length) {
+      /**
+       * If user is not on last question, increment question index
+       * and display the next question
+       */
       incrementIndex();
-      return null;
-    } else {
-      setCorrect(true);
-      return true;
+      setCorrect(null);
+      return correct;
     }
   };
 
@@ -58,6 +76,8 @@ const Exam = () => {
     return output;
   };
 
+  useEffect(() => localStorage.clear(), []);
+
   useEffect(() => {
     const radialButtons = Array.from(
       document.getElementsByClassName("radial-click")
@@ -66,13 +86,18 @@ const Exam = () => {
     const processClick = (e) => {
       radialButtons.forEach((button) => button.classList.remove("active"));
       e.target.classList.add("active");
+
+      const question = e.target.getAttribute("data-question");
+      const answer = e.target.getAttribute("data-answer");
+
+      saveAnswer(question, answer);
     };
 
     radialButtons.forEach((button) => {
       button.removeEventListener("click", processClick);
       button.addEventListener("click", processClick);
     });
-  }, [questionIndex]);
+  }, [questionIndex, correct]);
 
   return (
     <div id="elearning-exam">
@@ -80,12 +105,7 @@ const Exam = () => {
         <h4>WPK Digital Solutions Elearning Demo Exam</h4>
         <h1>Review Questions</h1>
         <hr />
-        {correct === true && questionIndex >= 1 ? (
-          <h3>Congratulations! You have passed.</h3>
-        ) : (
-          <CurrentQuestion />
-        )}
-
+        {correct === null ? <CurrentQuestion /> : <h3>{assessmentMessage}</h3>}
         <hr />
         <div className="exam-nav d-flex flex-row justify-content-between align-items-center">
           <span className="exam-nav" onClick={decrementIndex}>

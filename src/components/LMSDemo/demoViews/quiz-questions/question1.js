@@ -8,9 +8,8 @@ const Question1 = (props) => {
         <li className="option">
           <div
             className="radial-click"
-            onClick={() => {
-              props.saveAnswer("question1", "a");
-            }}
+            data-question="question1"
+            data-answer="a"
           ></div>
           <label for="option-1">
             A. employee prescreening, on the job training, compliance training
@@ -19,9 +18,8 @@ const Question1 = (props) => {
         <li className="option">
           <div
             className="radial-click"
-            onClick={() => {
-              props.saveAnswer("question1", "b");
-            }}
+            data-question="question1"
+            data-answer="b"
           ></div>
           <label for="option-2">
             B. tax preparation, estate planning, legal service
@@ -30,9 +28,8 @@ const Question1 = (props) => {
         <li className="option">
           <div
             className="radial-click"
-            onClick={() => {
-              props.saveAnswer("question1", "c");
-            }}
+            data-question="question1"
+            data-answer="c"
           ></div>
           <label for="option-3">
             C. drywall installation, window installation, roofing
@@ -41,9 +38,8 @@ const Question1 = (props) => {
         <li className="option">
           <div
             className="radial-click"
-            onClick={() => {
-              props.saveAnswer("question1", "d");
-            }}
+            data-question="question1"
+            data-answer="d"
           ></div>
           <label for="option-4">D. All of the above</label>
         </li>
