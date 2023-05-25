@@ -120,7 +120,8 @@ button.btn-default {
   transition: background-color 0.3s;
 }
 .exam #elearning-end-demo,
-.exam .btn-primary {
+.exam .btn-primary,
+.exam .btn-primary:focus {
   border: 1px solid #68bfba;
   background-color: rgb(255 255 255 / 20%);
   color: #68bfba;
@@ -128,6 +129,8 @@ button.btn-default {
 }
 .exam .btn-primary:hover {
   border: 1px solid #68bfba;
+  background-color: #68bfba;
+  color: white;
 }
 #elearning-demo-content #elearning-exam li {
   background-color: transparent;

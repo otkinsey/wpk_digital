@@ -7,20 +7,31 @@ const Question2 = (props) => {
       </p>
       <ul className="answer-set">
         <li className="option">
-          <div className="radial-click"></div>
-          <label for="option-1">A. option-1</label>
+          <div
+            className="radial-click"
+            onClick={() => {
+              props.saveAnswer("question1", "a");
+            }}
+          ></div>
+          <label for="option-1">A. Yes! Very helpful.</label>
         </li>
         <li className="option">
-          <div className="radial-click"></div>
-          <label for="option-2">B. option-2</label>
+          <div
+            className="radial-click"
+            onClick={() => {
+              props.saveAnswer("question1", "b");
+            }}
+          ></div>
+          <label for="option-2">B. Sort of helpful.</label>
         </li>
         <li className="option">
-          <div className="radial-click"></div>
-          <label for="option-3">C. option-3</label>
-        </li>
-        <li className="option">
-          <div className="radial-click"></div>
-          <label for="option-4">D. option-4</label>
+          <div
+            className="radial-click"
+            onClick={() => {
+              props.saveAnswer("question1", "c");
+            }}
+          ></div>
+          <label for="option-3">C. Not helpful.</label>
         </li>
       </ul>
     </div>
