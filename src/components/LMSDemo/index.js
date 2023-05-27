@@ -10,7 +10,7 @@ import { stopAudioFile } from "../../utils/helper.js";
 const LMSDemo = (props) => {
   // State variables
   const [demoContentVar, setDemoContentVar] = useState("default");
-  const childAudioFile = useRef(null);
+  const elearningVideo = useRef(null);
 
   const [demoPlaying, setDemoPlaying] = useState(false);
 
@@ -40,8 +40,8 @@ const LMSDemo = (props) => {
   const DemoContent = () => setDemoContent(demoContentVar);
 
   const endDemo = () => {
-    if (childAudioFile.current) {
-      stopAudioFile(childAudioFile.current);
+    if (elearningVideo.current) {
+      stopAudioFile(elearningVideo.current);
       props.setLMSActive(false);
       setDemoPlaying(false);
     }
@@ -53,8 +53,8 @@ const LMSDemo = (props) => {
   };
 
   const resetDemo = () => {
-    if (childAudioFile.current) {
-      stopAudioFile(childAudioFile.current);
+    if (elearningVideo.current) {
+      stopAudioFile(elearningVideo.current);
       setDemoPlaying(false);
     }
 
@@ -92,7 +92,7 @@ const LMSDemo = (props) => {
                     resetDemo={resetDemo}
                     setDemoPlaying={setDemoPlaying}
                     demoPlaying={demoPlaying}
-                    childAudioFile={childAudioFile}
+                    elearningVideo={elearningVideo}
                     demoContentVar={demoContentVar}
                   />
                 </div>

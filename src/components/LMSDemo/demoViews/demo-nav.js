@@ -33,41 +33,12 @@ const Default = (props) => {
     <ul className="demo-options">
       <li
         onClick={(e) => {
-          audioElement.current.setAttribute("src", audioFiles[audioIndex]);
-          /* Display desired view in presentation area */
           props.setDemoContentVar(e);
-
-          props.demoPlaying
-            ? props.resetDemo(audioElement)
-            : playAudioFile(audioElement, 0);
-
-          props.setDemoPlaying(!props.demoPlaying);
-
-          /** Pass audioFile ref to index.js */
-          props.childAudioFile.current = audioElement;
-
-          /** Set next audio to play */
-          function playNextAudio() {
-            audioIndex += 1;
-
-            if (audioIndex < 3) {
-              audioElement.current.setAttribute("src", audioFiles[audioIndex]);
-              playAudioFile(audioElement);
-            } else {
-              audioIndex = 0;
-              setTimeout(props.resetDemo(), 700);
-              audioElement.current.removeEventListener("ended", playNextAudio);
-            }
-          }
-
-          audioElement.current.addEventListener("ended", playNextAudio);
-
-          return;
         }}
         id="play"
       >
         {props.demoPlaying ? <FaRegStopCircle /> : <FaRegPlayCircle />}
-        <span className="demo-option">play presentation</span>
+        <span className="demo-option">Elearning presentation</span>
         <audio id="demoAudio" src="audio.m4a" ref={audioElement}></audio>
       </li>
       <li onClick={props.setDemoContentVar} id="exam">
