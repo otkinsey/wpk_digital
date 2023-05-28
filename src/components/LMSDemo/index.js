@@ -37,9 +37,10 @@ const LMSDemo = (props) => {
 
   const endDemo = () => {
     if (props.elearningVideo.current) {
-      stopAudioFile(props.elearningVideo.current);
-      props.setLMSActive(false);
-      props.setDemoPlaying(false);
+      // stopAudioFile(props.elearningVideo.current);
+      // props.setLMSActive(false);
+      // props.setDemoPlaying(false);
+      props.resetDemo();
     }
 
     props.toggleDemoLMS();

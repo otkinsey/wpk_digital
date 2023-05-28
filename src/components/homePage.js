@@ -46,6 +46,8 @@ const HomePage = (props) => {
                 toggleDemoLMS={props.toggleDemoLMS}
                 demoContentVar={props.demoContentVar}
                 setDemoContentVar={props.setDemoContentVar}
+                resetDemo={props.resetDemo}
+                elearningVideo={props.elearningVideo}
               />
             ) : (
               ""
