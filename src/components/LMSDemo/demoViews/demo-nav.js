@@ -1,4 +1,4 @@
-import { FaRegPlayCircle, FaRegStopCircle, FaEdit } from "react-icons/fa";
+import { FaFilm, FaEdit } from "react-icons/fa";
 import { MdComputer } from "react-icons/md";
 import { useRef, useEffect } from "react";
 import { playAudioFile, stopAudioFile } from "../../../utils/helper.js";
@@ -37,12 +37,12 @@ const Default = (props) => {
         }}
         id="play"
       >
-        {props.demoPlaying ? <FaRegStopCircle /> : <FaRegPlayCircle />}
+        <FaFilm />
         <span className="demo-option">Elearning presentation</span>
         <audio id="demoAudio" src="audio.m4a" ref={audioElement}></audio>
       </li>
       <li onClick={props.setDemoContentVar} id="exam">
-        <MdComputer />
+        <FaEdit />
         <span className="demo-option">Take Quiz</span>
       </li>
       {/* <li onClick={props.setDemoContentVar} id="manage">

@@ -14,6 +14,7 @@ const MobileMenu = (props) => {
             document.body.style.overflow = "scroll";
             if (props.LMSActive) {
               props.scrollTo(event.target.id);
+              props.resetDemo();
             } else {
               props.scrollTo(event.target.id);
             }

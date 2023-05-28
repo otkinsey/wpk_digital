@@ -113,7 +113,7 @@ const Exam = () => {
           </span>
           <div className="">
             <button className="btn btn-primary" onClick={processAnswers}>
-              submit
+              Submit
             </button>
           </div>
           <span className="exam-nav" onClick={incrementIndex}>

@@ -44,6 +44,8 @@ const HomePage = (props) => {
                 LMSActive={props.LMSActive}
                 setLMSActive={props.setLMSActive}
                 toggleDemoLMS={props.toggleDemoLMS}
+                demoContentVar={props.demoContentVar}
+                setDemoContentVar={props.setDemoContentVar}
               />
             ) : (
               ""

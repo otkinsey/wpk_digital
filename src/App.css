@@ -122,14 +122,14 @@ button.btn-default {
 .exam #elearning-end-demo,
 .exam .btn-primary,
 .exam .btn-primary:focus {
-  border: 1px solid #68bfba;
-  background-color: rgb(255 255 255 / 20%);
-  color: #68bfba;
-  transition: color 0.4s;
+  border: 1px solid white;
+  background-color: rgb(255 255 255 / 0%);
+  color: white;
+  transition: color 0.4s, background 0.4s;
 }
 .exam .btn-primary:hover {
-  border: 1px solid #68bfba;
-  background-color: #68bfba;
+  border: 1px solid white;
+  background-color: #2d9ccf;
   color: white;
 }
 #elearning-demo-content #elearning-exam li {
@@ -141,22 +141,28 @@ button.btn-default {
 #elearning-demo-content #elearning-exam li .radial-click {
   padding: 0;
   margin-right: 20px;
-  border: 1px solid rgb(152 151 151);
+  border: 1px solid white;
   height: 16px;
   width: 16px;
   border-radius: 9px;
   cursor: pointer;
 }
 #elearning-demo-content #elearning-exam li .radial-click.active {
-  background-color: #68bfba;
+  background-color: white;
+}
+#elearning-exam hr {
+  background-color: white;
 }
 #elearning-demo-content #elearning-exam {
   position: relative;
-  background-color: white;
+  background-color: #2787b2;
 }
 #elearning-demo-content .exam-nav {
-  color: #67bfba;
+  color: white;
   cursor: pointer;
+}
+#elearning-demo-content .exam-nav .question p {
+  font-weight: bold;
 }
 #elearning-demo-content #elearning-exam::before {
   content: "";
@@ -166,12 +172,14 @@ button.btn-default {
   background-image: url(http://localhost:3000/static/media/elearning-demo-background.5f52857903f650402dcf.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.05;
+  opacity: 0.3;
   transform: scaleX(-1);
   z-index: 0;
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
 }
 #elearning-demo-content #elearning-exam .overlay {
-  color: #777;
+  color: white;
   padding: 50px 40px 40px;
   top: 0;
   background-color: transparent;
@@ -182,12 +190,13 @@ button.btn-default {
 
 #elearning-demo-content #elearning-exam h1 {
   margin: 30px 0;
-  color: #aaa;
+  color: white;
+  font-weight: bold;
 }
 #elearning-demo-content #elearning-exam h4 {
   font-size: 1rem;
   font-weight: bold;
-  color: #61c4c0;
+  color: white;
   margin-bottom: 0;
 }
 #elearning-demo-content #elearning-exam .question {

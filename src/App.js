@@ -6,10 +6,14 @@ import { useState, useRef } from "react";
 import { FaBars } from "react-icons/fa";
 import { ReactComponent as Logo } from "./components/header/logo.svg";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { stopAudioFile } from "./utils/helper.js";
 
 function App() {
   // State variables
   const [active, setActive] = useState("inactive");
+  const elearningVideo = useRef(null);
+  const [demoPlaying, setDemoPlaying] = useState(false);
+  const [demoContentVar, setDemoContentVar] = useState("default");
 
   const scrollTo = (id, menuState = active) => {
     const demoActive = document
@@ -48,6 +52,17 @@ function App() {
     // return
   };
 
+  const resetDemo = () => {
+    if (elearningVideo.current) {
+      stopAudioFile(elearningVideo.current);
+      setDemoPlaying(false);
+    }
+
+    setTimeout(() => {
+      setDemoContentVar("default");
+    }, 1100);
+  };
+
   const toggleMenu = () => {
     active === "inactive" ? setActive("active") : setActive("inactive");
     return active;
@@ -67,6 +82,7 @@ function App() {
           scrollTo={scrollTo}
           active={active}
           LMSActive={LMSActive}
+          resetDemo={resetDemo}
           toggleDemoLMS={toggleDemoLMS}
         ></MainNav>
       </header>
@@ -80,6 +96,11 @@ function App() {
                 LMSActive={LMSActive}
                 setLMSActive={setLMSActive}
                 toggleDemoLMS={toggleDemoLMS}
+                elearningVideo={elearningVideo}
+                demoPlaying={demoPlaying}
+                setDemoPlaying={setDemoPlaying}
+                setDemoContentVar={setDemoContentVar}
+                demoContentVar={demoContentVar}
               />
             }
           />

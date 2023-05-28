@@ -9,10 +9,6 @@ import { stopAudioFile } from "../../utils/helper.js";
 
 const LMSDemo = (props) => {
   // State variables
-  const [demoContentVar, setDemoContentVar] = useState("default");
-  const elearningVideo = useRef(null);
-
-  const [demoPlaying, setDemoPlaying] = useState(false);
 
   const setDemoContent = (e) => {
     let output;
@@ -28,38 +24,27 @@ const LMSDemo = (props) => {
         output = (
           <Play
             LMSActive={props.LMSActive}
-            demoPlaying={demoPlaying}
-            resetDemo={resetDemo}
-            setDemoPlaying={setDemoPlaying}
+            demoPlaying={props.demoPlaying}
+            resetDemo={props.resetDemo}
+            setDemoPlaying={props.setDemoPlaying}
           />
         );
     }
     return output;
   };
 
-  const DemoContent = () => setDemoContent(demoContentVar);
+  const DemoContent = () => setDemoContent(props.demoContentVar);
 
   const endDemo = () => {
-    if (elearningVideo.current) {
-      stopAudioFile(elearningVideo.current);
+    if (props.elearningVideo.current) {
+      stopAudioFile(props.elearningVideo.current);
       props.setLMSActive(false);
-      setDemoPlaying(false);
+      props.setDemoPlaying(false);
     }
 
     props.toggleDemoLMS();
     setTimeout(() => {
-      setDemoContentVar("default");
-    }, 1100);
-  };
-
-  const resetDemo = () => {
-    if (elearningVideo.current) {
-      stopAudioFile(elearningVideo.current);
-      setDemoPlaying(false);
-    }
-
-    setTimeout(() => {
-      setDemoContentVar("default");
+      props.setDemoContentVar("default");
     }, 1100);
   };
 
@@ -87,13 +72,13 @@ const LMSDemo = (props) => {
                 <div>
                   <h2>Elearning Demo Application</h2>
                   <DemoNav
-                    setDemoContentVar={setDemoContentVar}
+                    setDemoContentVar={props.setDemoContentVar}
                     endDemo={endDemo}
-                    resetDemo={resetDemo}
-                    setDemoPlaying={setDemoPlaying}
-                    demoPlaying={demoPlaying}
-                    elearningVideo={elearningVideo}
-                    demoContentVar={demoContentVar}
+                    resetDemo={props.resetDemo}
+                    setDemoPlaying={props.setDemoPlaying}
+                    demoPlaying={props.demoPlaying}
+                    elearningVideo={props.elearningVideo}
+                    demoContentVar={props.demoContentVar}
                   />
                 </div>
               </div>
