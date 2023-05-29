@@ -111,7 +111,7 @@ const Exam = () => {
           <span className="exam-nav" onClick={decrementIndex}>
             <FaArrowLeft /> prev
           </span>
-          <div className="">
+          <div>
             <button className="btn btn-primary" onClick={processAnswers}>
               Submit
             </button>

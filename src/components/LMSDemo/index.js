@@ -1,15 +1,9 @@
-// import { useState } from "react";
-
-import { useState, useRef } from "react";
 import DemoNav from "./demoViews/demo-nav.js";
 import Exam from "./demoViews/exam";
 import Manage from "./demoViews/manage";
 import Play from "./demoViews/play";
-import { stopAudioFile } from "../../utils/helper.js";
 
 const LMSDemo = (props) => {
-  // State variables
-
   const setDemoContent = (e) => {
     let output;
     let switchVar = e === "default" ? "default" : e.target.id;
@@ -37,9 +31,6 @@ const LMSDemo = (props) => {
 
   const endDemo = () => {
     if (props.elearningVideo.current) {
-      // stopAudioFile(props.elearningVideo.current);
-      // props.setLMSActive(false);
-      // props.setDemoPlaying(false);
       props.resetDemo();
     }
 
@@ -85,8 +76,6 @@ const LMSDemo = (props) => {
               </div>
               <div className="col col-9">
                 <DemoContent />
-                {/* selectively render component on button click see the link below for details:  */}
-                {/* https://stackoverflow.com/questions/54188654/how-to-load-a-new-component-on-button-click-in-reactjs  */}
               </div>
             </div>
           </div>

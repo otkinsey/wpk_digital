@@ -1,6 +1,6 @@
 const Question2 = (props) => {
   return (
-    <div class="question" id="Question2">
+    <div className="question" id="Question2">
       <p>
         2. Was the content of this demo helpful in explaining our elearning
         development service?
@@ -12,7 +12,7 @@ const Question2 = (props) => {
             data-question="question2"
             data-answer="true"
           ></div>
-          <label for="option-1">A. Yes! Very helpful.</label>
+          <label htmlFor="option-1">A. Yes! Very helpful.</label>
         </li>
         <li className="option">
           <div
@@ -20,7 +20,7 @@ const Question2 = (props) => {
             data-question="question2"
             data-answer="true"
           ></div>
-          <label for="option-2">B. Sort of helpful.</label>
+          <label htmlFor="option-2">B. Sort of helpful.</label>
         </li>
         <li className="option">
           <div
@@ -28,7 +28,7 @@ const Question2 = (props) => {
             data-question="question2"
             data-answer="true"
           ></div>
-          <label for="option-3">C. Not helpful.</label>
+          <label htmlFor="option-3">C. Not helpful.</label>
         </li>
       </ul>
     </div>
