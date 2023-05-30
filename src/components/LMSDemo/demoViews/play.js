@@ -28,7 +28,7 @@ const Play = (props) => {
 
     return textElement;
   };
-  useEffect(() => (props.elearningVideo.current.currentTime = 5));
+  useEffect(() => (props.elearningVideo.current.currentTime = 4));
 
   return (
     <div
