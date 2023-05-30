@@ -2,24 +2,6 @@ import { useEffect } from "react";
 
 const Play = (props) => {
   // Initialize DOM constants
-  const Text = (opts) => {
-    const textElement = (
-      <text
-        // ref={text1}
-        x={opts.x}
-        y={opts.y}
-        fontSize={opts.size}
-        stroke={opts.strokeColor ? opts.strokeColor : "white"}
-        strokeWidth={opts.strokeWidth ? opts.strokeWidth : "0"}
-        id={`${opts.id}`}
-        style={{ visibility: "hidden" }}
-      >
-        {opts.text}
-      </text>
-    );
-
-    return textElement;
-  };
   useEffect(() => (props.elearningVideo.current.currentTime = 4));
 
   return (
