@@ -21,6 +21,7 @@ const LMSDemo = (props) => {
             demoPlaying={props.demoPlaying}
             resetDemo={props.resetDemo}
             setDemoPlaying={props.setDemoPlaying}
+            elearningVideo={props.elearningVideo}
           />
         );
     }
