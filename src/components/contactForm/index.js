@@ -12,33 +12,32 @@ const FormMockUp = () => {
     [top, setTop] = useState("0px"),
     [left, setLeft] = useState("0px");
   let [formValid, setFormValid] = useState(false);
+  let isValid = false;
   let [width, setWidth] = useState("inherit");
   let [textAlign, setTextAlign] = useState("right");
 
   const validateForm = () => {
+    // let isValid = false;
     const inputs = Array.from(
       document.getElementsByClassName("contact-form-input")
     );
     const formValues = inputs.map((i) => i.value);
-    message === "" && !formValues.includes("")
-      ? setFormValid(true)
-      : setFormValid(false);
+    isValid = message === "" && !formValues.includes("") ? true : false;
 
     // test each input for validity
     const inputsValid = inputs.map((v) => inputValid(v));
     const inputsBlank = formValues.includes("");
 
-    inputsValid.includes(false) || inputsBlank
-      ? setFormValid(false)
-      : setFormValid(true);
+    isValid = inputsValid.includes(false) || inputsBlank ? false : true;
 
     setWidth("100%");
     setTextAlign("center");
     setLeft("0");
-    if (formValid) {
+    if (isValid) {
       setMessage("");
       setDisplay("none");
-    }
+      return true;
+    } else return false;
   };
 
   const inputValid = (input) => {
@@ -92,8 +91,8 @@ const FormMockUp = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    validateForm();
-    if (formValid) {
+    setFormValid(validateForm());
+    if (isValid) {
       emailjs
         .sendForm(
           "service_jd9247j",
