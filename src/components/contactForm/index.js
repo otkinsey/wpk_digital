@@ -11,7 +11,6 @@ const FormMockUp = () => {
     [display, setDisplay] = useState("none"),
     [top, setTop] = useState("0px"),
     [left, setLeft] = useState("0px");
-  let [formValid, setFormValid] = useState(false);
   let isValid = false;
   let [width, setWidth] = useState("inherit");
   let [textAlign, setTextAlign] = useState("right");
@@ -74,11 +73,6 @@ const FormMockUp = () => {
    * @description ensure individual fields have valid inputs when onChange event is fired
    * @param {*} event onChange event from current field
    */
-  const frontEndValidate = (event) => {
-    const errorMsgWidth = 330;
-    const msgMargin = 5;
-    const val = inputValid(event.target) ? "none" : "block";
-  };
 
   const resetContactForm = (e) => {
     const formInputs = document.getElementsByClassName("contact-form-input");
@@ -87,7 +81,7 @@ const FormMockUp = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setFormValid(validateForm());
+    validateForm();
     if (isValid) {
       emailjs
         .sendForm(
@@ -119,31 +113,17 @@ const FormMockUp = () => {
       <div className="d-flex flex-row p-2">
         <div className="col">
           <label>First Name:</label>
-          <input
-            onChange={frontEndValidate}
-            className="contact-form-input"
-            name="first-name"
-            type="text"
-          />
+          <input className="contact-form-input" name="first-name" type="text" />
         </div>
         <div className="col">
           <label>Last Name:</label>
-          <input
-            onChange={frontEndValidate}
-            className="contact-form-input "
-            name="last-name"
-            type="text"
-          />
+          <input className="contact-form-input " name="last-name" type="text" />
         </div>
       </div>
       <div className="d-flex flex-row p-2 align-items-center justify-content-around">
         <div className="col">
           <label>Company Name:</label>
-          <input
-            onChange={frontEndValidate}
-            className="contact-form-input"
-            name="company-name"
-          />
+          <input className="contact-form-input" name="company-name" />
         </div>
         <div className="col">
           <label>Email:</label>
