@@ -1,34 +1,8 @@
-import { useRef, useEffect } from "react";
-import { ReactComponent as LogoWhite } from "../../header/logo_white.svg";
-import { ReactComponent as ConcentricCircle } from "./concentric.svg";
+import { useEffect } from "react";
 
 const Play = (props) => {
-  // DOM refs
-  // const audioElement = useRef(null);
-  const demoSvg = useRef(null);
-
   // Initialize DOM constants
-  let text1, subtext1, subtext2, demoLogo, svgWidth;
-
-  const Text = (opts) => {
-    const textElement = (
-      <text
-        // ref={text1}
-        x={opts.x}
-        y={opts.y}
-        fontSize={opts.size}
-        stroke={opts.strokeColor ? opts.strokeColor : "white"}
-        strokeWidth={opts.strokeWidth ? opts.strokeWidth : "0"}
-        id={`${opts.id}`}
-        style={{ visibility: "hidden" }}
-      >
-        {opts.text}
-      </text>
-    );
-
-    return textElement;
-  };
-  useEffect(() => (props.elearningVideo.current.currentTime = 5));
+  useEffect(() => (props.elearningVideo.current.currentTime = 4));
 
   return (
     <div

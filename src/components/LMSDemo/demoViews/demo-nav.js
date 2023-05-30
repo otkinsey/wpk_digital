@@ -1,15 +1,7 @@
 import { FaFilm, FaEdit } from "react-icons/fa";
-import { MdComputer } from "react-icons/md";
 import { useRef, useEffect } from "react";
-import { playAudioFile, stopAudioFile } from "../../../utils/helper.js";
 const Default = (props) => {
   const audioElement = useRef(null);
-  const audioFiles = [
-    "audio.m4a",
-    "elearning-usecases.m4a",
-    "core-functionality.m4a",
-  ];
-  let audioIndex = 0;
   useEffect(() => {
     const contentVar =
       props.demoContentVar === "default"
@@ -45,14 +37,6 @@ const Default = (props) => {
         <FaEdit />
         <span className="demo-option">Take Quiz</span>
       </li>
-      {/* <li onClick={props.setDemoContentVar} id="manage">
-        <FaEdit />
-        <span className="demo-option">Edit Content</span>
-      </li>
-      <li onClick={props.setDemoContentVar} id="manage">
-        <IoSettingsSharp />
-        <span className="demo-option">Manager Dashboard</span>
-      </li> */}
     </ul>
   );
 };
