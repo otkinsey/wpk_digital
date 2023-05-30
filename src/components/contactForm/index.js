@@ -41,18 +41,33 @@ const FormMockUp = () => {
   };
 
   const inputValid = (input) => {
+    input.style = "";
     const textOnlyFields = ["first-name", "last-name"];
     const re = textOnlyFields.includes(input.name)
       ? /;|@|\+|=|\$|%|\*|&|#|\^|<|>|[0-9]/g
       : /;|\+|=|\$|%|\*|&|#|-|\^|<|>/g;
 
-    textOnlyFields.includes(input.name)
-      ? setMessage("Invalid input. Letters only.")
-      : setMessage("Invalid input. Special characters not allowed.");
-
     let value = input.value.match(re) === null ? true : false;
 
+    value = input.value === "" ? false : true;
+
+    if (!value && input.value === "") {
+      input.style = "border: 1px solid red;";
+      setMessage("This field is required. Please review and resend.");
+    } else if (!value && textOnlyFields.includes(input.name)) {
+      setMessage("Invalid input. Letters only.");
+    } else if (!value && !textOnlyFields.includes(input.name)) {
+      setMessage("Invalid input. Special characters not allowed.");
+    }
+
     return value;
+  };
+
+  const displayMessage = () => {
+    setDisplay("block");
+    setWidth("100%");
+    setTop("53px");
+    setTextAlign("center");
   };
 
   /**
@@ -63,25 +78,6 @@ const FormMockUp = () => {
     const errorMsgWidth = 330;
     const msgMargin = 5;
     const val = inputValid(event.target) ? "none" : "block";
-
-    if (val === "block") {
-      setTextAlign("right");
-      setWidth("initial");
-      setTop(`${event.target.offsetTop - 27}px`);
-      display = setDisplay(val);
-
-      left = setLeft(
-        `${
-          event.target.offsetLeft +
-          event.target.clientWidth -
-          errorMsgWidth -
-          msgMargin
-        }px`
-      );
-      return setFormValid(false);
-    } else {
-      setMessage("");
-    }
   };
 
   const resetContactForm = (e) => {
@@ -102,7 +98,10 @@ const FormMockUp = () => {
         )
         .then(
           (result) => {
-            console.log(`emailJs success confirmation: ${result.text}`);
+            let messageContainer = document.getElementById("response");
+            messageContainer.style.color = "#5fe05f";
+            setMessage("Thank you. Your message has been sent.");
+            displayMessage();
             resetContactForm(e);
           },
           (error) => {
@@ -110,11 +109,7 @@ const FormMockUp = () => {
           }
         );
     } else {
-      setDisplay("block");
-      setWidth("100%");
-      setTop("53px");
-      setTextAlign("center");
-      setMessage("Invalid submission. Please review the form and resubmit");
+      displayMessage();
     }
   };
 
@@ -169,7 +164,7 @@ const FormMockUp = () => {
         <FaPaperPlane style={{}} /> <span>Send</span>
       </Button>
       <div
-        id="error message"
+        id="response"
         style={{
           position: "absolute",
           top: top,
