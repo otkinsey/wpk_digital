@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="rotating-graphic" xmlns="http://www.w3.org/2000/svg" width="375.01" height="375.22" viewBox="0 0 375.01 375.22">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-dasharray: 0 0 0 0 0 0 1.73 5.19;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-miterlimit: 8.66;
+        stroke-width: .87px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke: #fff;
+      }
+
+      .cls-1, .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke-dasharray: 0 0 0 0 0 0 1.73 5.2;
+      }
+
+      .cls-3, .cls-5, .cls-6, .cls-7 {
+        fill: #fff;
+      }
+
+      .cls-6, .cls-4, .cls-8 {
+        isolation: isolate;
+      }
+
+      .cls-4 {
+        stroke-miterlimit: 8.66;
+        stroke-width: .43px;
+      }
+
+      .cls-7 {
+        font-family: arial, san-serif;
+        font-size: 12px;
+      }
+    </style>
+  </defs>
+  <g id="elipse-5">
+    <circle cx="188.37" cy="188.37" r="57.59"/>
+    <g class="cls-8">
+      <text class="cls-6" transform="translate(173.31 178.86)"><tspan x="0" y="0">Core</tspan></text>
+      <text class="cls-6" transform="translate(166.65 195.65)"><tspan x="0" y="0">Mission</tspan></text>
+    </g>
+    <circle class="cls-2" cx="188.86" cy="188.11" r="54.13"/>
+  </g>
+  <g id="elipse-4">
+  <g id="organization_management">
+      <text class="cls-7" transform="translate(128.02 151.37) rotate(-55.1)"><tspan x="0" y="0">O</tspan></text>
+    <text class="cls-7" transform="translate(132.72 144.78) rotate(-50.25)"><tspan x="0" y="0">r</tspan></text>
+    <text class="cls-7" transform="translate(135.03 141.92) rotate(-46.11)"><tspan x="0" y="0">g</tspan></text>
+    <text class="cls-7" transform="translate(139.58 137.2) rotate(-41.14)"><tspan x="0" y="0">a</tspan></text>
+    <text class="cls-7" transform="translate(143.79 133.49) rotate(-36.19)"><tspan x="0" y="0">n</tspan></text>
+    <text class="cls-7" transform="translate(149.1 129.68) rotate(-32.41)"><tspan x="0" y="0">i</tspan></text>
+    <text class="cls-7" transform="translate(151.34 128.22) rotate(-29.25)"><tspan x="0" y="0">z</tspan></text>
+    <text class="cls-7" transform="translate(155.7 125.75) rotate(-24.85)"><tspan x="0" y="0">a</tspan></text>
+    <text class="cls-7" transform="translate(160.79 123.42) rotate(-20.97)"><tspan x="0" y="0">t</tspan></text>
+    <text class="cls-7" transform="translate(164.4 122.05) rotate(-18.25)"><tspan x="0" y="0">i</tspan></text>
+    <text class="cls-7" transform="translate(166.92 121.15) rotate(-14.47)"><tspan x="0" y="0">o</tspan></text>
+    <text class="cls-7" transform="translate(173.14 119.54) rotate(-9.14)"><tspan x="0" y="0">n</tspan></text>
+    <text class="cls-7" transform="translate(179.6 118.56) rotate(-5.46)"><tspan x="0" y="0"> </tspan></text>
+    <text class="cls-7" transform="translate(181.94 118.2) rotate(-.93)"><tspan x="0" y="0">M</tspan></text>
+    <text class="cls-7" transform="translate(191.46 118.17) rotate(5.51)"><tspan x="0" y="0">a</tspan></text>
+    <text class="cls-7" transform="translate(197.06 118.68) rotate(10.49)"><tspan x="0" y="0">n</tspan></text>
+    <text class="cls-7" transform="translate(203.42 119.87) rotate(15.48)"><tspan x="0" y="0">a</tspan></text>
+    <text class="cls-7" transform="translate(208.84 121.34) rotate(20.51)"><tspan x="0" y="0">g</tspan></text>
+    <text class="cls-7" transform="translate(214.96 123.63) rotate(25.62)"><tspan x="0" y="0">e</tspan></text>
+    <text class="cls-7" transform="translate(220.25 126.04) rotate(32.04)"><tspan x="0" y="0">m</tspan></text>
+    <text class="cls-7" transform="translate(228.49 131.31) rotate(38.42)"><tspan x="0" y="0">e</tspan></text>
+    <text class="cls-7" transform="translate(233.08 134.93) rotate(43.46)"><tspan x="0" y="0">n</tspan></text>
+    <text class="cls-7" transform="translate(237.75 139.4) rotate(47.65)"><tspan x="0" y="0">t</tspan></text>
+  </g>
+
+    <path id="arc-3" class="cls-3" d="m127.85,188.15c0-33.07,26.81-59.89,59.89-59.89s59.89,26.81,59.89,59.89m9.81,0c0-38.49-31.2-69.68-69.68-69.68s-69.68,31.2-69.68,69.68"/>
+    <g id="inner-circle-group">
+      <ellipse class="cls-5" cx="171.1" cy="95.14" rx="3.15" ry="3.14"/>
+      <ellipse class="cls-5" cx="210.03" cy="96.04" rx="3.14" ry="3.14"/>
+      <ellipse class="cls-5" cx="243.85" cy="111.48" rx="3.15" ry="3.14"/>
+      <ellipse class="cls-5" cx="271.21" cy="142.45" rx="3.14" ry="3.14"/>
+      <ellipse class="cls-5" cx="282.44" cy="179.74" rx="3.14" ry="3.14"/>
+      <ellipse class="cls-5" cx="278.15" cy="216.53" rx="3.14" ry="3.14"/>
+      <ellipse class="cls-5" cx="255.58" cy="253.81" rx="3.15" ry="3.14"/>
+      <ellipse class="cls-5" cx="224.84" cy="274.15" rx="3.14" ry="3.14"/>
+      <ellipse class="cls-5" cx="188.36" cy="282.87" rx="3.15" ry="3.14"/>
+      <ellipse class="cls-5" cx="147.94" cy="272.4" rx="3.15" ry="3.14"/>
+      <ellipse class="cls-5" cx="116.84" cy="248.8" rx="3.15" ry="3.14"/>
+      <ellipse class="cls-5" cx="98.33" cy="216.54" rx="3.14" ry="3.14"/>
+      <ellipse class="cls-5" cx="94.74" cy="175.46" rx="3.15" ry="3.14"/>
+      <ellipse class="cls-5" cx="107.67" cy="138.72" rx="3.15" ry="3.14"/>
+      <ellipse class="cls-5" cx="132.18" cy="111.19" rx="3.14" ry="3.14"/>
+    </g>
+    <circle class="cls-2" cx="187.72" cy="187.34" r="99.16"/>
+  </g>
+  <g id="elipse-3">
+  <g id="content_management">
+      <text class="cls-7" transform="translate(134.89 82.98) rotate(-25.5)"><tspan x="0" y="0">C</tspan></text>
+    <text class="cls-7" transform="translate(140.96 80.08) rotate(-22.3)"><tspan x="0" y="0">o</tspan></text>
+    <text class="cls-7" transform="translate(146.96 77.62) rotate(-19.11)"><tspan x="0" y="0">n</tspan></text>
+    <text class="cls-7" transform="translate(153.12 75.51) rotate(-16.57)"><tspan x="0" y="0">t</tspan></text>
+    <text class="cls-7" transform="translate(156.78 74.4) rotate(-14.19)"><tspan x="0" y="0">e</tspan></text>
+    <text class="cls-7" transform="translate(162.51 72.93) rotate(-11.14)"><tspan x="0" y="0">n</tspan></text>
+    <text class="cls-7" transform="translate(168.9 71.7) rotate(-8.62)"><tspan x="0" y="0">t</tspan></text>
+    <text class="cls-7" transform="translate(172.79 71.12) rotate(-7.05)"><tspan x="0" y="0"> </tspan></text>
+    <text class="cls-7" transform="translate(175.2 70.73) rotate(-4.15)"><tspan x="0" y="0">M</tspan></text>
+    <text class="cls-7" transform="translate(184.78 70.12) rotate(-.93)"><tspan x="0" y="0">a</tspan></text>
+    <text class="cls-7" transform="translate(190.44 70.04) rotate(2.45)"><tspan x="0" y="0">n</tspan></text>
+    <text class="cls-7" transform="translate(197.02 70.33) rotate(5.41)"><tspan x="0" y="0">a</tspan></text>
+    <text class="cls-7" transform="translate(202.66 70.85) rotate(8.39)"><tspan x="0" y="0">g</tspan></text>
+    <text class="cls-7" transform="translate(209.2 71.82) rotate(11.45)"><tspan x="0" y="0">e</tspan></text>
+    <text class="cls-7" transform="translate(214.98 72.92) rotate(15.31)"><tspan x="0" y="0">m</tspan></text>
+    <text class="cls-7" transform="translate(224.48 75.58) rotate(19.17)"><tspan x="0" y="0">e</tspan></text>
+    <text class="cls-7" transform="translate(230.06 77.51) rotate(22.22)"><tspan x="0" y="0">n</tspan></text>
+    <text class="cls-7" transform="translate(236.11 80.01) rotate(24.77)"><tspan x="0" y="0">t</tspan></text>
+  </g>
+
+    <path id="arc-2" class="cls-3" d="m87.52,187.47c0-55.86,45.29-101.14,101.14-101.14s101.14,45.29,101.14,101.14m16.58,0c0-65-52.69-117.69-117.69-117.69s-117.69,52.69-117.69,117.69"/>
+  </g>
+  <g id="elipse-2">
+  <g id="presentation_interface">
+      <text class="cls-7" transform="translate(134.04 35) rotate(-18.45)"><tspan x="0" y="0">P</tspan></text>
+      <text class="cls-7" transform="translate(139.84 33.08) rotate(-16.71)"><tspan x="0" y="0">r</tspan></text>
+      <text class="cls-7" transform="translate(143.44 31.98) rotate(-15)"><tspan x="0" y="0">e</tspan></text>
+      <text class="cls-7" transform="translate(149.17 30.45) rotate(-13.11)"><tspan x="0" y="0">s</tspan></text>
+      <text class="cls-7" transform="translate(153.74 29.38) rotate(-11.22)"><tspan x="0" y="0">e</tspan></text>
+      <text class="cls-7" transform="translate(159.57 28.21) rotate(-8.99)"><tspan x="0" y="0">n</tspan></text>
+      <text class="cls-7" transform="translate(166.03 27.21) rotate(-7.15)"><tspan x="0" y="0">t</tspan></text>
+      <text class="cls-7" transform="translate(169.9 26.71) rotate(-5.46)"><tspan x="0" y="0">a</tspan></text>
+      <text class="cls-7" transform="translate(175.58 26.18) rotate(-3.77)"><tspan x="0" y="0">t</tspan></text>
+      <text class="cls-7" transform="translate(179.48 25.93) rotate(-2.61)"><tspan x="0" y="0">i</tspan></text>
+      <text class="cls-7" transform="translate(182.24 25.78) rotate(-.99)"><tspan x="0" y="0">o</tspan></text>
+      <text class="cls-7" transform="translate(188.74 25.66) rotate(1.28)"><tspan x="0" y="0">n</tspan></text>
+      <text class="cls-7" transform="translate(195.35 25.84) rotate(2.87)"><tspan x="0" y="0"> </tspan></text>
+      <text class="cls-7" transform="translate(197.84 25.96) rotate(3.8)"><tspan x="0" y="0">I</tspan></text>
+      <text class="cls-7" transform="translate(200.77 26.13) rotate(5.49)"><tspan x="0" y="0">n</tspan></text>
+      <text class="cls-7" transform="translate(207.3 26.78) rotate(7.33)"><tspan x="0" y="0">t</tspan></text>
+      <text class="cls-7" transform="translate(211.09 27.25) rotate(9.05)"><tspan x="0" y="0">e</tspan></text>
+      <text class="cls-7" transform="translate(216.97 28.2) rotate(10.79)"><tspan x="0" y="0">r</tspan></text>
+      <text class="cls-7" transform="translate(221.14 29) rotate(12.23)"><tspan x="0" y="0">f</tspan></text>
+      <text class="cls-7" transform="translate(224.51 29.71) rotate(13.86)"><tspan x="0" y="0">a</tspan></text>
+      <text class="cls-7" transform="translate(230.06 31.08) rotate(15.82)"><tspan x="0" y="0">c</tspan></text>
+      <text class="cls-7" transform="translate(235.09 32.5) rotate(17.8)"><tspan x="0" y="0">e</tspan></text>
+  </g>
+
+    <circle class="cls-2" cx="187.97" cy="187.47" r="142.33"/>
+  </g>
+  <g id="elipse-1">
+    <g id="outer-circle-group">
+      <circle class="cls-5" cx="154.65" cy="6.02" r="3.22"/>
+      <circle class="cls-5" cx="230.19" cy="7.75" r="3.22"/>
+      <circle class="cls-5" cx="295.82" cy="37.85" r="3.22"/>
+      <circle class="cls-5" cx="348.92" cy="98.24" r="3.22"/>
+      <circle class="cls-5" cx="370.71" cy="170.94" r="3.22"/>
+      <circle class="cls-5" cx="362.37" cy="242.66" r="3.22"/>
+      <circle class="cls-5" cx="318.58" cy="315.34" r="3.22"/>
+      <circle class="cls-5" cx="258.94" cy="355.01" r="3.22"/>
+      <circle class="cls-5" cx="188.15" cy="372" r="3.22"/>
+      <circle class="cls-5" cx="109.7" cy="351.59" r="3.22"/>
+      <circle class="cls-5" cx="49.34" cy="305.58" r="3.22"/>
+      <circle class="cls-5" cx="13.44" cy="242.67" r="3.22"/>
+      <circle class="cls-5" cx="6.48" cy="162.59" r="3.22"/>
+      <circle class="cls-5" cx="31.58" cy="90.97" r="3.22"/>
+      <circle class="cls-5" cx="79.11" cy="37.29" r="3.22"/>
+    </g>
+    <circle class="cls-1" cx="187.51" cy="187.51" r="187.07"/>
+  </g>
+  <circle class="" cx="187.5" cy="187.5" r="161" fill="none" stroke-width=.5 stroke="white"></circle>
+  <circle class="" cx="187.97" cy="187.47" r="117" fill="none" stroke-width=.5 stroke="white"></circle>
+  <circle class="" cx="187.5" cy="187.5" r="70" fill="none" stroke-width=.5 stroke="white"></circle>
+  <path id="arc-1" class="cls-5" d="m43.7,188.15c0-81.68,63-144.52,144.68-144.52s144.78,62.29,144.78,143.96l17.25.73c0-89.48-72.54-162.02-162.02-162.02S26.36,98.83,26.36,188.31l17.34-.16Z"/>
+</svg>

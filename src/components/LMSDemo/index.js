@@ -1,42 +1,88 @@
-// import { useState } from "react";
+import DemoNav from "./demoViews/demo-nav.js";
+import Exam from "./demoViews/exam";
+import Manage from "./demoViews/manage";
+import Play from "./demoViews/play";
 
-import React from "react";
+const LMSDemo = (props) => {
+  const setDemoContent = (e) => {
+    let output;
+    let switchVar = e === "default" ? "default" : e.target.id;
+    switch (switchVar) {
+      case "exam":
+        output = <Exam />;
+        break;
+      case "manage":
+        output = <Manage />;
+        break;
+      default:
+        output = (
+          <Play
+            LMSActive={props.LMSActive}
+            demoPlaying={props.demoPlaying}
+            resetDemo={props.resetDemo}
+            setDemoPlaying={props.setDemoPlaying}
+          />
+        );
+    }
+    return output;
+  };
 
-class LMSDemo extends React.Component {
-  render() {
-    return (
-      <div
-        id="demo"
-        className={`container-fluid slide-down-panel ${
-          this.props.LMSActive ? "active" : ""
-        }`}
-      >
-        <div class="row">
-          <div class="col-sm toggle-row" id="">
+  const DemoContent = () => setDemoContent(props.demoContentVar);
+
+  const endDemo = () => {
+    if (props.elearningVideo.current) {
+      props.resetDemo();
+    }
+
+    props.toggleDemoLMS();
+    setTimeout(() => {
+      props.setDemoContentVar("default");
+    }, 1100);
+  };
+
+  return (
+    <div
+      id="demo"
+      className={`container-fluid slide-down-panel ${
+        props.LMSActive ? "active" : ""
+      }`}
+    >
+      <div className="row demo-interface" id="">
+        <div className="col col-12">
+          <div className="wrapper">
             <button
-              className="button btn-danger"
-              onClick={() => this.props.toggleDemoLMS()}
+              id="elearning-end-demo"
+              className="button btn-primary"
+              onClick={() => {
+                endDemo();
+              }}
             >
               End demo
             </button>
-          </div>
-        </div>
-        <div class="row demo-interface" id="">
-          <div class="col col-3">
-            <div class="wrapper">
-              <h1>Demo</h1>
-              <h3>column 1</h3>
-            </div>
-          </div>
-          <div class="col col-9">
-            <div class="wrapper">
-              <h3>col 2</h3>
+            <div id="elearning-demo-content" className="row gx-3">
+              <div className="col col-3 section-text">
+                <div>
+                  <h2>Elearning Demo Application</h2>
+                  <DemoNav
+                    setDemoContentVar={props.setDemoContentVar}
+                    endDemo={endDemo}
+                    resetDemo={props.resetDemo}
+                    setDemoPlaying={props.setDemoPlaying}
+                    demoPlaying={props.demoPlaying}
+                    elearningVideo={props.elearningVideo}
+                    demoContentVar={props.demoContentVar}
+                  />
+                </div>
+              </div>
+              <div className="col col-9">
+                <DemoContent />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default LMSDemo;

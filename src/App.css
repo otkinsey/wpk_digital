@@ -12,9 +12,26 @@ body {
   justify-content: center;
   color: white;
 }
-
+li {
+  list-style-type: none;
+}
 .App-link {
   color: #61dafb;
+}
+.bordered-image {
+  background: white;
+  padding: 13px;
+  overflow: hidden;
+
+  height: 100%;
+}
+.bordered-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+button svg {
+  pointer-events: none;
 }
 #contact-form {
   position: relative;
@@ -31,16 +48,15 @@ label {
   height: 40vmin;
   pointer-events: none;
 }
-button svg {
+button:not(#button_header, #button_hero) svg {
   pointer-events: none;
 }
 button:not(#button_hero) svg {
   margin-right: 7px;
 }
-button,
-button.button,
-a.btn-primary {
-  height: 35px;
+button.btn-primary,
+.btn-secondary {
+  height: 32px;
   display: block;
   z-index: 1;
   color: #fff;
@@ -55,7 +71,14 @@ a.btn-primary {
   justify-content: center;
   cursor: pointer;
   border: none;
+  transition: background-color 0.3s;
 }
+
+#elearning-end-demo:hover,
+button.btn-primary:hover {
+  background-color: #eb6969;
+}
+
 .btn-primary {
   background-color: #0d6efd;
 }
@@ -68,25 +91,420 @@ button.btn-default {
 .btn-primary button svg {
   pointer-events: none;
 }
-
-#digital_transformation {
-  border-top: 1px solid rgba(22, 103, 149, 0.15);
-  border-bottom: 1px solid rgba(22, 103, 149, 0.15);
-}
 .demo-interface {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .demo-interface .col .wrapper {
-  border: 1px solid lightgray;
-  height: 95%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: 1px solid rgb(0 0 0 / 45%);
+  height: 100%;
+  background: linear-gradient(90deg, white -81%, red 58%);
+  color: white;
+  position: relative;
 }
 .demo-interface footer {
   background-color: #f3f3f3;
+}
+#elearning-demo-content .col > div {
+  height: 100%;
+  position: relative;
+  background-color: rgb(0 0 0 / 20%);
+}
+#elearning-end-demo {
+  position: absolute;
+  right: 60px;
+  top: 60px;
+  border: 1px solid white;
+  background-color: rgba(13, 110, 253, 0.1);
+  transition: background-color 0.3s;
+}
+.exam #elearning-end-demo,
+.exam .btn-primary,
+.exam .btn-primary:focus {
+  border: 1px solid white;
+  background-color: rgb(255 255 255 / 0%);
+  color: white;
+  transition: color 0.4s, background 0.4s;
+}
+.exam .btn-primary:hover {
+  border: 1px solid white;
+  background-color: #2d9ccf;
+  color: white;
+}
+#elearning-demo-content #elearning-exam li {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  padding: 10px 20px;
+}
+#elearning-demo-content #elearning-exam li .radial-click {
+  padding: 0;
+  margin-right: 20px;
+  border: 1px solid white;
+  height: 16px;
+  width: 16px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+#elearning-demo-content #elearning-exam li .radial-click.active {
+  background-color: white;
+}
+#elearning-exam hr {
+  background-color: white;
+}
+#elearning-demo-content #elearning-exam {
+  position: relative;
+  background-color: #2787b2;
+}
+#elearning-demo-content .exam-nav {
+  color: white;
+  cursor: pointer;
+}
+#elearning-demo-content .exam-nav .question p {
+  font-weight: bold;
+}
+#elearning-demo-content #elearning-exam::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url(http://localhost:3000/static/media/elearning-demo-background.5f52857903f650402dcf.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.1;
+  transform: scaleX(-1);
+  z-index: 0;
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+}
+#elearning-demo-content #elearning-exam .overlay {
+  color: white;
+  padding: 50px 40px 40px;
+  top: 0;
+  background-color: transparent;
+  display: block;
+  height: auto;
+  position: relative;
+}
+
+#elearning-demo-content #elearning-exam h1 {
+  margin: 30px 0;
+  color: white;
+  font-weight: bold;
+}
+#elearning-demo-content #elearning-exam h4 {
+  font-size: 1rem;
+  font-weight: normal;
+  color: white;
+  margin-bottom: 0;
+}
+#elearning-demo-content #elearning-exam .question {
+  padding: 30px 0 90px;
+}
+#elearning-demo-content #elearning-exam .question > p {
+  font-weight: bold;
+}
+#elearning-demo-content #usecases {
+  transition: transform 1s;
+}
+
+#elearning-demo-content #usecases .usecase-path {
+  fill: none;
+}
+#presentation_interface,
+#content_management,
+#organization_management {
+  transform: translate(0px, -3px);
+}
+#elearning-demo-content #rotating-graphic {
+  opacity: 0;
+  transition: opacity 1s;
+}
+#elearning-demo-content #rotating-graphic.active {
+  opacity: 1;
+}
+#elearning-demo-content #demo-svg {
+  font-family: arial sans-serif;
+}
+#elearning-demo-content #demo-svg.active {
+  opacity: 1;
+}
+
+#elearning-demo-content #demo-svg {
+  opacity: 0;
+  transition: opacity 1s;
+  font-family: arial, san-serif;
+}
+
+#elearning-demo-content #rotating-graphic g#elipse-5 text {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Elearning: animation 1 - Display Welcome */
+#elearning-demo-content .overlay svg #text1 {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+#elearning-demo-content .overlay svg #text1.active {
+  opacity: 1;
+}
+
+/* Elearning: animation 2 - Display logo */
+#elearning-demo-content .overlay #logo-white path {
+  opacity: 0;
+  transition: opacity 1s 1s ease;
+}
+#elearning-demo-content .overlay #logo-white.active path {
+  opacity: 1;
+}
+
+/****
+Elearning: animation 3 - Fade logo and subtext
+no css currently required for this transition
+****/
+
+/* Elearning: animation 4 - Animate "Elearning" */
+#elearning-demo-content .overlay svg #subtext1 {
+  opacity: 0;
+  transition: opacity 1s 3s ease, font-size 1s 27s, transform 1s 27s;
+}
+#elearning-demo-content .overlay svg #subtext2 {
+  opacity: 0;
+  transition: opacity 1s 3s ease;
+}
+
+/* Elearning: animation 5 - Animate "Elearning" */
+/* Elearning: animation 6 - Animate "Elearning" */
+#elearning-demo-content .overlay {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  justify-items: center;
+  grid-template-rows: 1fr 50%;
+  height: 100%;
+  /* padding: 40px; */
+  background-color: rgb(5 24 61 / 70%);
+  transition: background-color 1s 24s, grid-template-rows 1s 24s;
+}
+#elearning-demo-content .overlay video {
+  position: relative;
+  width: 100%;
+}
+#elearning-demo-content #logo-white {
+  height: 60px;
+  transition: height 1s 24s;
+}
+#elearning-demo-content .overlay.expanded {
+  grid-template-rows: 1fr 100%;
+  background-color: rgb(5 24 61 / 100%);
+}
+#elearning-demo-content .overlay.expanded #logo-white {
+  height: 0;
+}
+#elearning-demo-content .overlay #subtext1.animate1 {
+  font-size: 2rem;
+  transform: translate(-420px, 156px);
+}
+/**** end: animation 6 */
+
+/* Elearning: animation 7 - animate usecases */
+#elearning-demo-content .usecase,
+#elearning-demo-content #usecase-1.active textPath {
+  fill: white;
+  font-size: 18px;
+  opacity: 0;
+  transition: transform 1.5s 1s, opacity 0.7s 1s;
+}
+#elearning-demo-content #usecase-1.active,
+#elearning-demo-content #usecase-1.active textPath {
+  opacity: 1;
+}
+#elearning-demo-content #usecase-2.active,
+#elearning-demo-content #usecase-2.active textPath {
+  opacity: 1;
+}
+#elearning-demo-content #usecase-3.active,
+#elearning-demo-content #usecase-3.active textPath {
+  opacity: 1;
+}
+
+/* Elearning: animation 10 - rotational graphic */
+#rotating-graphic [id*="arc"] {
+  opacity: 0.05;
+}
+#rotating-graphic #presentation_interface,
+#rotating-graphic #content_management,
+#rotating-graphic #organization_management {
+  opacity: 0.4;
+}
+#rotating-graphic #presentation_interface text,
+#rotating-graphic #content_management text,
+#rotating-graphic #organization_management text {
+  padding: 1px;
+}
+#rotating-graphic circle,
+#rotating-graphic [id*="circle"] {
+  opacity: 0.2;
+}
+#rotating-graphic.active.rotate #elipse-1 {
+  animation: spin 60s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+#rotating-graphic #elipse-2 {
+  transform: rotate(-26deg);
+  transform-origin: 50% 50%;
+}
+#rotating-graphic.active.rotate #elipse-2 {
+  animation: spin 25s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+#rotating-graphic.active.rotate #arc-1 {
+  animation: spin 25s linear infinite;
+  transform-origin: 50% 50%;
+}
+#rotating-graphic #elipse-3 {
+  transform: rotate(-26deg);
+  transform-origin: 50% 50%;
+}
+
+#rotating-graphic.active.rotate #elipse-3 {
+  animation: spin 15s linear infinite;
+  transform: rotate(-26deg);
+  transform-origin: 50% 50%;
+}
+
+#rotating-graphic.active.rotate #arc-2 {
+  animation: spin 0s linear infinite;
+  transform-origin: 50% 50%;
+}
+#rotating-graphic #elipse-4 {
+  transform: rotate(-61deg);
+  transform-origin: 50% 50%;
+}
+
+#rotating-graphic.active.rotate #elipse-4 {
+  animation: spin 22s linear infinite;
+  transform: rotate(-61deg);
+  transform-origin: 50% 50%;
+}
+
+#rotating-graphic.active.rotate #arc-3 {
+  animation: spin 0s linear infinite;
+  transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+#rotating-graphic.active.rotate #elipse-5 circle {
+  opacity: 0.3;
+}
+#rotating-graphic.active.rotate #elipse-5 .cls-2 {
+  animation: spin 10s linear infinite;
+  transform-origin: 50.2% 50.13%;
+}
+
+@keyframes reverse-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+#elearning-demo-content .dendogram-path {
+  stroke: #495d83;
+  fill: none;
+  stroke-width: 1px;
+  stroke-dasharray: 450;
+  stroke-dashoffset: 450;
+  transition: stroke-dashoffset 1s 2s;
+}
+#elearning-demo-content .dendogram-path.active {
+  stroke-dashoffset: 0;
+}
+
+#elearning-demo-content .overlay svg #subtext1.active,
+#elearning-demo-content .overlay svg #subtext2.active {
+  opacity: 1;
+}
+
+#elearning-demo-content .overlay > div,
+#elearning-demo-content .overlay > svg,
+#elearning-demo-content .overlay > div > svg {
+  width: 100%;
+  height: 100%;
+}
+.demo-interface #elearning-demo-content {
+  position: relative;
+  padding: 20px 11px;
+  height: 100%;
+  margin: 0;
+}
+
+.demo-interface #elearning-demo-content li:nth-child(2) {
+  border-top: 1px solid rgb(0 0 0 / 30%);
+  border-bottom: 1px solid rgb(0 0 0 / 30%);
+}
+.demo-interface #elearning-demo-content .section-text > div {
+  padding: 0;
+}
+.demo-interface .section-text h2 {
+  padding: 18px;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1.35em;
+}
+.demo-interface #elearning-demo-content ul {
+  margin: 0;
+  padding: 0;
+}
+.demo-interface #elearning-demo-content .demo-options li {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  align-items: center;
+  padding: 0 20px;
+  background: rgb(57 1 1 / 20%);
+  min-height: 73px;
+  cursor: pointer;
+}
+.demo-interface #elearning-demo-content .demo-options li * {
+  pointer-events: none;
+}
+.demo-interface #elearning-demo-content .demo-options li svg {
+  font-size: 1.5rem;
+  color: rgb(255 255 255 / 60%);
+  color: rgb(0 0 0 / 45%);
+}
+.demo-interface #elearning-demo-content .demo-options li div {
+  padding-left: 20px;
+}
+.demo-interface #elearning-demo-content .demo-option {
+  /* font-weight: bold; */
+  text-transform: capitalize;
+  font-size: 1em;
+  padding-left: 11px;
+}
+#digital_transformation {
+  border-top: 1px solid rgba(22, 103, 149, 0.15);
+  border-bottom: 1px solid rgba(22, 103, 149, 0.15);
 }
 footer #logo * {
   fill: #6c6c6c;
@@ -160,7 +578,7 @@ header {
   font-weight: normal;
 }
 header {
-  border-bottom: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd; */
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -186,6 +604,10 @@ header li {
 
 header li {
   height: 100%;
+  transition: color 0.3s;
+}
+header li:hover {
+  color: #fa9191;
 }
 
 header svg {
@@ -203,6 +625,9 @@ header ul {
   bottom: 17px;
   display: none;
 }
+.removed {
+  display: none;
+}
 .row {
   padding-bottom: 1rem;
 }
@@ -215,6 +640,9 @@ header ul {
   position: relative;
   display: flex;
   align-items: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  border-top: 1px solid rgba(22, 103, 149, 0.15);
 }
 .section#contact_us {
   justify-content: center;
@@ -226,30 +654,19 @@ header ul {
   left: 0;
   z-index: 0;
 }
-.section .section_text {
+.section .section-text {
   position: relative;
   z-index: 1;
   width: 31%;
   font-size: 1.25rem;
 }
 
-.section .section_text h1 {
+.section .section-text h1 {
   text-transform: inherit;
   font-size: 4rem;
 }
 
-.section {
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-}
-.section {
-  border-top: 1px solid rgba(22, 103, 149, 0.15);
-  /* border-bottom: 1px solid rgb(185, 181, 181); */
-}
-.section_text {
-  border: 1px solid rgba(255, 255, 255, 0.25);
-}
-.section_text.left {
+.section-text.left {
   text-align: left;
   color: #6c6c6c;
   left: 10%;
@@ -257,7 +674,7 @@ header ul {
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.25);
 }
-.section_text.right {
+.section-text.right {
   /* text-align: right; */
   color: white;
   left: 59%;
@@ -268,34 +685,57 @@ header ul {
 .slide-down-panel {
   background: white;
   height: 0vh;
-  position: relative;
   width: 100%;
   overflow: hidden;
-  transition: height 0.75s ease;
+  transition: padding 0.7s linear, height 1s cubic-bezier(0.75, 0, 0.58, 0);
+  padding-top: 0px;
 }
 .slide-down-panel.active {
+  padding-top: 65px;
+  position: relative;
   height: 100vh;
 }
-.slide-down-panel.active .row {
+.slide-down-panel .wrapper > .row:first-child {
+  border-bottom: 1px solid rgb(0 0 0 / 15%);
+  background: rgb(57 1 1 / 20%);
+  margin: 0;
+}
+.slide-down-panel .row {
   min-height: 60px;
 }
-.slide-down-panel.active .demo-interface.row {
-  height: 90%;
+.slide-down-panel .demo-interface.row {
+  height: 100%;
 }
-.slide-down-panel.active .row .col {
+.slide-down-panel .row .col {
   height: 100%;
 }
 .slide-down-panel button {
   position: relative;
 }
+.slide-down-panel .btn-secondary {
+  border: 2px solid;
+  border-color: white;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.25);
+  transition: background-color 0.5s;
+}
+.slide-down-panel .btn-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.55);
+  border-color: white;
+}
 .toggle-row {
   display: flex;
   justify-content: right;
-  padding-top: 80px;
+  padding-top: 1rem;
+  padding-right: 66px !important;
+  /* padding-bottom: 9px; */
+}
+#wpk-logo {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
-  .section .section_text h1 {
+  .section .section-text h1 {
     font-size: 11vw;
   }
   footer {
@@ -384,7 +824,7 @@ header ul {
     display: none;
   }
 
-  .section .section_text {
+  .section .section-text {
     position: relative;
     z-index: 1;
     width: 90%;
@@ -397,8 +837,8 @@ header ul {
     left: 0;
     background-color: transparent;
   }
-  .section_text.left,
-  .section_text.right {
+  .section-text.left,
+  .section-text.right {
     color: white;
     text-align: center;
   }
