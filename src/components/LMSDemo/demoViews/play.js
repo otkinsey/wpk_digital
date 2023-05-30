@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { ReactComponent as LogoWhite } from "../../header/logo_white.svg";
 import { ReactComponent as ConcentricCircle } from "./concentric.svg";
 
@@ -28,6 +28,7 @@ const Play = (props) => {
 
     return textElement;
   };
+  useEffect(() => (props.elearningVideo.current.currentTime = 5));
 
   return (
     <div
