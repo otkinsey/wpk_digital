@@ -172,7 +172,7 @@ button.btn-default {
   background-image: url(http://localhost:3000/static/media/elearning-demo-background.5f52857903f650402dcf.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.3;
+  opacity: 0.1;
   transform: scaleX(-1);
   z-index: 0;
   filter: grayscale(1);
@@ -195,12 +195,15 @@ button.btn-default {
 }
 #elearning-demo-content #elearning-exam h4 {
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: normal;
   color: white;
   margin-bottom: 0;
 }
 #elearning-demo-content #elearning-exam .question {
   padding: 30px 0 90px;
+}
+#elearning-demo-content #elearning-exam .question > p {
+  font-weight: bold;
 }
 #elearning-demo-content #usecases {
   transition: transform 1s;
