@@ -1,15 +1,7 @@
-import { useRef, useEffect } from "react";
-import { ReactComponent as LogoWhite } from "../../header/logo_white.svg";
-import { ReactComponent as ConcentricCircle } from "./concentric.svg";
+import { useEffect } from "react";
 
 const Play = (props) => {
-  // DOM refs
-  // const audioElement = useRef(null);
-  const demoSvg = useRef(null);
-
   // Initialize DOM constants
-  let text1, subtext1, subtext2, demoLogo, svgWidth;
-
   const Text = (opts) => {
     const textElement = (
       <text

@@ -36,9 +36,9 @@ const Exam = () => {
   const processAnswers = () => {
     const submittedAnswers = questions.map((q) => localStorage.getItem(q));
 
-    const comparedAnswers = submittedAnswers.map((answer) =>
-      correctAnswers.includes(answer)
-    );
+    // const comparedAnswers = submittedAnswers.map((answer) =>
+    //   correctAnswers.includes(answer)
+    // );
 
     /**
      * Otherwise, if user is on last question, ie. question index
