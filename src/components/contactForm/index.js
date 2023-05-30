@@ -53,7 +53,7 @@ const FormMockUp = () => {
 
     if (!value && input.value === "") {
       input.style = "border: 1px solid red;";
-      setMessage("This field is required. Please review and resend.");
+      setMessage("Field is required. Please review and resend.");
     } else if (!value && textOnlyFields.includes(input.name)) {
       setMessage("Invalid input. Letters only.");
     } else if (!value && !textOnlyFields.includes(input.name)) {
