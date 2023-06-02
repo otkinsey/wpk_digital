@@ -54,7 +54,6 @@ function App() {
 
   const resetDemo = () => {
     if (elearningVideo.current) {
-      stopAudioFile(elearningVideo.current);
       setDemoPlaying(false);
     }
 
@@ -101,6 +100,7 @@ function App() {
                 setDemoPlaying={setDemoPlaying}
                 setDemoContentVar={setDemoContentVar}
                 demoContentVar={demoContentVar}
+                resetDemo={resetDemo}
               />
             }
           />
