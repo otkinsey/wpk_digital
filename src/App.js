@@ -6,7 +6,6 @@ import { useState, useRef } from "react";
 import { FaBars } from "react-icons/fa";
 import { ReactComponent as Logo } from "./components/header/logo.svg";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { stopAudioFile } from "./utils/helper.js";
 
 function App() {
   // State variables
