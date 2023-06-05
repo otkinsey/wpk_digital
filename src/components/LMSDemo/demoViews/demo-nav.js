@@ -1,7 +1,6 @@
 import { FaFilm, FaEdit } from "react-icons/fa";
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
 const Default = (props) => {
-  const audioElement = useRef(null);
   useEffect(() => {
     const contentVar =
       props.demoContentVar === "default"
@@ -31,7 +30,6 @@ const Default = (props) => {
       >
         <FaFilm />
         <span className="demo-option">Elearning presentation</span>
-        <audio id="demoAudio" src="audio.m4a" ref={audioElement}></audio>
       </li>
       <li onClick={props.setDemoContentVar} id="exam">
         <FaEdit />

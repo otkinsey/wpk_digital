@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 const Play = (props) => {
   // Initialize DOM constants
-  useEffect(() => (props.elearningVideo.current.currentTime = 4));
+  useEffect(() => (props.elearningVideo.current.currentTime = 4), []);
 
   return (
     <div
