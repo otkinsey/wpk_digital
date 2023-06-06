@@ -32,13 +32,15 @@ const LMSDemo = (props) => {
 
   const endDemo = () => {
     if (props.elearningVideo.current) {
-      props.resetDemo();
+      setTimeout(() => {
+        props.resetDemo();
+      }, 2000);
     }
 
     props.toggleDemoLMS();
     setTimeout(() => {
       props.setDemoContentVar("default");
-    }, 1100);
+    }, 0);
   };
 
   return (

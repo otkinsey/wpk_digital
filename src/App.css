@@ -242,6 +242,20 @@ button.btn-default {
   font-weight: bold;
 }
 
+#elearning-demo-content .main-backdrop > .overlay {
+  background-image: url(http://localhost:3000/static/media/elearning-background.8915d36287eb73646596.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#elearning-demo-content .main-backdrop > .overlay video {
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s 1s;
+}
+#elearning-demo-content .main-backdrop > .overlay video.active {
+  opacity: 1;
+}
+
 /* Elearning: animation 1 - Display Welcome */
 #elearning-demo-content .overlay svg #text1 {
   opacity: 0;
