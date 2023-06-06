@@ -2,15 +2,13 @@ import { useEffect } from "react";
 
 const Play = (props) => {
   // Initialize DOM constants
-  useEffect(
-    () =>
-      props.elearningVideo.current.addEventListener("loadeddata", (event) => {
-        props.elearningVideo.current.currentTime = 4;
-        setTimeout(() => {
-          event.target.classList.add("active");
-        }, 500);
-      }),
-    []
+  useEffect(() =>
+    props.elearningVideo.current.addEventListener("loadeddata", (event) => {
+      props.elearningVideo.current.currentTime = 4;
+      setTimeout(() => {
+        event.target.classList.add("active");
+      }, 500);
+    })
   );
 
   return (

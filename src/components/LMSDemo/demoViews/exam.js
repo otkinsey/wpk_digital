@@ -76,7 +76,7 @@ const Exam = () => {
     return output;
   };
 
-  useEffect(() => localStorage.clear(), []);
+  useEffect(() => localStorage.clear());
 
   useEffect(() => {
     const radialButtons = Array.from(
