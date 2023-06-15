@@ -22,10 +22,7 @@ const Play = (props) => {
       }}
       className="main-backdrop"
     >
-      <div
-        className="overlay"
-        style={{ backgroundImage: "url(elearning-background.jpg)" }}
-      >
+      <div className="overlay">
         <video src="elearning.mp4" ref={props.elearningVideo} controls></video>
       </div>
     </div>
