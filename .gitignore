@@ -27,7 +27,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log 
 archive*
-*public*
+#*public*
 
 # Local Netlify folder
 .netlify
