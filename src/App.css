@@ -801,6 +801,10 @@ header ul {
     align-items: center;
     justify-content: center;
   }
+  .demo-interface .col .wrapper > h3 {
+    padding: 30px;
+    text-align: center;
+  }
   footer {
     padding: 0 3%;
     font-size: 0.75rem;

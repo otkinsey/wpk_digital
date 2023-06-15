@@ -70,7 +70,9 @@ const LMSDemo = (props) => {
             >
               End demo
             </button>
-            <h3>For optimal experience please use a wider screen.</h3>
+            <h3 className="message">
+              For optimal experience please use a wider screen.
+            </h3>
           </div>
         </div>
       </div>
