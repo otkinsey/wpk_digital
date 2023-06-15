@@ -253,7 +253,7 @@ button.btn-default {
   height: 100%;
   opacity: 0;
   transition: opacity 1.5s 1s;
-  object-fit: cover;
+  object-fit: fill;
 }
 #elearning-demo-content .main-backdrop > .overlay video.active {
   opacity: 1;
