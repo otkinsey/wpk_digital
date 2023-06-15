@@ -1,9 +1,12 @@
+import { useState, useEffect } from "react";
+
 import DemoNav from "./demoViews/demo-nav.js";
 import Exam from "./demoViews/exam";
 import Manage from "./demoViews/manage";
 import Play from "./demoViews/play";
 
 const LMSDemo = (props) => {
+  const [mobile, setMobile] = useState(null);
   const setDemoContent = (e) => {
     let output;
     let switchVar = e === "default" ? "default" : e.target.id;
@@ -43,14 +46,43 @@ const LMSDemo = (props) => {
     }, 0);
   };
 
-  return (
+  useEffect(() => {
+    if (window.innerWidth < 1101) setMobile(true);
+    else setMobile(false);
+  }, [props.LMSActive]);
+
+  return mobile ? (
     <div
       id="demo"
       className={`container-fluid slide-down-panel ${
         props.LMSActive ? "active" : ""
       }`}
     >
-      <div className="row demo-interface" id="">
+      <div className="row demo-interface">
+        <div className="col col-12">
+          <div className="wrapper">
+            <button
+              id="elearning-end-demo"
+              className="button btn-primary"
+              onClick={() => {
+                endDemo();
+              }}
+            >
+              End demo
+            </button>
+            <h3>For optimal experience please use a wider screen.</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div
+      id="demo"
+      className={`container-fluid slide-down-panel ${
+        props.LMSActive ? "active" : ""
+      }`}
+    >
+      <div className="row demo-interface">
         <div className="col col-12">
           <div className="wrapper">
             <button

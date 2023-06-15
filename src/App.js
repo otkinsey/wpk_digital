@@ -43,9 +43,9 @@ function App() {
   const toggleDemoLMS = () => {
     if (!LMSActive) {
       scrollTo("demo");
-      document.body.style.overflow = "hidden";
+      document.body.setAttribute("style", "overflow-y: hidden");
     } else {
-      document.body.style.overflow = "scroll";
+      document.body.setAttribute("style", "overflow-y: scroll");
     }
     setLMSActive(!LMSActive);
     // return
