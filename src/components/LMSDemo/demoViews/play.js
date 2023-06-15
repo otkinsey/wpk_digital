@@ -18,7 +18,7 @@ const Play = (props) => {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "50% center",
         backgroundImage:
-          "url('elearnng_1_radek-grzybowski-eBRTYyjwpRY-unsplash.jpg')",
+          "url('images/elearnng_1_radek-grzybowski-eBRTYyjwpRY-unsplash.jpg')",
       }}
       className="main-backdrop"
     >

@@ -28,3 +28,6 @@ yarn-debug.log*
 yarn-error.log 
 archive*
 *public*
+
+# Local Netlify folder
+.netlify
