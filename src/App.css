@@ -35,6 +35,16 @@ li {
 button svg {
   pointer-events: none;
 }
+.blog-paragraph {
+  padding-bottom: 20px;
+  font-size: 1.25rem;
+}
+#blog {
+  li {
+    cursor: pointer;
+    padding-bottom: 20px;
+  }
+}
 #contact-form {
   position: relative;
 }
@@ -523,6 +533,20 @@ no css currently required for this transition
   border-top: 1px solid rgba(22, 103, 149, 0.15);
   border-bottom: 1px solid rgba(22, 103, 149, 0.15);
 }
+
+pre {
+  background-color: rgb(229, 229, 229);
+  padding: 20px;
+}
+
+.section#blog {
+  justify-content: center;
+
+  #blog-container {
+    width: 79%;
+    padding-top: 80px;
+  }
+}
 footer #logo * {
   fill: #6c6c6c;
 }
@@ -578,12 +602,12 @@ form textarea {
   padding: 20px;
 }
 footer {
+  display: flex;
   border-top: 1px solid #ddd;
   height: 150px;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0px 24%;
+  justify-content: space-around;
+  width: 100%;
 }
 footer,
 header {
@@ -601,7 +625,6 @@ header {
   justify-content: space-around;
   position: fixed;
   width: 100%;
-  font-size: 14px;
   z-index: 9;
 }
 header ul#main-nav {
@@ -611,19 +634,26 @@ header ul#main-nav {
   justify-content: space-around;
   width: 75%;
 }
-header li {
+header li,
+#blog-container ul li {
   display: flex;
   align-items: center;
   cursor: pointer;
   font-weight: 400;
+  font-size: 14px;
   text-transform: capitalize;
 }
 
 header li {
   height: 100%;
+}
+
+header li,
+#blog-container ul li {
   transition: color 0.3s;
 }
-header li:hover {
+header li:hover,
+#blog-container ul li:hover {
   color: #fa9191;
 }
 

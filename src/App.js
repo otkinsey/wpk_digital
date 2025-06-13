@@ -106,8 +106,12 @@ function App() {
         </Routes>
       </Router>
       <footer>
-        <Logo style={{ height: 45 }} />
-        <p>&copy; WPK Digital Solution copyright 2022. All rights reserved</p>
+        <div style={{}}>
+          <Logo style={{ height: 45 }} />
+        </div>
+        <p style={{ width: "74%" }}>
+          &copy; WPK Digital Solution copyright 2022. All rights reserved
+        </p>
       </footer>
     </div>
   );

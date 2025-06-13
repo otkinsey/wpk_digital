@@ -4,7 +4,7 @@ const MobileMenu = (props) => {
     { name: "document management", id: "nav_document_management" },
     { name: "digital transformation", id: "nav_digital_transformation" },
     { name: "contact us", id: "nav_contact_us" },
-    { name: "blog", id: "" },
+    { name: "blog", id: "nav_blog" },
   ];
   return (
     <ul id="main-nav" className={`${props.active}`} style={{}}>

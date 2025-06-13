@@ -3,6 +3,7 @@ import { BsChevronUp } from "react-icons/bs";
 import { FaPaperPlane } from "react-icons/fa";
 import { default as DemoLMS } from "./LMSDemo/index";
 import ContactForm from "./contactForm";
+import Blog from "./blog";
 
 const HomePage = (props) => {
   const pageData = [
@@ -97,6 +98,9 @@ const HomePage = (props) => {
 
         {/* refactor: replace with a form component */}
         <ContactForm />
+      </div>
+      <div className="section" id="blog">
+        <Blog />
       </div>
       <button
         onClick={(event) => {
