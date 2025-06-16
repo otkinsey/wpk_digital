@@ -537,6 +537,9 @@ no css currently required for this transition
 pre {
   background-color: rgb(229, 229, 229);
   padding: 20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .section#blog {

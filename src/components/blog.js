@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const Blog = () => {
   const [currentArticle, setCurrentArticle] = useState(0);
@@ -29,11 +31,9 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Here's an example of proper key usage:
-          <pre>
-            <code>
-              {`\n items.map(item => <li key={item.id}>{item.name}</li>)`}
-            </code>
-          </pre>
+          <SyntaxHighlighter language="javascript" style={dark}>
+            {`\n items.map(item => <li key={item.id}>{item.name}</li>)`}
+          </SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           In summary, failing to provide unique keys in React lists leads to
@@ -64,9 +64,10 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`<input type="text" {...(isRequired && { required: true })} />`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`<input type="text" {...(isRequired && { required: true })} />`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           To sum up, conditionally adding attributes in React is best handled
@@ -97,9 +98,10 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`using System; \n namespace MyApp   \n class Program { 'static' void Main() {     Console.WriteLine("Hello World"); }<  \n     }<  \n }`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`using System; \n namespace MyApp   \n class Program { 'static' void Main() {     Console.WriteLine("Hello World"); }<  \n     }<  \n }`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           In conclusion, while C# allows flexibility, placing 'using' directives
@@ -129,9 +131,10 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`enum Status { Active = 1, Inactive = 2 }<  \n int value = (int)Status.Active; // value = 1`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`enum Status { Active = 1, Inactive = 2 }<  \n int value = (int)Status.Active; // value = 1`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           Ultimately, understanding how to cast enums to integers in C# allows
@@ -151,9 +154,10 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           React provides a built-in solution with{" "}
-          <pre>
-            <code>{`React.memo`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`React.memo`}</SyntaxHighlighter>
           , a higher-order component that prevents re-rendering when props
           haven’t changed.
         </div>,
@@ -164,15 +168,17 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`const MyComponent = React.memo(function MyComponent(props)   \n   \n   return <div>{props.name}</div>;<  \n });`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`const MyComponent = React.memo(function MyComponent(props)   \n   \n   return <div>{props.name}</div>;<  \n });`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           To conclude,{" "}
-          <pre>
-            <code>{`React.memo`}</code>
-          </pre>{" "}
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`React.memo`}</SyntaxHighlighter>{" "}
           is an effective way to improve rendering performance by memoizing
           functional components based on props stability.
         </div>,
@@ -197,9 +203,10 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`const [name, setName] = useState('');<  \n <input value={name} onChange={e => setName(e.target.value)} />`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`const [name, setName] = useState('');<  \n <input value={name} onChange={e => setName(e.target.value)} />`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           In short, using controlled components ensures a predictable and
@@ -213,16 +220,18 @@ const Blog = () => {
       content: [
         <div className="blog-paragraph">
           React's{" "}
-          <pre>
-            <code>{`useEffect`}</code>
-          </pre>{" "}
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`useEffect`}</SyntaxHighlighter>{" "}
           hook is often misused or misunderstood, leading to unexpected behavior
           like infinite loops or stale data.
         </div>,
         <div className="blog-paragraph">
-          <pre>
-            <code>{`useEffect`}</code>
-          </pre>{" "}
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`useEffect`}</SyntaxHighlighter>{" "}
           allows side effects such as data fetching or subscriptions in function
           components. It should be used carefully with dependency arrays to
           avoid unnecessary re-renders.
@@ -233,15 +242,17 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`useEffect(() =>   \n   \n   fetchData();<  \n }, [query]);`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`useEffect(() =>   \n   \n   fetchData();<  \n }, [query]);`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           To sum up, using{" "}
-          <pre>
-            <code>{`useEffect`}</code>
-          </pre>{" "}
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`useEffect`}</SyntaxHighlighter>{" "}
           correctly involves managing dependencies properly and understanding
           how React schedules re-renders based on them.
         </div>,
@@ -265,9 +276,10 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`{isLoggedIn ? <Dashboard /> : <Login />}`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`{isLoggedIn ? <Dashboard /> : <Login />}`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           Ultimately, using the right conditional rendering pattern based on
@@ -293,9 +305,10 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`function Parent()   \n   \n   const [count, setCount] = useState(0);<  \n   return (<Child count={count} setCount={setCount} />);<  \n }`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`function Parent()   \n   \n   const [count, setCount] = useState(0);<  \n   return (<Child count={count} setCount={setCount} />);<  \n }`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           In conclusion, lifting state up ensures centralized state management
@@ -321,9 +334,10 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`const ThemeContext = React.createContext();<  \n <ThemeContext.Provider value={value}>...</ThemeContext.Provider>`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`const ThemeContext = React.createContext();<  \n <ThemeContext.Provider value={value}>...</ThemeContext.Provider>`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           To summarize, the Context API solves prop drilling by providing a
@@ -341,9 +355,10 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           React provides{" "}
-          <pre>
-            <code>{`useRef`}</code>
-          </pre>{" "}
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`useRef`}</SyntaxHighlighter>{" "}
           to create persistent references to DOM elements or values that persist
           across renders without causing re-renders.
         </div>,
@@ -353,15 +368,17 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`const inputRef = useRef(null);<  \n useEffect(() => { inputRef.current.focus(); }, []);<  \n <input ref={inputRef} />`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`const inputRef = useRef(null);<  \n useEffect(() => { inputRef.current.focus(); }, []);<  \n <input ref={inputRef} />`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           In closing,{" "}
-          <pre>
-            <code>{`useRef`}</code>
-          </pre>{" "}
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`useRef`}</SyntaxHighlighter>{" "}
           is the right tool when you need to imperatively interact with DOM
           elements or store mutable values.
         </div>,
@@ -386,9 +403,10 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`string? name = null; // Nullable<  \n string name = "John"; // Non-nullable`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`string? name = null; // Nullable<  \n string name = "John"; // Non-nullable`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           In summary, nullable reference types provide safer and more
@@ -403,48 +421,56 @@ const Blog = () => {
         <div className="blog-paragraph">
           Writing asynchronous code in C# can be complex and error-prone without
           a clear understanding of{" "}
-          <pre>
-            <code>{`async`}</code>
-          </pre>{" "}
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`async`}</SyntaxHighlighter>{" "}
           and{" "}
-          <pre>
-            <code>{`await`}</code>
-          </pre>{" "}
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`await`}</SyntaxHighlighter>{" "}
           keywords.
         </div>,
         <div className="blog-paragraph">
-          <pre>
-            <code>{`async`}</code>
-          </pre>{" "}
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`async`}</SyntaxHighlighter>{" "}
           and{" "}
-          <pre>
-            <code>{`await`}</code>
-          </pre>{" "}
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`await`}</SyntaxHighlighter>{" "}
           simplify asynchronous programming by making asynchronous code look
           synchronous.
         </div>,
         <div className="blog-paragraph">
           They are often used in conjunction with{" "}
-          <pre>
-            <code>{`Task`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`Task`}</SyntaxHighlighter>
           -based methods to avoid blocking the main thread.
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`public async Task<string> GetDataAsync()   \n   \n   var result = await httpClient.GetStringAsync(url);<  \n   return result;<  \n }`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`public async Task<string> GetDataAsync()   \n   \n   var result = await httpClient.GetStringAsync(url);<  \n   return result;<  \n }`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           To conclude, mastering{" "}
-          <pre>
-            <code>{`async`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`async`}</SyntaxHighlighter>
           /
-          <pre>
-            <code>{`await`}</code>
-          </pre>{" "}
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`await`}</SyntaxHighlighter>{" "}
           leads to more responsive applications and easier-to-maintain
           asynchronous code.
         </div>,
@@ -468,9 +494,10 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`var results = users.Where(u => u.IsActive).Select(u => u.Name);`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`var results = users.Where(u => u.IsActive).Select(u => u.Name);`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           In summary, LINQ simplifies data manipulation in C# and should be used
@@ -496,9 +523,10 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`public delegate void Notify();<  \n public event Notify OnNotify;`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`public delegate void Notify();<  \n public event Notify OnNotify;`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           In conclusion, understanding how delegates and events work enables you
@@ -525,9 +553,10 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`try   \n   \n   File.ReadAllText(path);<  \n } catch (FileNotFoundException ex)   \n   \n   Console.WriteLine(ex.Message);<  \n }`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`try   \n   \n   File.ReadAllText(path);<  \n } catch (FileNotFoundException ex)   \n   \n   Console.WriteLine(ex.Message);<  \n }`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           In short, structured and thoughtful exception handling leads to more
@@ -553,9 +582,10 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`interface ILogger { void Log(string message); }<  \n abstract class BaseLogger { public abstract void Log(string msg); }`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`interface ILogger { void Log(string message); }<  \n abstract class BaseLogger { public abstract void Log(string msg); }`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           Ultimately, interfaces and abstract classes serve different purposes
@@ -581,9 +611,10 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`(string name, int age) GetUser() => ("Alice", 30);`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`(string name, int age) GetUser() => ("Alice", 30);`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           To summarize, tuples are a lightweight and expressive way to return or
@@ -602,17 +633,20 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Introduced in recent versions of C#, pattern matching enhances{" "}
-          <pre>
-            <code>{`switch`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`switch`}</SyntaxHighlighter>
           ,{" "}
-          <pre>
-            <code>{`is`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`is`}</SyntaxHighlighter>
           , and{" "}
-          <pre>
-            <code>{`when`}</code>
-          </pre>{" "}
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`when`}</SyntaxHighlighter>{" "}
           statements with more powerful semantics.
         </div>,
         <div className="blog-paragraph">
@@ -621,9 +655,10 @@ const Blog = () => {
         </div>,
         <div className="blog-paragraph">
           Example:
-          <pre>
-            <code>{`if (shape is Circle { Radius: > 10 }) { ... }`}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >{`if (shape is Circle { Radius: > 10 }) { ... }`}</SyntaxHighlighter>
         </div>,
         <div className="blog-paragraph">
           In conclusion, pattern matching makes conditional logic more readable
