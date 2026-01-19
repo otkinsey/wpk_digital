@@ -13,12 +13,17 @@ const MobileMenu = (props) => {
           key={`nav-item-${index}`}
           onClick={(event) => {
             document.body.style.overflow = "scroll";
-            if (props.LMSActive) {
-              props.scrollTo(event.target.id);
-              props.resetDemo();
-            } else {
-              props.scrollTo(event.target.id);
-            }
+            // if (props.LMSActive) {
+            //   props.scrollTo(event.target.id);
+            //   props.resetDemo();
+            // } else {
+            //   props.scrollTo(event.target.id);
+            // }
+            props.LMSActive && props.resetDemo();
+            event.target.id === "nav_blog"
+              ? props.setBlogActive(true)
+              : props.setBlogActive(false);
+            props.scrollTo(event.target.id);
           }}
           id={item.id}
         >

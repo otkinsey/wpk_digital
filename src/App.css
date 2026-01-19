@@ -137,7 +137,9 @@ button.btn-default {
   border: 1px solid white;
   background-color: rgb(255 255 255 / 0%);
   color: white;
-  transition: color 0.4s, background 0.4s;
+  transition:
+    color 0.4s,
+    background 0.4s;
 }
 .exam .btn-primary:hover {
   border: 1px solid white;
@@ -295,7 +297,10 @@ no css currently required for this transition
 /* Elearning: animation 4 - Animate "Elearning" */
 #elearning-demo-content .overlay svg #subtext1 {
   opacity: 0;
-  transition: opacity 1s 3s ease, font-size 1s 27s, transform 1s 27s;
+  transition:
+    opacity 1s 3s ease,
+    font-size 1s 27s,
+    transform 1s 27s;
 }
 #elearning-demo-content .overlay svg #subtext2 {
   opacity: 0;
@@ -313,7 +318,9 @@ no css currently required for this transition
   height: 100%;
   /* padding: 40px; */
   background-color: rgb(5 24 61 / 70%);
-  transition: background-color 1s 24s, grid-template-rows 1s 24s;
+  transition:
+    background-color 1s 24s,
+    grid-template-rows 1s 24s;
 }
 #elearning-demo-content .overlay video {
   position: relative;
@@ -342,7 +349,9 @@ no css currently required for this transition
   fill: white;
   font-size: 18px;
   opacity: 0;
-  transition: transform 1.5s 1s, opacity 0.7s 1s;
+  transition:
+    transform 1.5s 1s,
+    opacity 0.7s 1s;
 }
 #elearning-demo-content #usecase-1.active,
 #elearning-demo-content #usecase-1.active textPath {
@@ -547,7 +556,6 @@ pre {
 
   #blog-container {
     width: 79%;
-    padding-top: 80px;
   }
 }
 footer #logo * {
@@ -737,7 +745,9 @@ header ul {
   height: 0vh;
   width: 100%;
   overflow: hidden;
-  transition: padding 0.7s linear, height 1s cubic-bezier(0.75, 0, 0.58, 0);
+  transition:
+    padding 0.7s linear,
+    height 1s cubic-bezier(0.75, 0, 0.58, 0);
   padding-top: 0px;
 }
 .slide-down-panel.active {

@@ -99,8 +99,12 @@ const HomePage = (props) => {
         {/* refactor: replace with a form component */}
         <ContactForm />
       </div>
-      <div className="section" id="blog">
-        <Blog />
+      <div
+        className="section"
+        id="blog"
+        style={{ height: "auto", minHeight: 0 }}
+      >
+        <Blog blogActive={props.BlogActive} />
       </div>
       <button
         onClick={(event) => {

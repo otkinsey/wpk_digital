@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-const Blog = () => {
+const Blog = (props) => {
   const [currentArticle, setCurrentArticle] = useState(0);
 
   const blogArticles = [
@@ -672,7 +672,16 @@ const Blog = () => {
     );
   }
   return (
-    <div id="blog-container" style={{ display: "flex" }}>
+    <div
+      id="blog-container"
+      style={{
+        display: "flex",
+        height: props.blogActive ? "100%" : "0px",
+        paddingTop: props.blogActive ? "80px" : "0px",
+        overflow: "hidden",
+        transition: "height 0.5s ease-in-out",
+      }}
+    >
       <ul
         id="side-menu"
         style={{ padding: "0px 20px 40px 40px", width: "25%" }}

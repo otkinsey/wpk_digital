@@ -13,6 +13,8 @@ function App() {
   const elearningVideo = useRef(null);
   const [demoPlaying, setDemoPlaying] = useState(false);
   const [demoContentVar, setDemoContentVar] = useState("default");
+  const [LMSActive, setLMSActive] = useState(false);
+  const [BlogActive, setBlogActive] = useState(false);
 
   const scrollTo = (id, menuState = active) => {
     const demoActive = document
@@ -32,13 +34,11 @@ function App() {
           toggleMenu();
         }
       },
-      demoActive ? 1100 : 0
+      demoActive ? 1100 : 0,
     );
 
     if (demoActive) toggleDemoLMS();
   };
-
-  const [LMSActive, setLMSActive] = useState(false);
 
   const toggleDemoLMS = () => {
     if (!LMSActive) {
@@ -80,6 +80,7 @@ function App() {
           scrollTo={scrollTo}
           active={active}
           LMSActive={LMSActive}
+          setBlogActive={setBlogActive}
           resetDemo={resetDemo}
           toggleDemoLMS={toggleDemoLMS}
         ></MainNav>
@@ -93,6 +94,7 @@ function App() {
                 scrollTo={scrollTo}
                 LMSActive={LMSActive}
                 setLMSActive={setLMSActive}
+                BlogActive={BlogActive}
                 toggleDemoLMS={toggleDemoLMS}
                 elearningVideo={elearningVideo}
                 demoPlaying={demoPlaying}
