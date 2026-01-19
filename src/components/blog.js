@@ -5,8 +5,6 @@ import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 const Blog = () => {
   const [currentArticle, setCurrentArticle] = useState(0);
 
-  const parser = new DOMParser();
-
   const blogArticles = [
     {
       subject: "React",
@@ -670,7 +668,7 @@ const Blog = () => {
 
   function displayArticle(articleIndex) {
     return blogArticles[articleIndex].content.map(
-      (paragraph, index) => paragraph
+      (paragraph, index) => paragraph,
     );
   }
   return (
